@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="French" nowhitespace="true" translatedname="French">
+  <!-- TALENTS -->
+  <talentdescription.ntsp_imadoctornota>Gagnez un bonus égal à [skillpercentage]% de la vitesse de tir à distance et de la vitesse d'attaque en mêlée de votre compétence chirurgicale.</talentdescription.ntsp_imadoctornota>
+  <talentname.tesp_militarydoping>Dopage militaire</talentname.tesp_militarydoping>
+  <talentdescription.ntsp_preventativepermit>La dernière personne à recevoir votre commandement et les troupes amies dans un rayon de 6 m (y compris vous-même) gagnent [physicalresistance]% de résistance aux dégâts et évitent de recevoir des coups mortels.</talentdescription.ntsp_preventativepermit>
+  <talentname.tesp_laststand>Course contre la mort</talentname.tesp_laststand>
+  <talentdescription.tesp_laststand>Un bon médecin doit soigner non seulement les autres, mais aussi lui-même. À l'agonie, gagnez [base] + chirurgie × [multiplier] secondes de dernier rempart : conscience forcée, tension stabilisée, plus de perte de sang et rythme cardiaque normal. C'est ma dernière onde ! À la fin, vous gagnez Séquelle (vie max -15 %, soignable en clinique médicale).</talentdescription.tesp_laststand>
+  <afflictionname.tesp_laststand>Course contre la mort</afflictionname.tesp_laststand>
+  <afflictiondescription.tesp_laststand>Conscience forcée ; tension, rythme cardiaque et perte de sang stabilisés.</afflictiondescription.tesp_laststand>
+  <afflictionname.tesp_laststand_aftermath>Séquelle</afflictionname.tesp_laststand_aftermath>
+  <afflictiondescription.tesp_laststand_aftermath>Le prix de la survie : vie max -15 %. Soignable en clinique médicale.</afflictiondescription.tesp_laststand_aftermath>
+</infotexts>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Talents>
+    <!-- Researcher -->
+    <!-- Hospitalizer -->
+    <Talent identifier="vitaminsupplements">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,5" sheetelementsize="128,128" />
+      <Description tag="talentdescription.vitaminsupplements">
+        <Replace tag="[healthboost]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnApplyTreatment">
+        <Conditions>
+          <AbilityConditionCharacter targettype="Ally" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveAffliction affliction="bedsidemanner" strength="600" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- Field surgeon -->
+    <Talent identifier="ntsp_imadoctornota">
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.skillbonus">
+        <Replace tag="[amount]" value="20" />
+        <Replace tag="[skillname]" value="skillname.medical" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.skillbonus">
+        <Replace tag="[amount]" value="20" />
+        <Replace tag="[skillname]" value="skillname.weapons" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.skillbonus">
+        <Replace tag="[amount]" value="20" />
+        <Replace tag="[skillname]" value="skillname.mechanical" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.skillbonus">
+        <Replace tag="[amount]" value="20" />
+        <Replace tag="[skillname]" value="skillname.electrical" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.skillbonus">
+        <Replace tag="[amount]" value="20" />
+        <Replace tag="[skillname]" value="skillname.helm" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.ntsp_imadoctornota">
+        <Replace tag="[skillpercentage]" value="30" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="20" />
+          <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="20" />
+          <CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="20" />
+          <CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="20" />
+          <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="20" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.5">
+        <Abilities>
+          <CharacterAbilityModifyStatToSkill stattype="MeleeAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="RangedAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <Talent identifier="tesp_militarydoping">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,5" sheetelementsize="128,128" />
+      <Description tag="talentdescription.increaseappliedbuffduration">
+        <Replace tag="[amount]" value="25" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.combatstimulantsyringe" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.endocrinebooster" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MedicalItemDurationMultiplier" value="0.25" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="combatstimulantsyringe" />
+      <AddedRecipe itemidentifier="endocrinebooster" />
+    </Talent>
+    <Talent identifier="ntsp_preventativepermit">
+      <Description tag="talentdescription.ntsp_preventativepermit">
+        <Replace tag="[physicalresistance]" value="35" color="gui.green" />
+      </Description>
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.commanderreminder" />
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" allowself="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="preventativepermit" amount="5.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffectsToLastOrderedCharacter>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="preventativepermit" amount="5.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToLastOrderedCharacter>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 非专业专家：+30 外科技能（占位）。
+         游戏 StatTypes 无 SurgerySkillBonus 映射（GetSkillStatType 只支持
+         electrical/helm/mechanical/medical/weapons），CharacterAbilityIncreaseSkill
+         会直接改角色基础技能值（写进存档，出问题），故留空占位，等 NT 更新支持额外等级。 -->
+    <Talent identifier="ntsp_unspecialisedspecialist">
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.ntsp_unspecialisedspecialist">
+        <Replace tag="[amount]" value="30" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.surgery" color="gui.orange" />
+      </Description>
+    </Talent>
+    <!-- 异丙酚专家：不给自身施加 miracleworker（allowself="false"），
+         但自身不免疫 miracleworker，周围同样有此天赋的医生可以互相给对方吊命。 -->
+    <Talent identifier="ntsp_properfol">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="6,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.miracleworker" />
+      <Description tag="talentdescription.ntsp_properfol">
+        <Replace tag="[itemname]" value="entityname.propofol" color="gui.orange" />
+      </Description>
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" allowself="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="miracleworker" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 预备包：缝合线 x3 + O-血袋 x2 + 吗啡 x2 -->
+    <Talent identifier="ntsp_homecarepackage">
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="7,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.ntsp_homecarepackage"></Description>
+      <Description tag="talentdescription.gainitem">
+        <Replace tag="[amount]" value="3" color="gui.green" />
+        <Replace tag="[itemname]" value="entityname.suture" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.gainitem">
+        <Replace tag="[amount]" value="2" color="gui.green" />
+        <Replace tag="[itemname]" value="entityname.bloodpackominus" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.gainitem">
+        <Replace tag="[amount]" value="2" color="gui.green" />
+        <Replace tag="[itemname]" value="entityname.opium" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAnyMissionCompleted">
+        <Abilities>
+          <CharacterAbilityPutItem itemidentifier="suture" amount="3" />
+          <CharacterAbilityPutItem itemidentifier="bloodpackominus" amount="2" />
+          <CharacterAbilityPutItem itemidentifier="opium" amount="2" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 自我护理：精神病抗性 100%（multiplier 0 = 完全免疫） -->
+    <Talent identifier="ntsp_selfcare">
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="3,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.ntsp_selfcarepsychosis">
+        <Replace tag="[amount]" value="100" color="gui.green" />
+        <Replace tag="[affliction]" value="afflictionname.psychosis" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveResistance resistance="psychosis" multiplier="0" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 与死神赛跑：触发逻辑由 Lua 完成（动态时长、稳定血压/心率/失血、后遗症） -->
+    <Talent identifier="tesp_laststand">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.tesp_laststand">
+        <Replace tag="[base]" value="60" color="gui.green" />
+        <Replace tag="[multiplier]" value="0.1" color="gui.green" />
+      </Description>
+    </Talent>
+  </Talents>
+</Override>

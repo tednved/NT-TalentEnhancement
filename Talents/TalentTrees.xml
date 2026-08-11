@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <TalentTrees>
+    <TalentTree jobidentifier="surgeon">
+      <SubTree identifier="surgeon_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="1" maxchosentalents="4">
+          <TalentOption identifier="ntsp_surgeonsintuition" />
+          <TalentOption identifier="ntsp_adrenalinepump" />
+          <TalentOption identifier="ntsp_autodidact" />
+          <TalentOption identifier="selfcare" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
+          <TalentOption identifier="ntsp_homecarepackage" />
+          <TalentOption identifier="ntsp_injectorgeneral" />
+          <TalentOption identifier="ntsp_fellowtoaster" />
+          <TalentOption identifier="ntsp_unspecialisedspecialist" />
+          <TalentOption identifier="vitaminsupplements" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="ethicalmedicine" type="specialization" requires="surgeon_primary">
+        <TalentOptions>
+          <TalentOption identifier="ntsp_underpressure" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="ntsp_fisharespecimens" />
+          <TalentOption identifier="tesp_laststand" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="ntsp_bedsidemanner" />
+          <TalentOption identifier="tesp_militarydoping" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="ntsp_brucereitzperk" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="dabblingpharmacist" type="specialization" requires="surgeon_primary">
+        <TalentOptions>
+          <TalentOption identifier="ntsp_ultrasoniccleaner" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="ntsp_therapisttintraining" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="ntsp_mannitol" />
+          <TalentOption identifier="ntsp_experimental" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="ntsp_selfcare" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="fieldsurgeon" type="specialization" requires="surgeon_primary">
+        <TalentOptions>
+          <TalentOption identifier="ntsp_rapiddeoployment" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="ntsp_captainresist" />
+          <TalentOption identifier="ntsp_fallenandcantgetup" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="ntsp_preventativepermit" />
+          <TalentOption identifier="ntsp_imadoctornota" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="ntsp_properfol" />
+        </TalentOptions>
+      </SubTree>
+    </TalentTree>
+  </TalentTrees>
+</Override>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <!-- 与死神赛跑：锁血 buff。
+       duration=60 作为基础时长兜底；Lua 会按外科技能覆盖实例 Duration。strengthchange=0 确保强度不会自行衰减。
+       AlwaysStayConscious 与 Lua 的血压/心率/失血稳定都以此 buff 的存在为准，完全同步。 -->
+  <Affliction
+    identifier="tesp_laststand"
+    type="talentbuff"
+    isbuff="true"
+    hideiconafterdelay="true"
+    limbspecific="false"
+    maxstrength="1"
+    duration="60"
+    treatmentthreshold="1000"
+    iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="1" strengthchange="0">
+      <AbilityFlag flagtype="AlwaysStayConscious" />
+    </Effect>
+    <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="6,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+
+  <!-- 爆发后遗症：血量上限 -15%，可被站点医生治疗（healableinmedicalclinic="true"） -->
+  <Affliction
+    identifier="tesp_laststand_aftermath"
+    type="talentbuff"
+    isbuff="false"
+    limbspecific="false"
+    maxstrength="1"
+    treatmentthreshold="1000"
+    healableinmedicalclinic="true"
+    iconcolors="255,90,0,255;255,90,0,255;255,45,0,255;255,90,0,255">
+    <Effect minstrength="0" maxstrength="1" strengthchange="0">
+      <StatValue stattype="MaximumHealthMultiplier" value="-0.15" />
+    </Effect>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,7" sheetelementsize="128,128" color="200,40,40,255" origin="0,0" />
+  </Affliction>
+</Afflictions>
+
+
+

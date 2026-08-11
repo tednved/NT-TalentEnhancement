@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <!-- TALENTS -->
+  <talentdescription.ntsp_imadoctornota>Gain an additional percentage to Ranged Fire Rate and Melee Attack Speed equal to [skillpercentage]% of your surgery skill.</talentdescription.ntsp_imadoctornota>
+  <talentname.tesp_militarydoping>Military doping</talentname.tesp_militarydoping>
+  <talentdescription.ntsp_preventativepermit>The last person you ordered and ally(including yourself) within 6m gain gains [physicalresistance]% damage resistance and is less likely to suffer serious injuries.</talentdescription.ntsp_preventativepermit>
+  <talentname.tesp_laststand>Race with Death</talentname.tesp_laststand>
+  <talentdescription.tesp_laststand>A good doctor should be able to heal not only others but also themselves. When dying, gain [base] + surgery skill × [multiplier] seconds of last stand: forced consciousness, stabilized blood pressure, no blood loss, and a steady heart rate. This is my final ripple! After it ends, you gain Aftermath of the Surge (max health -15%, curable at a medical clinic).</talentdescription.tesp_laststand>
+  <afflictionname.tesp_laststand>Race with Death</afflictionname.tesp_laststand>
+  <afflictiondescription.tesp_laststand>Forced consciousness; blood pressure, heart rate and blood loss are stabilized.</afflictiondescription.tesp_laststand>
+  <afflictionname.tesp_laststand_aftermath>Aftermath of the Surge</afflictionname.tesp_laststand_aftermath>
+  <afflictiondescription.tesp_laststand_aftermath>The price of holding on: max health -15%. Curable at a medical clinic.</afflictiondescription.tesp_laststand_aftermath>
+</infotexts>

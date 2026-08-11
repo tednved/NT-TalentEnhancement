@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <!-- TALENTS -->
+  <talentdescription.ntsp_imadoctornota>Получите бонус, равный [skillpercentage]% от скорости дальнего выстрела и скорости атаки ближнего боя вашего хирургического навыка.</talentdescription.ntsp_imadoctornota>
+  <talentname.tesp_militarydoping>Военный допинг</talentname.tesp_militarydoping>
+  <talentdescription.ntsp_preventativepermit>Последний человек, получивший вашу команду, и дружественные войска в радиусе 6 м (включая вас самих) получают [physicalresistance]% сопротивления урону и защищены от смертельных ударов.</talentdescription.ntsp_preventativepermit>
+  <talentname.tesp_laststand>Гонка со смертью</talentname.tesp_laststand>
+  <talentdescription.tesp_laststand>Хороший врач должен лечить не только других, но и себя. При смерти вы получаете [base] + хирургия × [multiplier] секунд последнего рубежа: принудительное сознание, стабильное давление, без кровопотери и ровный пульс. Это моя последняя волна! После окончания вы получаете Последствие (макс. здоровье -15%, лечится в медклинике).</talentdescription.tesp_laststand>
+  <afflictionname.tesp_laststand>Гонка со смертью</afflictionname.tesp_laststand>
+  <afflictiondescription.tesp_laststand>Принудительное сознание; давление, пульс и кровопотеря стабилизированы.</afflictiondescription.tesp_laststand>
+  <afflictionname.tesp_laststand_aftermath>Последствие</afflictionname.tesp_laststand_aftermath>
+  <afflictiondescription.tesp_laststand_aftermath>Цена выживания: макс. здоровье -15%. Лечится в медклинике.</afflictiondescription.tesp_laststand_aftermath>
+</infotexts>

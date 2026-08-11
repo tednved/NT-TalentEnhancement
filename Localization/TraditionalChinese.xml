@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Traditional Chinese" nowhitespace="true" translatedname="中文(繁體)">
+  <!-- TALENTS -->
+  <talentdescription.ntsp_imadoctornota>獲得相當於妳外科技能[skillpercentage]%的遠程射擊速度和近戰攻擊速度的獎勵。</talentdescription.ntsp_imadoctornota>
+  <talentname.tesp_militarydoping>軍用興奮劑</talentname.tesp_militarydoping>
+  <talentdescription.ntsp_preventativepermit>最後一個得到妳命令的人以及6米內的友軍(包括自身)獲得[physicalresistance]%的傷害抗性，併避免其受到致命的打擊。</talentdescription.ntsp_preventativepermit>
+  <talentname.tesp_laststand>與死神賽跑</talentname.tesp_laststand>
+  <talentdescription.tesp_laststand>一個合格的醫生不但要會治療別人，也應該能治療自己。瀕死時，妳會獲得 [base] 秒 + 外科技能×[multiplier] 秒的鎖血：強制保持清醒、血壓穩定、不再失血、心率正常。這是我最後的波紋了！鎖血結束後會獲得爆發後遺癥（最大生命-15%，可被站點醫生治愈）。</talentdescription.tesp_laststand>
+  <afflictionname.tesp_laststand>與死神賽跑</afflictionname.tesp_laststand>
+  <afflictiondescription.tesp_laststand>強制清醒，血壓、心率和失血被穩定。</afflictiondescription.tesp_laststand>
+  <afflictionname.tesp_laststand_aftermath>爆發後遺癥</afflictionname.tesp_laststand_aftermath>
+  <afflictiondescription.tesp_laststand_aftermath>強行續命的代價：最大生命值-15%。可被站點醫生治愈。</afflictiondescription.tesp_laststand_aftermath>
+</infotexts>
