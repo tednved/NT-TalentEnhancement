@@ -418,6 +418,8 @@ local LASTWAVE_ID = Identifier(LASTWAVE_KEY)
 local VANILLA_IMPLACABLE_ID = Identifier("implacable")
 local IMPLACABLE_BASE_DURATION = 20.0
 local IMPLACABLE_WEAPONS_MULTIPLIER = 0.2
+-- 与原版 implacable 一致（vitalitypercentage="0.01"）：生命值低于最大值的 1% 时触发
+local IMPLACABLE_VITALITY_THRESHOLD = 0.01
 
 local activeImplacables = {} -- character -> true
 local severedRestore = {} -- character -> { [limb] = true }
@@ -553,7 +555,7 @@ local function UpdateImplacable()
                     and type(maxVitality) == "number"
                     and maxVitality > 0
                     and type(vitality) == "number"
-                    and vitality <= 0 then
+                    and vitality / maxVitality < IMPLACABLE_VITALITY_THRESHOLD then
                     TriggerImplacable(character)
                 end
             end
