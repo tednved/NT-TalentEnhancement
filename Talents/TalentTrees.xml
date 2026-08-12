@@ -65,5 +65,139 @@
         </TalentOptions>
       </SubTree>
     </TalentTree>
+    <!-- 安全官天赋树 -->
+    <TalentTree jobidentifier="securityofficer">
+      <SubTree identifier="security_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
+          <TalentOption identifier="protectandserve" />
+          <TalentOption identifier="warstories" />
+          <TalentOption identifier="firstaidtraining" />
+          <TalentOption identifier="physicalconditioning" />
+          <TalentOption identifier="buff" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
+          <TalentOption identifier="weaponsmith" />
+          <TalentOption identifier="bythebook" />
+          <TalentOption identifier="dontpushit" />
+          <TalentOption identifier="bootcamp" />
+          <TalentOption identifier="munitionsexpertise" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="frogman" type="specialization" requires="security_primary">
+        <TalentOptions>
+          <TalentOption identifier="boardingparty" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="scavenger" />
+          <TalentOption identifier="slayer" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="easyturtle" />
+          <TalentOption identifier="daringdolphin" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="specops" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="enforcer" type="specialization" requires="security_primary">
+        <TalentOptions>
+          <TalentOption identifier="pacificationkit" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="beatcop" />
+          <TalentOption identifier="stonewall" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="crustyseaman" />
+          <TalentOption identifier="inordinateexsanguination" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="implacable" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="gunner" type="specialization" requires="security_primary">
+        <TalentOptions>
+          <TalentOption identifier="rifleman" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="tandemfire" />
+          <TalentOption identifier="commando" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="gunrunner" />
+          <TalentOption identifier="extrapowder" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="warlord" />
+        </TalentOptions>
+      </SubTree>
+    </TalentTree>
+    <!-- 医生天赋树 -->
+    <TalentTree jobidentifier="medicaldoctor">
+      <SubTree identifier="medical_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
+          <TalentOption identifier="healthinsurance" />
+          <TalentOption identifier="nobodyimportantdies" />
+          <TalentOption identifier="laresistance" />
+          <TalentOption identifier="selfcare" />
+          <TalentOption identifier="stayinalive" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
+          <TalentOption identifier="firemanscarry" />
+          <TalentOption identifier="medicalcompanion" />
+          <TalentOption identifier="dontdieonme" />
+          <TalentOption identifier="nopressure" />
+          <TalentOption identifier="blooddonor" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="xenologist" type="specialization" requires="medical_primary">
+        <TalentOptions>
+          <TalentOption identifier="geneharvester" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="bloodybusiness" />
+          <TalentOption identifier="genesplicer" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="blackmarketgenes" />
+          <TalentOption identifier="genetampering" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="geneticgenious" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="medic" type="specialization" requires="medical_primary">
+        <TalentOptions>
+          <TalentOption identifier="medicalexpertise" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="medicalassistance" />
+          <TalentOption identifier="emergencyresponse" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="drsubmarine" />
+          <TalentOption identifier="vitaminsupplements" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="miracleworker" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="scientist" type="specialization" requires="medical_primary">
+        <TalentOptions>
+          <TalentOption identifier="plaguedoctor" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="deliverysystem" />
+          <TalentOption identifier="labcontacts" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="supersoldiers" />
+          <TalentOption identifier="whatastench" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="macrodosing" />
+        </TalentOptions>
+      </SubTree>
+    </TalentTree>
   </TalentTrees>
 </Override>
