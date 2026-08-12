@@ -424,6 +424,8 @@ local IMPLACABLE_BASE_DURATION = 20.0
 local IMPLACABLE_WEAPONS_MULTIPLIER = 0.2
 -- 与原版 implacable 一致（vitalitypercentage="0.01"）：生命值低于最大值的 1% 时触发
 local IMPLACABLE_VITALITY_THRESHOLD = 0.01
+-- 结束后的晕眩强度（stun 每秒 -1，约等于秒数）
+local IMPLACABLE_END_STUN = 5
 
 local activeImplacables = {} -- character -> true
 local traumaAmputationWrapped = false
@@ -463,45 +465,68 @@ local function TriggerImplacable(character)
     return true
 end
 
--- buff 期间临时隐藏的四肢骨折/脱臼 affliction：character -> { affliction -> 原始强度 }
-local fractureRestore = {}
-
--- 四肢骨折 + 四肢脱臼（均为 limbspecific="false" 的全局 affliction）
-local LIMB_FRACTURE_AFFLICTIONS = {
+-- 触发破釜沉舟时永久治愈的残废状态：四肢截肢(创伤+手术)、全部骨折、四肢脱臼
+local HEAL_AFFLICTIONS = {
+    "tra_amputation", "sra_amputation", "tla_amputation", "sla_amputation",
+    "trl_amputation", "srl_amputation", "tll_amputation", "sll_amputation",
     "la_fracture", "ra_fracture", "ll_fracture", "rl_fracture",
+    "h_fracture", "t_fracture", "n_fracture",
     "dislocation1", "dislocation2", "dislocation3", "dislocation4",
 }
+local HEAL_CAST_LIMBS = { "LeftArm", "RightArm", "LeftLeg", "RightLeg" }
 
--- buff 期间：临时移除四肢骨折/脱臼，实现"无视其 debuff"
-local function ApplyFractureImmunity(character)
-    local getStrength = GetFunction(HF, "GetAfflictionStrength")
-    if getStrength == nil then return end
-    if fractureRestore[character] == nil then fractureRestore[character] = {} end
-    for _, aff in ipairs(LIMB_FRACTURE_AFFLICTIONS) do
-        local strength = InvokeSafely("HF.GetAfflictionStrength", getStrength, character, aff, 0)
-        if type(strength) == "number" and strength > 0 then
-            if fractureRestore[character][aff] == nil then
-                fractureRestore[character][aff] = strength
+-- 触发时：永久治好断肢/骨折/脱臼（移除 affliction 后游戏原版会自动恢复肢体），
+-- 并清掉四肢石膏（骨折已愈，石膏的减速 debuff 不再需要）
+local function HealImplacable(character)
+    for _, aff in ipairs(HEAL_AFFLICTIONS) do
+        SetAffliction(character, aff, 0)
+    end
+    local setAfflictionLimb = GetFunction(HF, "SetAfflictionLimb")
+    if setAfflictionLimb ~= nil then
+        for _, limbName in ipairs(HEAL_CAST_LIMBS) do
+            local limbType = SafeGet(LimbType, limbName)
+            if limbType ~= nil then
+                InvokeSafely("HF.SetAfflictionLimb.gypsumcast", setAfflictionLimb,
+                    character, "gypsumcast", limbType, 0)
             end
-            SetAffliction(character, aff, 0)
         end
     end
 end
 
-local function RestoreFractures(character)
-    local restore = fractureRestore[character]
-    if restore == nil then return end
-    for aff, strength in pairs(restore) do
-        if type(strength) == "number" and strength > 0 then
-            SetAffliction(character, aff, strength)
+-- 锁血期间免疫新骨折/新脱臼（与 WrapAmputations 同理，包装 NT 函数）
+local breakLimbWrapped = false
+local dislocateLimbWrapped = false
+local function WrapDamageImmunities()
+    if not breakLimbWrapped then
+        local original = GetFunction(NT, "BreakLimb")
+        if original ~= nil then
+            local wrapped = function(character, limbType, strength)
+                if activeImplacables[character] then return end
+                return InvokeSafely("NT.BreakLimb", original, character, limbType, strength)
+            end
+            if SafeSet(NT, "BreakLimb", wrapped, "damageimmunity.wrap.break") then
+                breakLimbWrapped = true
+            end
         end
     end
-    fractureRestore[character] = nil
+    if not dislocateLimbWrapped then
+        local original = GetFunction(NT, "DislocateLimb")
+        if original ~= nil then
+            local wrapped = function(character, limbType, strength)
+                if activeImplacables[character] then return end
+                return InvokeSafely("NT.DislocateLimb", original, character, limbType, strength)
+            end
+            if SafeSet(NT, "DislocateLimb", wrapped, "damageimmunity.wrap.dislocate") then
+                dislocateLimbWrapped = true
+            end
+        end
+    end
 end
 
 local function FinishImplacable(character)
     if not activeImplacables[character] then return end
-    RestoreFractures(character)
+    -- 结束后短暂晕眩（代价之一）
+    SetAffliction(character, "stun", IMPLACABLE_END_STUN)
     if not HasAffliction(character, LASTWAVE_ID)
         and not SetAffliction(character, LASTWAVE_KEY, 1) then
         return
@@ -521,7 +546,6 @@ local function UpdateImplacable()
             elseif HasAffliction(character, IMPLACABLE_ID) then
                 -- Recover state after a script reload or a late-created affliction.
                 activeImplacables[character] = true
-                ApplyFractureImmunity(character)
                 CancelVanillaImplacable(character)
             else
                 FinishImplacable(character)
@@ -534,7 +558,9 @@ local function UpdateImplacable()
                     and maxVitality > 0
                     and type(vitality) == "number"
                     and vitality / maxVitality < IMPLACABLE_VITALITY_THRESHOLD then
-                    TriggerImplacable(character)
+                    if TriggerImplacable(character) then
+                        HealImplacable(character)
+                    end
                 end
             end
         end
@@ -578,6 +604,7 @@ end
 
 local function UpdateImplacableWrapped()
     WrapAmputations()
+    WrapDamageImmunities()
     UpdateImplacable()
 end
 

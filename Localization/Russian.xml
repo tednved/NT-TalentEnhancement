@@ -16,8 +16,8 @@
   <talentdescription.tesp_buff>Получаемый урон от тупых предметов снижен на [bluntresistance]%, вероятность переломов (череп, шея и др.) снижена на [fracturechance]%.</talentdescription.tesp_buff>
   <talentdescription.tesp_crustyseaman>В течение [duration] секунд после получения удара восстанавливайте [bleedheal] кровотечения в секунду на каждой конечности (обычное кровотечение; артериальные и другие особые кровотечения не затрагиваются). Перезарядка [cooldown] сек.</talentdescription.tesp_crustyseaman>
   <talentdescription.tesp_implacable>Когда ваша жизненная сила падает до 0, получите [base] + навык оружия × [multiplier] секунд последнего рубежа: быстрое лечение обычного урона, принудительное сознание, +25% к атаке, невозможно умереть от урона.</talentdescription.tesp_implacable>
-  <talentdescription.tesp_implacable_amputate>Во время действия игнорируются негативные эффекты переломов и вывихов конечностей.</talentdescription.tesp_implacable_amputate>
-  <talentdescription.tesp_lastwave>После окончания вы получаете Последнюю волну (макс. здоровье -20%, лечится только в медклинике). Возможность повторного срабатывания зависит от Последней волны.</talentdescription.tesp_lastwave>
+  <talentdescription.tesp_implacable_amputate>При активации лечит ампутированные конечности, переломы и вывихи; во время действия нельзя получить новые ампутации, переломы или вывихи.</talentdescription.tesp_implacable_amputate>
+  <talentdescription.tesp_lastwave>После окончания вы получаете Последнюю волну (макс. здоровье -20%, лечится только в медклинике) и кратковременное оглушение. Возможность повторного срабатывания зависит от Последней волны.</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>Последний рубеж</afflictionname.tesp_implacable>
   <afflictiondescription.tesp_implacable>Борьба на грани: быстрое лечение, принудительное сознание, +25% к атаке, иммунитет к ампутациям.</afflictiondescription.tesp_implacable>
   <afflictionname.tesp_lastwave>Последняя волна</afflictionname.tesp_lastwave>
