@@ -308,14 +308,23 @@ local function TriggerImplacable(character)
     return true
 end
 
+-- 肢体 → 截肢标记 affliction 映射（amputation afflictions 为非 limbspecific，全局判断）
+local AMPUTATION_AFFLICTIONS = {
+    [LimbType.RightLeg] = { "trl_amputation", "srl_amputation" },
+    [LimbType.LeftLeg] = { "tll_amputation", "sll_amputation" },
+    [LimbType.RightArm] = { "tra_amputation", "sra_amputation" },
+    [LimbType.LeftArm] = { "tla_amputation", "sla_amputation" },
+    [LimbType.Head] = { "th_amputation", "sh_amputation" },
+}
+
 -- buff 期间：把已截断的肢体临时置为未截断（断腿能跑、断手能持物）
 local function ApplySeveredImmunity(character)
     if character.AnimController == nil then return end
     if severedRestore[character] == nil then severedRestore[character] = {} end
     for limb in character.AnimController.Limbs do
         if limb ~= nil then
-            local wasSevered = pcall(function() return limb.IsSevered end)
-            if wasSevered == true then
+            local ok, isSevered = pcall(function() return limb.IsSevered end)
+            if ok and isSevered == true then
                 severedRestore[character][limb] = true
                 pcall(function() limb.IsSevered = false end)
             end
@@ -327,9 +336,23 @@ local function RestoreSevered(character)
     local restore = severedRestore[character]
     if restore == nil then return end
     for limb in pairs(restore) do
-        pcall(function()
-            limb.IsSevered = true
-        end)
+        if limb ~= nil then
+            -- 若该肢体已在 buff 期间被手术修复（amputation affliction 已移除），
+            -- 保持未截断状态，不再恢复 IsSevered=true
+            local stillAmputated = false
+            local affs = AMPUTATION_AFFLICTIONS[limb.type]
+            if affs ~= nil then
+                for _, aff in ipairs(affs) do
+                    if HF.HasAffliction(character, aff, 0.5) then
+                        stillAmputated = true
+                        break
+                    end
+                end
+            end
+            if stillAmputated then
+                pcall(function() limb.IsSevered = true end)
+            end
+        end
     end
     severedRestore[character] = nil
 end
