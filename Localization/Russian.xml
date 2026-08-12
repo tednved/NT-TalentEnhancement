@@ -10,4 +10,6 @@
   <afflictiondescription.tesp_laststand>Принудительное сознание; давление, пульс и кровопотеря стабилизированы.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Последствие</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>Цена выживания: макс. здоровье -15%. Лечится в медклинике.</afflictiondescription.tesp_laststand_aftermath>
+  <talentname.tesp_bonefixer>Костоправ</talentname.tesp_bonefixer>
+  <talentdescription.tesp_bonefixer>Вправление вывихов больше не требует опиоидных обезболивающих, а нехватка навыка не приведёт к перелому. Но пациент всё равно будет кричать и падать от боли — традиционная медицина, боль неизбежна.</talentdescription.tesp_bonefixer>
 </infotexts>

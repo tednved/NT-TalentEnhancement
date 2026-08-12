@@ -10,4 +10,6 @@
   <afflictiondescription.tesp_laststand>Conscience forcée ; tension, rythme cardiaque et perte de sang stabilisés.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Séquelle</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>Le prix de la survie : vie max -15 %. Soignable en clinique médicale.</afflictiondescription.tesp_laststand_aftermath>
+  <talentname.tesp_bonefixer>Rebouteux</talentname.tesp_bonefixer>
+  <talentdescription.tesp_bonefixer>Réduire une luxation ne nécessite plus d'analgésiques opiacés, et un échec de compétence ne provoquera pas de fracture. Le patient criera et s'effondrera quand même de douleur — médecine traditionnelle, la douleur fait partie du soin.</talentdescription.tesp_bonefixer>
 </infotexts>

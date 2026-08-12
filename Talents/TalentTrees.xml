@@ -22,7 +22,7 @@
           <TalentOption identifier="ntsp_underpressure" />
         </TalentOptions>
         <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="ntsp_fisharespecimens" />
+          <TalentOption identifier="tesp_bonefixer" />
           <TalentOption identifier="tesp_laststand" />
         </TalentOptions>
         <TalentOptions requiredtalents="1" maxchosentalents="2">

@@ -10,4 +10,6 @@
   <afflictiondescription.tesp_laststand>強制清醒，血壓、心率和失血被穩定。</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>爆發後遺癥</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>強行續命的代價：最大生命值-15%。可被站點醫生治愈。</afflictiondescription.tesp_laststand_aftermath>
+  <talentname.tesp_bonefixer>骨科老中醫</talentname.tesp_bonefixer>
+  <talentdescription.tesp_bonefixer>治療脫臼時不再需要阿片類藥物鎮痛，技能不足也不會造成後續骨折。但患者依然會痛得哀嚎倒地——傳統手藝，疼在所難免。</talentdescription.tesp_bonefixer>
 </infotexts>

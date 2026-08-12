@@ -179,5 +179,11 @@
         <Replace tag="[multiplier]" value="0.1" color="gui.green" />
       </Description>
     </Talent>
+    <!-- 骨科老中医：治疗脱臼不依赖镇痛药、技能不足也不会造成骨折（逻辑由 Lua 包装 NT wrench 方法实现）。
+         图标沿用原 ntsp_fisharespecimens 的位置，如不合适可在游戏内确认后更换。 -->
+    <Talent identifier="tesp_bonefixer">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,6" sheetelementsize="128,128" />
+      <Description tag="talentdescription.tesp_bonefixer" />
+    </Talent>
   </Talents>
 </Override>

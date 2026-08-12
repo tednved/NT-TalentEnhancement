@@ -1,43 +1,23 @@
 # 天赋增强-外科医生[SP]（NT SP Talent）
 
-## 模组介绍
-
-本模组是基于精神创伤及其各类附属的天赋增强模组，目前适配了NT外科扩展的外科医生职业，本模组需要Lua cs for Barotrauma
-
-规划是修改所有职业的天赋，使他们能适应高难环境下的精神创伤内容
-
-模组灵感源于「天赋增强[SP]」，感谢原作者：
-原mod：https://steamcommunity.com/sharedfiles/filedetails/?id=2958569302
-
-天赋内容与外科扩展本体及原mod基本一致，仅增删了部分天赋及其排列顺序；为了使外科医生与原版医生有差异性，移除了原版医生的部分天赋内容，仅保留和修改了外科。
-
-
-有问题请联系qq1728548350
-如有侵权 联系删除
-
----
-
-## About
-
-This is a talent enhancement mod based on Neurotrauma and its various add-ons, currently adapted for the Surgeon class of NT Surgery Plus. Requires Lua CS for Barotrauma.
-
-The plan is to modify the talents of all classes so they can survive the mental trauma content in high-difficulty environments. 
-
-This mod is inspired by Talent Enhancement [SP]. Thanks to the original author:
-Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2958569302
-
-The talents remain largely identical to those in Surgery Plus and the original mod, with only some talents added, removed, or reordered. To make the Surgeon stand apart from the vanilla Medic, part of the Medic's talent content was removed, keeping only the surgery-related parts.
-
-For questions, please contact QQ: 1728548350
-If any content infringes on copyright, please contact us for removal.
-
----
-
-## 技术信息
+《Barotrauma》的外科医生天赋增强模组，在 [NT Surgery Plus](https://steamcommunity.com/sharedfiles/filedetails/?id=2542573144)（神经外科加强）的基础上新增/调整外科医生天赋，并提供中英俄法四种本地化文本。
 
 - 模组版本：1.0.6
 - 游戏版本：1.13.4.0
 - Steam 工坊：3545888282
+
+## 新增天赋
+
+- **与死神赛跑**（tesp_laststand）：濒死时强制保持清醒，稳定血压、失血和心率，持续 60 秒 + 外科技能 × 0.1 秒；锁血结束后获得「爆发后遗症」（最大生命 -15%，可由站点医生治愈）。需要 Neurotrauma 的健康框架支持。
+- **军用兴奋剂**（tesp_militarydoping）：解锁战斗兴奋剂注射器与内分泌增强剂配方。
+- **我不是医生吗**（ntsp_imadoctornota）：全技能 +20，并根据外科技能获得最高 30% 的近战/远程攻击速度加成。
+- **预防性许可**（ntsp_preventativepermit）：自身及 6 米内友军获得伤害抗性，并避免受到致命打击。
+
+## 安装
+
+1. 通过 Steam 创意工坊订阅，或将该目录放入 `LocalMods` 文件夹。
+2. 模组依赖 **Neurotrauma** 与 **NT Surgery Plus**，请确保已订阅并启用。
+3. 多人游戏由服务器执行脚本，单人游戏保留本地执行。
 
 ## 许可
 

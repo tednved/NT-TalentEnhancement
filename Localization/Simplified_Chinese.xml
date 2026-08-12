@@ -10,4 +10,6 @@
   <afflictiondescription.tesp_laststand>强制清醒，血压、心率和失血被稳定。</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>爆发后遗症</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>强行续命的代价：最大生命值-15%。</afflictiondescription.tesp_laststand_aftermath>
+  <talentname.tesp_bonefixer>骨科老中医</talentname.tesp_bonefixer>
+  <talentdescription.tesp_bonefixer>治疗脱臼时不再需要阿片类药物镇痛，技能不足也不会造成后续骨折。但患者依然会痛得哀嚎倒地——传统手艺，疼在所难免。</talentdescription.tesp_bonefixer>
 </infotexts>

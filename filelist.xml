@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="天赋增强-外科医生[SP]" modversion="1.0.6" corepackage="False" steamworkshopid="3545888282" gameversion="1.13.4.0" altnames="NT SP Talent">
+<contentpackage name="[NT]精神创伤-天赋增强" modversion="1.1.0" corepackage="False" steamworkshopid="3545888282" gameversion="1.13.4.0" altnames="NT Talent Enhancement">
   <Afflictions file="%ModDir%/Talents/Afflictions.xml" />
   <Talents file="%ModDir%/Talents/TalentsSurgeon.xml" />
   <TalentTrees file="%ModDir%/Talents/TalentTrees.xml" />
-  <Jobs file="%ModDir%/Xml/Jobs.xml" />
+  <TalentTrees file="%ModDir%/Talents/TalentTreesMedicSecurity.xml" />
+  <Jobs file="%ModDir%/Jobs/Jobs.xml" />
   <Other file="%ModDir%/Lua/Autorun/init.lua" />
   <Text file="%ModDir%/Localization/Simplified_Chinese.xml" />
   <Text file="%ModDir%/Localization/TraditionalChinese.xml" />

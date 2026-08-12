@@ -10,4 +10,6 @@
   <afflictiondescription.tesp_laststand>Forced consciousness; blood pressure, heart rate and blood loss are stabilized.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Aftermath of the Surge</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>The price of holding on: max health -15%. Curable at a medical clinic.</afflictiondescription.tesp_laststand_aftermath>
+  <talentname.tesp_bonefixer>Bone-Setter</talentname.tesp_bonefixer>
+  <talentdescription.tesp_bonefixer>Fixing dislocations no longer requires opioid painkillers, and a failed skill check won't cause a fracture. The patient will still scream and collapse in agony, though — traditional techniques, pain included.</talentdescription.tesp_bonefixer>
 </infotexts>

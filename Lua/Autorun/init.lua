@@ -107,7 +107,51 @@ local function TriggerLastStand(character)
     return true
 end
 
+local BONE_KEY = "tesp_bonefixer"
+local wrenchWrapped = false
+
+-- 骨科老中医（tesp_bonefixer）：治疗脱臼不依赖镇痛药、不造成骨折
+-- 原版 NT 扳手机制（NT.ItemStartsWithMethods.wrench）：治疗脱臼需 60 医疗技能
+--   （有 analgesia/肾上腺素时降为 30）；技能不足会 NT.BreakLimb 造成骨折；
+--   无镇痛时给患者加 severepain（剧痛 → 哀嚎 + 眩晕倒地）。
+-- 本天赋：无视镇痛与技能要求直接复位，绝不造成骨折，
+--   但保留 severepain —— 患者依然会痛得哀嚎倒地。
+local function WrapWrench()
+    if wrenchWrapped then return end
+    if type(NT) ~= "table" or type(NT.ItemStartsWithMethods) ~= "table" then return end
+
+    local originalWrench = NT.ItemStartsWithMethods.wrench
+    if type(originalWrench) ~= "function" then return end
+
+    local function BoneSetterWrench(item, usingCharacter, targetCharacter, limb)
+        if usingCharacter ~= nil and targetCharacter ~= nil and limb ~= nil then
+            local limbtype = HF.NormalizeLimbType(limb.type)
+            if NT.LimbIsDislocated(targetCharacter, limbtype)
+                and HasTalentSafe(usingCharacter, BONE_KEY) then
+                -- 直接复位：无视镇痛与技能要求，绝不造成骨折
+                NT.DislocateLimb(targetCharacter, limbtype, -1000)
+                HF.GiveSkillScaled(usingCharacter, "medical", 4000)
+                -- 保留剧痛：无镇痛时患者仍会哀嚎倒地（好玩）
+                if not HF.HasAffliction(targetCharacter, "analgesia", 0.5) then
+                    HF.AddAffliction(targetCharacter, "severepain", 5, usingCharacter)
+                end
+                return
+            end
+        end
+        originalWrench(item, usingCharacter, targetCharacter, limb)
+    end
+
+    NT.ItemStartsWithMethods.wrench = BoneSetterWrench
+    -- heavywrench/repairpack 在 NT 加载时按值拷贝了原函数，需一并替换
+    if type(NT.ItemMethods) == "table" then
+        NT.ItemMethods.heavywrench = BoneSetterWrench
+        NT.ItemMethods.repairpack = BoneSetterWrench
+    end
+    wrenchWrapped = true
+end
+
 local function UpdateLastStand()
+    WrapWrench() -- 一次性包装 NT wrench 方法（保证 NT 已加载）
     if not HasHealthFramework() then
         if not missingHealthFrameworkWarningShown then
             print("[天赋增强] 未找到 Neurotrauma HF.SetAffliction，锁血天赋不会运行。")
