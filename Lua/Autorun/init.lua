@@ -159,6 +159,15 @@ end
 local function FinishLastStand(character)
     if not activeLastStands[character] then return end
 
+    -- 锁血期间被救回（活着且生命值已恢复 >0）：不发放后遗症。
+    -- 死亡（IsDead）或仍濒死（vitality<=0）的角色照常发放。
+    local isDead = SafeGet(character, "IsDead", "laststand.finishIsDead") == true
+    local vitality = SafeGet(character, "Vitality", "laststand.finishVitality")
+    if not isDead and type(vitality) == "number" and vitality > 0 then
+        activeLastStands[character] = nil
+        return
+    end
+
     if not HasAffliction(character, AFTERMATH_ID)
         and not SetAffliction(character, AFTERMATH_KEY, 1) then
         return
