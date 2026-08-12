@@ -159,15 +159,6 @@ end
 local function FinishLastStand(character)
     if not activeLastStands[character] then return end
 
-    -- 锁血期间被救回（活着且生命值已恢复 >0）：不发放后遗症。
-    -- 死亡（IsDead）或仍濒死（vitality<=0）的角色照常发放。
-    local isDead = SafeGet(character, "IsDead", "laststand.finishIsDead") == true
-    local vitality = SafeGet(character, "Vitality", "laststand.finishVitality")
-    if not isDead and type(vitality) == "number" and vitality > 0 then
-        activeLastStands[character] = nil
-        return
-    end
-
     if not HasAffliction(character, AFTERMATH_ID)
         and not SetAffliction(character, AFTERMATH_KEY, 1) then
         return
@@ -435,7 +426,6 @@ local IMPLACABLE_WEAPONS_MULTIPLIER = 0.2
 local IMPLACABLE_VITALITY_THRESHOLD = 0.01
 
 local activeImplacables = {} -- character -> true
-local severedRestore = {} -- character -> { [limb] = true }
 local traumaAmputationWrapped = false
 local surgicalAmputationWrapped = false
 
@@ -471,67 +461,6 @@ local function TriggerImplacable(character)
     end
     activeImplacables[character] = true
     return true
-end
-
--- Keep this mapping optional so a missing enum cannot abort the whole script at load time.
-local AMPUTATION_AFFLICTIONS = {}
-if LimbType ~= nil then
-    local rightLeg = SafeGet(LimbType, "RightLeg")
-    local leftLeg = SafeGet(LimbType, "LeftLeg")
-    local rightArm = SafeGet(LimbType, "RightArm")
-    local leftArm = SafeGet(LimbType, "LeftArm")
-    local head = SafeGet(LimbType, "Head")
-    if rightLeg ~= nil then AMPUTATION_AFFLICTIONS[rightLeg] = { "trl_amputation", "srl_amputation" } end
-    if leftLeg ~= nil then AMPUTATION_AFFLICTIONS[leftLeg] = { "tll_amputation", "sll_amputation" } end
-    if rightArm ~= nil then AMPUTATION_AFFLICTIONS[rightArm] = { "tra_amputation", "sra_amputation" } end
-    if leftArm ~= nil then AMPUTATION_AFFLICTIONS[leftArm] = { "tla_amputation", "sla_amputation" } end
-    if head ~= nil then AMPUTATION_AFFLICTIONS[head] = { "th_amputation", "sh_amputation" } end
-end
-
--- During the buff, make already-severed limbs temporarily usable.
-local function ApplySeveredImmunity(character)
-    local animController = SafeGet(character, "AnimController", "implacable.AnimController")
-    local limbs = SafeGet(animController, "Limbs", "implacable.Limbs")
-    if limbs == nil then return end
-    if severedRestore[character] == nil then severedRestore[character] = {} end
-    for limb in limbs do
-        if limb ~= nil and SafeGet(limb, "IsSevered", "implacable.IsSevered") == true then
-            severedRestore[character][limb] = true
-            SafeSet(limb, "IsSevered", false, "implacable.clearSevered")
-        end
-    end
-end
-
-local function RestoreSevered(character)
-    local restore = severedRestore[character]
-    if restore == nil then return end
-
-    local hasAffliction = GetFunction(HF, "HasAffliction")
-    for limb in pairs(restore) do
-        if limb ~= nil then
-            local limbType = SafeGet(limb, "type", "implacable.limbType")
-            local affs = limbType ~= nil and AMPUTATION_AFFLICTIONS[limbType] or nil
-            local stillAmputated = false
-            if affs ~= nil then
-                for _, aff in ipairs(affs) do
-                    local present
-                    if hasAffliction ~= nil then
-                        present = InvokeSafely("HF.HasAffliction", hasAffliction, character, aff, 0.5)
-                    else
-                        present = HasAffliction(character, aff)
-                    end
-                    if present == true then
-                        stillAmputated = true
-                        break
-                    end
-                end
-            end
-            if stillAmputated then
-                SafeSet(limb, "IsSevered", true, "implacable.restoreSevered")
-            end
-        end
-    end
-    severedRestore[character] = nil
 end
 
 -- buff 期间临时隐藏的四肢骨折/脱臼 affliction：character -> { affliction -> 原始强度 }
@@ -572,7 +501,6 @@ end
 
 local function FinishImplacable(character)
     if not activeImplacables[character] then return end
-    RestoreSevered(character)
     RestoreFractures(character)
     if not HasAffliction(character, LASTWAVE_ID)
         and not SetAffliction(character, LASTWAVE_KEY, 1) then
@@ -593,7 +521,6 @@ local function UpdateImplacable()
             elseif HasAffliction(character, IMPLACABLE_ID) then
                 -- Recover state after a script reload or a late-created affliction.
                 activeImplacables[character] = true
-                ApplySeveredImmunity(character)
                 ApplyFractureImmunity(character)
                 CancelVanillaImplacable(character)
             else

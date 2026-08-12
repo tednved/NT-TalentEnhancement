@@ -16,7 +16,7 @@
   <talentdescription.tesp_buff>受到的鈍器傷害減少[bluntresistance]%，頭部及全身骨折的出現概率降低[fracturechance]%。</talentdescription.tesp_buff>
   <talentdescription.tesp_crustyseaman>受到攻擊後的[duration]秒內，以每秒[bleedheal]點的速度修復身上各肢體的普通出血（不含動脈破裂等特殊出血），內置冷卻[cooldown]秒。</talentdescription.tesp_crustyseaman>
   <talentdescription.tesp_implacable>當你的生命值低於0時，獲得[base]+武器技能×[multiplier]秒的掙紮時間：快速治療普通傷害、強制清醒、攻擊力+25%、不會因傷害致死。</talentdescription.tesp_implacable>
-  <talentdescription.tesp_implacable_amputate>掙紮期間不受斷肢影響：斷腿不影響移動和奔跑，斷手可正常拿起物品；同時無視四肢骨折和脫臼的負面影響。</talentdescription.tesp_implacable_amputate>
+  <talentdescription.tesp_implacable_amputate>掙紮期間無視四肢骨折和脫臼的負面影響。</talentdescription.tesp_implacable_amputate>
   <talentdescription.tesp_lastwave>結束後獲得「最後的波紋」（最大生命-20%，隻能在站點醫生處治療），技能是否可用與「最後的波紋」掛鉤。</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>破釜沉舟</afflictionname.tesp_implacable>
   <afflictiondescription.tesp_implacable>瀕死掙紮：快速治療、強制清醒、攻擊+25%、免疫斷肢影響。</afflictiondescription.tesp_implacable>

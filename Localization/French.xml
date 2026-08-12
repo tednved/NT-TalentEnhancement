@@ -16,7 +16,7 @@
   <talentdescription.tesp_buff>Les dégâts contondants subis sont réduits de [bluntresistance]%, et le risque de fractures (crâne, cou, etc.) est réduit de [fracturechance]%.</talentdescription.tesp_buff>
   <talentdescription.tesp_crustyseaman>Pendant [duration] secondes après avoir reçu un coup, soignez [bleedheal] de saignement par seconde sur chaque membre (saignement normal uniquement ; les coupures d'artère et autres saignements spéciaux ne sont pas affectés). Recharge de [cooldown] s.</talentdescription.tesp_crustyseaman>
   <talentdescription.tesp_implacable>Lorsque votre vitalité tombe à 0, gagnez [base] + compétence d'armes × [multiplier] secondes de dernier rempart : soin rapide des dégâts normaux, conscience forcée, +25 % d'attaque et impossible de mourir de dégâts.</talentdescription.tesp_implacable>
-  <talentdescription.tesp_implacable_amputate>Pendant l'effet, les effets des membres amputés, des fractures et des luxations sont ignorés : les jambes peuvent marcher et courir, les bras peuvent saisir des objets.</talentdescription.tesp_implacable_amputate>
+  <talentdescription.tesp_implacable_amputate>Pendant l'effet, les effets négatifs des fractures et luxations des membres sont ignorés.</talentdescription.tesp_implacable_amputate>
   <talentdescription.tesp_lastwave>Après la fin, vous gagnez La Dernière Vague (vie max -20 %, soignable uniquement en clinique médicale). La possibilité de redéclencher dépend de La Dernière Vague.</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>Dernier rempart</afflictionname.tesp_implacable>
   <afflictiondescription.tesp_implacable>Lutte à l'agonie : soin rapide, conscience forcée, +25 % d'attaque, immunité aux amputations.</afflictiondescription.tesp_implacable>
