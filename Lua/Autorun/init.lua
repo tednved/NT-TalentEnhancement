@@ -313,9 +313,12 @@ local function ApplySeveredImmunity(character)
     if character.AnimController == nil then return end
     if severedRestore[character] == nil then severedRestore[character] = {} end
     for limb in character.AnimController.Limbs do
-        if limb ~= nil and limb.IsSevered then
-            severedRestore[character][limb] = true
-            limb.IsSevered = false
+        if limb ~= nil then
+            local wasSevered = pcall(function() return limb.IsSevered end)
+            if wasSevered == true then
+                severedRestore[character][limb] = true
+                pcall(function() limb.IsSevered = false end)
+            end
         end
     end
 end

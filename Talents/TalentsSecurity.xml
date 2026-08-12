@@ -1,41 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Talents>
-    <!-- 急救训练：手术创伤性休克-50%、精神创伤（cerebralhypoxia）抗性-30% -->
+    <!-- 急救训练：原版(+15 医疗技能、+35% 医疗物品效果) + 手术创伤性休克-50% + 精神创伤(cerebralhypoxia)抗性-30% -->
     <Talent identifier="firstaidtraining">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.skillbonus">
+        <Replace tag="[amount]" value="15" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.medical" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.medicaleffectiveness">
+        <Replace tag="[amount]" value="35" color="gui.green" />
+      </Description>
       <Description tag="talentdescription.tesp_firstaidtraining">
         <Replace tag="[traumashockresistance]" value="50" color="gui.green" />
         <Replace tag="[neurotraumaresistance]" value="30" color="gui.green" />
       </Description>
       <AbilityGroupEffect abilityeffecttype="None">
         <Abilities>
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="15" />
+          <CharacterAbilityGiveStat stattype="MedicalItemEffectivenessMultiplier" value="0.35" />
           <CharacterAbilityGiveResistance resistance="traumaticshock" multiplier="0.5" />
           <CharacterAbilityGiveResistance resistance="cerebralhypoxia" multiplier="0.7" />
         </Abilities>
       </AbilityGroupEffect>
     </Talent>
-    <!-- 身强体壮：新增钝器伤-20%；骨折概率-50% 由 Lua 设置 anyfracturechance 乘数 -->
+    <!-- 身强体壮：原版(+50% 增益持续时间、25% 阿片成瘾抗性) + 钝器伤-20%；骨折概率-50% 由 Lua 设置 anyfracturechance 乘数 -->
     <Talent identifier="buff">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,4" sheetelementsize="128,128" />
+      <Description tag="talentdescription.additionalstattypeself">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.buffdurationmultiplier" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.additionalresistanceself">
+        <Replace tag="[amount]" value="25" color="gui.green" />
+        <Replace tag="[affliction]" value="afflictionname.opiateaddiction" color="gui.orange" />
+      </Description>
       <Description tag="talentdescription.tesp_buff">
         <Replace tag="[bluntresistance]" value="20" color="gui.green" />
         <Replace tag="[fracturechance]" value="50" color="gui.green" />
       </Description>
       <AbilityGroupEffect abilityeffecttype="None">
         <Abilities>
+          <CharacterAbilityGiveStat stattype="BuffDurationMultiplier" value="0.5" />
+          <CharacterAbilityGiveResistance resistanceid="opiateaddiction" multiplier="0.75" />
           <CharacterAbilityGiveResistance resistance="blunttrauma" multiplier="0.8" />
         </Abilities>
       </AbilityGroupEffect>
     </Talent>
-    <!-- 老水手：受击后 10 秒内每秒修复 2 点普通出血（冷却 60 秒），由 Lua 实现 -->
+    <!-- 老水手：原版(每秒-1 普通出血) + 受击后 10 秒内每秒额外-2 普通出血（冷却 60 秒，Lua 实现） -->
     <Talent identifier="crustyseaman">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.crustyseaman" />
       <Description tag="talentdescription.tesp_crustyseaman">
         <Replace tag="[bleedheal]" value="2" color="gui.green" />
         <Replace tag="[duration]" value="10" color="gui.green" />
         <Replace tag="[cooldown]" value="60" color="gui.green" />
       </Description>
+      <AbilityGroupInterval interval="1.0">
+        <Abilities>
+          <CharacterAbilityReduceAffliction afflictionId="bleeding" amount="1" />
+        </Abilities>
+      </AbilityGroupInterval>
     </Talent>
-    <!-- 破釜沉舟：改为 Lua 驱动（时长 20+0.2×武器技能、断肢免疫、结束后发放「最后的波纹」） -->
+    <!-- 破釜沉舟：整体重做为 Lua 驱动（时长 20+0.2×武器技能、断肢免疫、结束后发放「最后的波纹」），
+         图标沿用原版图块 TalentsIcons1.png 2,3 -->
     <Talent identifier="implacable">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,3" sheetelementsize="128,128" />
       <Description tag="talentdescription.tesp_implacable">
         <Replace tag="[base]" value="20" color="gui.green" />
         <Replace tag="[multiplier]" value="0.2" color="gui.green" />
