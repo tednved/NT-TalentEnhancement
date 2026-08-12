@@ -525,9 +525,46 @@ local function RestoreSevered(character)
     severedRestore[character] = nil
 end
 
+-- buff 期间临时隐藏的四肢骨折/脱臼 affliction：character -> { affliction -> 原始强度 }
+local fractureRestore = {}
+
+-- 四肢骨折 + 四肢脱臼（均为 limbspecific="false" 的全局 affliction）
+local LIMB_FRACTURE_AFFLICTIONS = {
+    "la_fracture", "ra_fracture", "ll_fracture", "rl_fracture",
+    "dislocation1", "dislocation2", "dislocation3", "dislocation4",
+}
+
+-- buff 期间：临时移除四肢骨折/脱臼，实现"无视其 debuff"
+local function ApplyFractureImmunity(character)
+    local getStrength = GetFunction(HF, "GetAfflictionStrength")
+    if getStrength == nil then return end
+    if fractureRestore[character] == nil then fractureRestore[character] = {} end
+    for _, aff in ipairs(LIMB_FRACTURE_AFFLICTIONS) do
+        local strength = InvokeSafely("HF.GetAfflictionStrength", getStrength, character, aff, 0)
+        if type(strength) == "number" and strength > 0 then
+            if fractureRestore[character][aff] == nil then
+                fractureRestore[character][aff] = strength
+            end
+            SetAffliction(character, aff, 0)
+        end
+    end
+end
+
+local function RestoreFractures(character)
+    local restore = fractureRestore[character]
+    if restore == nil then return end
+    for aff, strength in pairs(restore) do
+        if type(strength) == "number" and strength > 0 then
+            SetAffliction(character, aff, strength)
+        end
+    end
+    fractureRestore[character] = nil
+end
+
 local function FinishImplacable(character)
     if not activeImplacables[character] then return end
     RestoreSevered(character)
+    RestoreFractures(character)
     if not HasAffliction(character, LASTWAVE_ID)
         and not SetAffliction(character, LASTWAVE_KEY, 1) then
         return
@@ -548,6 +585,7 @@ local function UpdateImplacable()
                 -- Recover state after a script reload or a late-created affliction.
                 activeImplacables[character] = true
                 ApplySeveredImmunity(character)
+                ApplyFractureImmunity(character)
                 CancelVanillaImplacable(character)
             else
                 FinishImplacable(character)
