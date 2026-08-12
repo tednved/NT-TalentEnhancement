@@ -12,4 +12,14 @@
   <afflictiondescription.tesp_laststand_aftermath>The price of holding on: max health -15%. Curable at a medical clinic.</afflictiondescription.tesp_laststand_aftermath>
   <talentname.tesp_bonefixer>Bone-Setter</talentname.tesp_bonefixer>
   <talentdescription.tesp_bonefixer>Fixing dislocations no longer requires opioid painkillers, and a failed skill check won't cause a fracture. The patient will still scream and collapse in agony, though — traditional techniques, pain included.</talentdescription.tesp_bonefixer>
+  <talentdescription.tesp_firstaidtraining>Traumatic shock suffered during surgery is reduced by [traumashockresistance]%, and resistance to Neurotrauma is increased by [neurotraumaresistance]%.</talentdescription.tesp_firstaidtraining>
+  <talentdescription.tesp_buff>Blunt force damage taken is reduced by [bluntresistance]%, and the chance of fractures (skull, neck, etc.) is reduced by [fracturechance]%.</talentdescription.tesp_buff>
+  <talentdescription.tesp_crustyseaman>For [duration] seconds after taking a hit, heal [bleedheal] bleeding per second on every limb (regular bleeding only; arterial cuts and other special bleeds are unaffected). [cooldown]s cooldown.</talentdescription.tesp_crustyseaman>
+  <talentdescription.tesp_implacable>When your vitality drops to 0, gain [base] + weapons skill × [multiplier] seconds of last stand: rapidly heal regular damage, stay conscious, +25% attack power, and cannot die from damage.</talentdescription.tesp_implacable>
+  <talentdescription.tesp_implacable_amputate>While active, the effects of amputated limbs are ignored: legs can move and run, arms can pick up and hold items.</talentdescription.tesp_implacable_amputate>
+  <talentdescription.tesp_lastwave>After it ends, you gain The Last Wave (max health -20%, curable only at a medical clinic). Whether the skill can trigger again depends on The Last Wave.</talentdescription.tesp_lastwave>
+  <afflictionname.tesp_implacable>Last Stand</afflictionname.tesp_implacable>
+  <afflictiondescription.tesp_implacable>Deathbed struggle: rapid healing, forced consciousness, +25% attack, immune to amputation effects.</afflictiondescription.tesp_implacable>
+  <afflictionname.tesp_lastwave>The Last Wave</afflictionname.tesp_lastwave>
+  <afflictiondescription.tesp_lastwave>The price of holding on: max health -20%. Curable only at a medical clinic.</afflictiondescription.tesp_lastwave>
 </infotexts>

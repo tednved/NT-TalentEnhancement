@@ -12,4 +12,14 @@
   <afflictiondescription.tesp_laststand_aftermath>强行续命的代价：最大生命值-15%。</afflictiondescription.tesp_laststand_aftermath>
   <talentname.tesp_bonefixer>骨科老中医</talentname.tesp_bonefixer>
   <talentdescription.tesp_bonefixer>治疗脱臼时不再需要阿片类药物镇痛，技能不足也不会造成后续骨折。但患者依然会痛得哀嚎倒地——传统手艺，疼在所难免。</talentdescription.tesp_bonefixer>
+  <talentdescription.tesp_firstaidtraining>手术中受到的创伤性休克减少[traumashockresistance]%，对精神创伤的抗性提高[neurotraumaresistance]%。</talentdescription.tesp_firstaidtraining>
+  <talentdescription.tesp_buff>受到的钝器伤害减少[bluntresistance]%，头部及全身骨折的出现概率降低[fracturechance]%。</talentdescription.tesp_buff>
+  <talentdescription.tesp_crustyseaman>受到攻击后的[duration]秒内，以每秒[bleedheal]点的速度修复身上各肢体的普通出血（不含动脉破裂等特殊出血），内置冷却[cooldown]秒。</talentdescription.tesp_crustyseaman>
+  <talentdescription.tesp_implacable>当你的生命值低于0时，获得[base]+武器技能×[multiplier]秒的挣扎时间：快速治疗普通伤害、强制清醒、攻击力+25%、不会因伤害致死。</talentdescription.tesp_implacable>
+  <talentdescription.tesp_implacable_amputate>挣扎期间不受断肢影响：断腿不影响移动和奔跑，断手可正常拿起物品。</talentdescription.tesp_implacable_amputate>
+  <talentdescription.tesp_lastwave>结束后获得「最后的波纹」（最大生命-20%，只能在站点医生处治疗），技能是否可用与「最后的波纹」挂钩。</talentdescription.tesp_lastwave>
+  <afflictionname.tesp_implacable>破釜沉舟</afflictionname.tesp_implacable>
+  <afflictiondescription.tesp_implacable>濒死挣扎：快速治疗、强制清醒、攻击+25%、免疫断肢影响。</afflictiondescription.tesp_implacable>
+  <afflictionname.tesp_lastwave>最后的波纹</afflictionname.tesp_lastwave>
+  <afflictiondescription.tesp_lastwave>强行续命的代价：最大生命值-20%，只能在站点医生处治疗。</afflictiondescription.tesp_lastwave>
 </infotexts>

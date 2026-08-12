@@ -12,4 +12,14 @@
   <afflictiondescription.tesp_laststand_aftermath>Цена выживания: макс. здоровье -15%. Лечится в медклинике.</afflictiondescription.tesp_laststand_aftermath>
   <talentname.tesp_bonefixer>Костоправ</talentname.tesp_bonefixer>
   <talentdescription.tesp_bonefixer>Вправление вывихов больше не требует опиоидных обезболивающих, а нехватка навыка не приведёт к перелому. Но пациент всё равно будет кричать и падать от боли — традиционная медицина, боль неизбежна.</talentdescription.tesp_bonefixer>
+  <talentdescription.tesp_firstaidtraining>Травматический шок во время операции снижен на [traumashockresistance]%, сопротивление нейротравме повышено на [neurotraumaresistance]%.</talentdescription.tesp_firstaidtraining>
+  <talentdescription.tesp_buff>Получаемый урон от тупых предметов снижен на [bluntresistance]%, вероятность переломов (череп, шея и др.) снижена на [fracturechance]%.</talentdescription.tesp_buff>
+  <talentdescription.tesp_crustyseaman>В течение [duration] секунд после получения удара восстанавливайте [bleedheal] кровотечения в секунду на каждой конечности (обычное кровотечение; артериальные и другие особые кровотечения не затрагиваются). Перезарядка [cooldown] сек.</talentdescription.tesp_crustyseaman>
+  <talentdescription.tesp_implacable>Когда ваша жизненная сила падает до 0, получите [base] + навык оружия × [multiplier] секунд последнего рубежа: быстрое лечение обычного урона, принудительное сознание, +25% к атаке, невозможно умереть от урона.</talentdescription.tesp_implacable>
+  <talentdescription.tesp_implacable_amputate>Во время действия эффекты ампутированных конечностей игнорируются: ноги могут ходить и бегать, руки могут брать предметы.</talentdescription.tesp_implacable_amputate>
+  <talentdescription.tesp_lastwave>После окончания вы получаете Последнюю волну (макс. здоровье -20%, лечится только в медклинике). Возможность повторного срабатывания зависит от Последней волны.</talentdescription.tesp_lastwave>
+  <afflictionname.tesp_implacable>Последний рубеж</afflictionname.tesp_implacable>
+  <afflictiondescription.tesp_implacable>Борьба на грани: быстрое лечение, принудительное сознание, +25% к атаке, иммунитет к ампутациям.</afflictiondescription.tesp_implacable>
+  <afflictionname.tesp_lastwave>Последняя волна</afflictionname.tesp_lastwave>
+  <afflictiondescription.tesp_lastwave>Цена выживания: макс. здоровье -20%. Лечится только в медклинике.</afflictiondescription.tesp_lastwave>
 </infotexts>

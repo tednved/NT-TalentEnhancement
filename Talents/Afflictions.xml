@@ -34,6 +34,49 @@
     </Effect>
     <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,7" sheetelementsize="128,128" color="200,40,40,255" origin="0,0" />
   </Affliction>
+
+  <!-- 破釜沉舟 buff：由 Lua 触发并设置实例 Duration（20 + 0.2×武器技能）。
+       效果：+25% 攻击、强制清醒、不会因 affliction 致死、周期治疗普通伤害；
+       Lua 在 buff 存在期间提供断肢免疫。 -->
+  <Affliction
+    identifier="tesp_implacable"
+    type="talentbuff"
+    isbuff="true"
+    hideiconafterdelay="true"
+    limbspecific="false"
+    maxstrength="1"
+    duration="20"
+    treatmentthreshold="1000"
+    iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="1" strengthchange="0">
+      <StatValue stattype="AttackMultiplier" value="0.25" />
+      <AbilityFlag flagtype="AlwaysStayConscious" />
+      <AbilityFlag flagtype="CanNotDieToAfflictions" />
+      <StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+        <ReduceAffliction type="damage" strength="0.05" />
+        <ReduceAffliction type="burn" strength="0.05" />
+        <ReduceAffliction identifier="bloodloss" strength="0.05" />
+        <ReduceAffliction identifier="bleeding" strength="0.05" />
+      </StatusEffect>
+    </Effect>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,3" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+
+  <!-- 最后的波纹：破釜沉舟结束后的代价，血量上限 -20%，仅站点医生可治疗 -->
+  <Affliction
+    identifier="tesp_lastwave"
+    type="talentbuff"
+    isbuff="false"
+    limbspecific="false"
+    maxstrength="1"
+    treatmentthreshold="1000"
+    healableinmedicalclinic="true"
+    iconcolors="255,90,0,255;255,90,0,255;255,45,0,255;255,90,0,255">
+    <Effect minstrength="0" maxstrength="1" strengthchange="0">
+      <StatValue stattype="MaximumHealthMultiplier" value="-0.2" />
+    </Effect>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,7" sheetelementsize="128,128" color="200,40,40,255" origin="0,0" />
+  </Affliction>
 </Afflictions>
 
 
