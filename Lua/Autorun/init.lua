@@ -22,6 +22,8 @@ local activeLastStands = {} -- character userdata -> true
 local talentIdentifierCache = {}
 local missingHealthFrameworkWarningShown = false
 local warnedRuntimeErrors = {}
+-- Lua 5.1/5.2 兼容的 unpack（LuaCs 基于 MoonSharp）
+local unpack = unpack or table.unpack
 
 -- Protect calls across the Lua/C# and dependency boundary. Runtime objects can disappear
 -- during character removal or load-order changes; never let those errors escape a hook.
@@ -73,8 +75,10 @@ end
 -- when the member is accessed through object[field](...).
 local function InvokeMemberSafely(key, object, field, ...)
     if object == nil then return nil end
+    -- 嵌套函数内不能直接使用外层 ...（Lua 语法限制），先捕获为参数表再展开
+    local args = { ... }
     local ok, a, b, c, d = pcall(function()
-        return object[field](...)
+        return object[field](unpack(args))
     end)
     if not ok then
         WarnRuntimeError(key, a)
