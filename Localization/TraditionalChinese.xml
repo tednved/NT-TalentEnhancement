@@ -5,21 +5,21 @@
   <talentname.tesp_militarydoping>軍用興奮劑</talentname.tesp_militarydoping>
   <talentdescription.ntsp_preventativepermit>最後一個得到妳命令的人以及6米內的友軍(包括自身)獲得[physicalresistance]%的傷害抗性，併避免其受到致命的打擊。</talentdescription.ntsp_preventativepermit>
   <talentname.tesp_laststand>與死神賽跑</talentname.tesp_laststand>
-  <talentdescription.tesp_laststand>一個合格的醫生不但要會治療別人，也應該能治療自己。瀕死時，妳會獲得 [base] 秒 + 外科技能×[multiplier] 秒的鎖血：強制保持清醒、血壓穩定、不再失血、心率正常。這是我最後的波紋了！鎖血結束後會獲得爆發後遺癥（最大生命-15%，可被站點醫生治愈）。</talentdescription.tesp_laststand>
+  <talentdescription.tesp_laststand>一個合格的醫生不但要會治療別人，也應該能治療自己。瀕死時，妳會獲得 [base] 秒 + 外科技能×[multiplier] 秒的強制清醒。鎖血結束後最大生命-15%，隻能在站點醫生處治療。</talentdescription.tesp_laststand>
   <afflictionname.tesp_laststand>與死神賽跑</afflictionname.tesp_laststand>
   <afflictiondescription.tesp_laststand>強制清醒，血壓、心率和失血被穩定。</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>爆發後遺癥</afflictionname.tesp_laststand_aftermath>
-  <afflictiondescription.tesp_laststand_aftermath>強行續命的代價：最大生命值-15%。可被站點醫生治愈。</afflictiondescription.tesp_laststand_aftermath>
+  <afflictiondescription.tesp_laststand_aftermath>強行續命的代價：最大生命值-15%。有此debuff時與死神賽跑無法生效</afflictiondescription.tesp_laststand_aftermath>
   <talentname.tesp_bonefixer>骨科老中醫</talentname.tesp_bonefixer>
-  <talentdescription.tesp_bonefixer>治療脫臼時不再需要阿片類藥物鎮痛，技能不足也不會造成後續骨折。但患者依然會痛得哀嚎倒地——傳統手藝，疼在所難免。</talentdescription.tesp_bonefixer>
+  <talentdescription.tesp_bonefixer>治療脫臼時不再需要阿片類藥物鎮痛，也不會造成後續骨折——但傳統手藝，疼在所難免。</talentdescription.tesp_bonefixer>
   <talentdescription.tesp_firstaidtraining>手術中受到的創傷性休克減少[traumashockresistance]%，對精神創傷的抗性提高[neurotraumaresistance]%。</talentdescription.tesp_firstaidtraining>
-  <talentdescription.tesp_buff>受到的鈍器傷害減少[bluntresistance]%，頭部及全身骨折的出現概率降低[fracturechance]%。</talentdescription.tesp_buff>
-  <talentdescription.tesp_crustyseaman>受到攻擊後的[duration]秒內，以每秒[bleedheal]點的速度修復身上各肢體的普通出血（不含動脈破裂等特殊出血），內置冷卻[cooldown]秒。</talentdescription.tesp_crustyseaman>
+  <talentdescription.tesp_buff>受到的鈍器傷害減少[bluntresistance]%，全身骨折的出現概率降低[fracturechance]%。</talentdescription.tesp_buff>
+  <talentdescription.tesp_crustyseaman>受到攻擊後的[duration]秒內，以每秒[bleedheal]點的速度修復身上各肢體的普通出血。</talentdescription.tesp_crustyseaman>
   <talentdescription.tesp_implacable>當你的生命值低於0時，獲得[base]+武器技能×[multiplier]秒的掙紮時間：快速治療普通傷害、強制清醒、攻擊力+25%、不會因傷害致死。</talentdescription.tesp_implacable>
   <talentdescription.tesp_implacable_amputate>觸發時治愈身上的斷肢、骨折和脫臼；持續期間不會新增斷肢、骨折或脫臼。</talentdescription.tesp_implacable_amputate>
-  <talentdescription.tesp_lastwave>結束後獲得「最後的波紋」（最大生命-20%，隻能在站點醫生處治療）並短暫暈眩；技能是否可用與「最後的波紋」掛鉤。</talentdescription.tesp_lastwave>
+  <talentdescription.tesp_lastwave>結束後最大生命-20%，隻能在站點醫生處治療，並短暫暈眩；有此debuff時破釜沉舟無法生效</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>破釜沉舟</afflictionname.tesp_implacable>
-  <afflictiondescription.tesp_implacable>瀕死掙紮：快速治療、強制清醒、攻擊+25%、免疫斷肢影響。</afflictiondescription.tesp_implacable>
+  <afflictiondescription.tesp_implacable>瀕死掙紮</afflictiondescription.tesp_implacable>
   <afflictionname.tesp_lastwave>最後的波紋</afflictionname.tesp_lastwave>
   <afflictiondescription.tesp_lastwave>強行續命的代價：最大生命值-20%，隻能在站點醫生處治療。</afflictiondescription.tesp_lastwave>
 </infotexts>

@@ -5,21 +5,21 @@
   <talentname.tesp_militarydoping>Военный допинг</talentname.tesp_militarydoping>
   <talentdescription.ntsp_preventativepermit>Последний человек, получивший вашу команду, и дружественные войска в радиусе 6 м (включая вас самих) получают [physicalresistance]% сопротивления урону и защищены от смертельных ударов.</talentdescription.ntsp_preventativepermit>
   <talentname.tesp_laststand>Гонка со смертью</talentname.tesp_laststand>
-  <talentdescription.tesp_laststand>Хороший врач должен лечить не только других, но и себя. При смерти вы получаете [base] + хирургия × [multiplier] секунд последнего рубежа: принудительное сознание, стабильное давление, без кровопотери и ровный пульс. Это моя последняя волна! После окончания вы получаете Последствие (макс. здоровье -15%, лечится в медклинике).</talentdescription.tesp_laststand>
+  <talentdescription.tesp_laststand>Хороший врач должен лечить не только других, но и себя. При смерти вы получаете [base] + хирургия × [multiplier] секунд принудительного сознания. После окончания макс. здоровье -15%, лечится только в медклинике.</talentdescription.tesp_laststand>
   <afflictionname.tesp_laststand>Гонка со смертью</afflictionname.tesp_laststand>
   <afflictiondescription.tesp_laststand>Принудительное сознание; давление, пульс и кровопотеря стабилизированы.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Последствие</afflictionname.tesp_laststand_aftermath>
-  <afflictiondescription.tesp_laststand_aftermath>Цена выживания: макс. здоровье -15%. Лечится в медклинике.</afflictiondescription.tesp_laststand_aftermath>
+  <afflictiondescription.tesp_laststand_aftermath>Цена выживания: макс. здоровье -15%. Пока действует этот дебафф, Гонка со смертью не может сработать.</afflictiondescription.tesp_laststand_aftermath>
   <talentname.tesp_bonefixer>Костоправ</talentname.tesp_bonefixer>
-  <talentdescription.tesp_bonefixer>Вправление вывихов больше не требует опиоидных обезболивающих, а нехватка навыка не приведёт к перелому. Но пациент всё равно будет кричать и падать от боли — традиционная медицина, боль неизбежна.</talentdescription.tesp_bonefixer>
+  <talentdescription.tesp_bonefixer>Вправление вывихов больше не требует опиоидных обезболивающих и не приведёт к перелому — но традиционная медицина, боль неизбежна.</talentdescription.tesp_bonefixer>
   <talentdescription.tesp_firstaidtraining>Травматический шок во время операции снижен на [traumashockresistance]%, сопротивление нейротравме повышено на [neurotraumaresistance]%.</talentdescription.tesp_firstaidtraining>
-  <talentdescription.tesp_buff>Получаемый урон от тупых предметов снижен на [bluntresistance]%, вероятность переломов (череп, шея и др.) снижена на [fracturechance]%.</talentdescription.tesp_buff>
-  <talentdescription.tesp_crustyseaman>В течение [duration] секунд после получения удара восстанавливайте [bleedheal] кровотечения в секунду на каждой конечности (обычное кровотечение; артериальные и другие особые кровотечения не затрагиваются). Перезарядка [cooldown] сек.</talentdescription.tesp_crustyseaman>
+  <talentdescription.tesp_buff>Получаемый урон от тупых предметов снижен на [bluntresistance]%, вероятность переломов снижена на [fracturechance]%.</talentdescription.tesp_buff>
+  <talentdescription.tesp_crustyseaman>В течение [duration] секунд после получения удара восстанавливайте [bleedheal] кровотечения в секунду на каждой конечности.</talentdescription.tesp_crustyseaman>
   <talentdescription.tesp_implacable>Когда ваша жизненная сила падает до 0, получите [base] + навык оружия × [multiplier] секунд последнего рубежа: быстрое лечение обычного урона, принудительное сознание, +25% к атаке, невозможно умереть от урона.</talentdescription.tesp_implacable>
   <talentdescription.tesp_implacable_amputate>При активации лечит ампутированные конечности, переломы и вывихи; во время действия нельзя получить новые ампутации, переломы или вывихи.</talentdescription.tesp_implacable_amputate>
-  <talentdescription.tesp_lastwave>После окончания вы получаете Последнюю волну (макс. здоровье -20%, лечится только в медклинике) и кратковременное оглушение. Возможность повторного срабатывания зависит от Последней волны.</talentdescription.tesp_lastwave>
+  <talentdescription.tesp_lastwave>После окончания макс. здоровье -20%, лечится только в медклинике, плюс кратковременное оглушение; Последний рубеж не может сработать, пока действует этот дебафф.</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>Последний рубеж</afflictionname.tesp_implacable>
-  <afflictiondescription.tesp_implacable>Борьба на грани: быстрое лечение, принудительное сознание, +25% к атаке, иммунитет к ампутациям.</afflictiondescription.tesp_implacable>
+  <afflictiondescription.tesp_implacable>Борьба на грани</afflictiondescription.tesp_implacable>
   <afflictionname.tesp_lastwave>Последняя волна</afflictionname.tesp_lastwave>
   <afflictiondescription.tesp_lastwave>Цена выживания: макс. здоровье -20%. Лечится только в медклинике.</afflictiondescription.tesp_lastwave>
 </infotexts>

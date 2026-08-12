@@ -5,21 +5,21 @@
   <talentname.tesp_militarydoping>Dopage militaire</talentname.tesp_militarydoping>
   <talentdescription.ntsp_preventativepermit>La dernière personne à recevoir votre commandement et les troupes amies dans un rayon de 6 m (y compris vous-même) gagnent [physicalresistance]% de résistance aux dégâts et évitent de recevoir des coups mortels.</talentdescription.ntsp_preventativepermit>
   <talentname.tesp_laststand>Course contre la mort</talentname.tesp_laststand>
-  <talentdescription.tesp_laststand>Un bon médecin doit soigner non seulement les autres, mais aussi lui-même. À l'agonie, gagnez [base] + chirurgie × [multiplier] secondes de dernier rempart : conscience forcée, tension stabilisée, plus de perte de sang et rythme cardiaque normal. C'est ma dernière onde ! À la fin, vous gagnez Séquelle (vie max -15 %, soignable en clinique médicale).</talentdescription.tesp_laststand>
+  <talentdescription.tesp_laststand>Un bon médecin doit soigner non seulement les autres, mais aussi lui-même. À l'agonie, gagnez [base] + chirurgie × [multiplier] secondes de conscience forcée. Après la fin, vie max -15 %, soignable uniquement en clinique médicale.</talentdescription.tesp_laststand>
   <afflictionname.tesp_laststand>Course contre la mort</afflictionname.tesp_laststand>
   <afflictiondescription.tesp_laststand>Conscience forcée ; tension, rythme cardiaque et perte de sang stabilisés.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Séquelle</afflictionname.tesp_laststand_aftermath>
-  <afflictiondescription.tesp_laststand_aftermath>Le prix de la survie : vie max -15 %. Soignable en clinique médicale.</afflictiondescription.tesp_laststand_aftermath>
+  <afflictiondescription.tesp_laststand_aftermath>Le prix de la survie : vie max -15 %. La Course contre la mort ne peut pas se déclencher tant que ce debuff est actif.</afflictiondescription.tesp_laststand_aftermath>
   <talentname.tesp_bonefixer>Rebouteux</talentname.tesp_bonefixer>
-  <talentdescription.tesp_bonefixer>Réduire une luxation ne nécessite plus d'analgésiques opiacés, et un échec de compétence ne provoquera pas de fracture. Le patient criera et s'effondrera quand même de douleur — médecine traditionnelle, la douleur fait partie du soin.</talentdescription.tesp_bonefixer>
+  <talentdescription.tesp_bonefixer>Réduire une luxation ne nécessite plus d'analgésiques opiacés et ne provoquera pas de fracture — mais médecine traditionnelle, la douleur fait partie du soin.</talentdescription.tesp_bonefixer>
   <talentdescription.tesp_firstaidtraining>Le choc traumatique subi pendant une opération est réduit de [traumashockresistance]%, et la résistance à la neurotraumatologie est augmentée de [neurotraumaresistance]%.</talentdescription.tesp_firstaidtraining>
-  <talentdescription.tesp_buff>Les dégâts contondants subis sont réduits de [bluntresistance]%, et le risque de fractures (crâne, cou, etc.) est réduit de [fracturechance]%.</talentdescription.tesp_buff>
-  <talentdescription.tesp_crustyseaman>Pendant [duration] secondes après avoir reçu un coup, soignez [bleedheal] de saignement par seconde sur chaque membre (saignement normal uniquement ; les coupures d'artère et autres saignements spéciaux ne sont pas affectés). Recharge de [cooldown] s.</talentdescription.tesp_crustyseaman>
+  <talentdescription.tesp_buff>Les dégâts contondants subis sont réduits de [bluntresistance]%, et le risque de fractures est réduit de [fracturechance]%.</talentdescription.tesp_buff>
+  <talentdescription.tesp_crustyseaman>Pendant [duration] secondes après avoir reçu un coup, soignez [bleedheal] de saignement par seconde sur chaque membre.</talentdescription.tesp_crustyseaman>
   <talentdescription.tesp_implacable>Lorsque votre vitalité tombe à 0, gagnez [base] + compétence d'armes × [multiplier] secondes de dernier rempart : soin rapide des dégâts normaux, conscience forcée, +25 % d'attaque et impossible de mourir de dégâts.</talentdescription.tesp_implacable>
   <talentdescription.tesp_implacable_amputate>À l'activation, soigne les membres amputés, fractures et luxations ; pendant l'effet, aucun nouveau membre amputé, fracture ou luxation ne peut survenir.</talentdescription.tesp_implacable_amputate>
-  <talentdescription.tesp_lastwave>Après la fin, vous gagnez La Dernière Vague (vie max -20 %, soignable uniquement en clinique médicale) et un étourdissement bref. La possibilité de redéclencher dépend de La Dernière Vague.</talentdescription.tesp_lastwave>
+  <talentdescription.tesp_lastwave>Après la fin, vie max -20 %, soignable uniquement en clinique médicale, plus un étourdissement bref ; le Dernier rempart ne peut pas se déclencher tant que ce debuff est actif.</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>Dernier rempart</afflictionname.tesp_implacable>
-  <afflictiondescription.tesp_implacable>Lutte à l'agonie : soin rapide, conscience forcée, +25 % d'attaque, immunité aux amputations.</afflictiondescription.tesp_implacable>
+  <afflictiondescription.tesp_implacable>Lutte à l'agonie</afflictiondescription.tesp_implacable>
   <afflictionname.tesp_lastwave>La Dernière Vague</afflictionname.tesp_lastwave>
   <afflictiondescription.tesp_lastwave>Le prix de la survie : vie max -20 %. Soignable uniquement en clinique médicale.</afflictiondescription.tesp_lastwave>
 </infotexts>
