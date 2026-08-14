@@ -10,8 +10,6 @@
   <afflictiondescription.tesp_laststand>強制清醒，血壓、心率和失血被穩定。</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>爆發後遺癥</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>強行續命的代價：最大生命值-15%。有此debuff時與死神賽跑無法生效</afflictiondescription.tesp_laststand_aftermath>
-  <talentname.tesp_bonefixer>骨科老中醫</talentname.tesp_bonefixer>
-  <talentdescription.tesp_bonefixer>治療脫臼時不再需要阿片類藥物鎮痛，也不會造成後續骨折——但傳統手藝，疼在所難免。</talentdescription.tesp_bonefixer>
   <talentdescription.tesp_firstaidtraining>手術中受到的創傷性休克減少[traumashockresistance]%，對精神創傷的抗性提高[neurotraumaresistance]%。</talentdescription.tesp_firstaidtraining>
   <talentdescription.tesp_buff>受到的鈍器傷害減少[bluntresistance]%，全身骨折的出現概率降低[fracturechance]%。</talentdescription.tesp_buff>
   <talentdescription.tesp_crustyseaman>受到攻擊後的[duration]秒內，以每秒[bleedheal]點的速度修復身上各肢體的普通出血。</talentdescription.tesp_crustyseaman>

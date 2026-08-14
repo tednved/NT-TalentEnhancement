@@ -10,8 +10,6 @@
   <afflictiondescription.tesp_laststand>Forced consciousness; blood pressure, heart rate and blood loss are stabilized.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Aftermath of the Surge</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>The price of holding on: max health -15%. Race with Death cannot trigger while this debuff is active.</afflictiondescription.tesp_laststand_aftermath>
-  <talentname.tesp_bonefixer>Bone-Setter</talentname.tesp_bonefixer>
-  <talentdescription.tesp_bonefixer>Fixing dislocations no longer requires opioid painkillers and won't cause a fracture — but traditional techniques, pain included.</talentdescription.tesp_bonefixer>
   <talentdescription.tesp_firstaidtraining>Traumatic shock suffered during surgery is reduced by [traumashockresistance]%, and resistance to Neurotrauma is increased by [neurotraumaresistance]%.</talentdescription.tesp_firstaidtraining>
   <talentdescription.tesp_buff>Blunt force damage taken is reduced by [bluntresistance]%, and the chance of fractures is reduced by [fracturechance]%.</talentdescription.tesp_buff>
   <talentdescription.tesp_crustyseaman>For [duration] seconds after taking a hit, heal [bleedheal] bleeding per second on every limb.</talentdescription.tesp_crustyseaman>

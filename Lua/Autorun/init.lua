@@ -206,67 +206,6 @@ local function TriggerLastStand(character)
     return true
 end
 
-local BONE_KEY = "tesp_bonefixer"
-local wrenchWrapped = false
-
--- 骨科老中医（tesp_bonefixer）：治疗脱臼不依赖镇痛药、不造成骨折
--- 原版 NT 扳手机制（NT.ItemStartsWithMethods.wrench）：治疗脱臼需 60 医疗技能
---   （有 analgesia/肾上腺素时降为 30）；技能不足会 NT.BreakLimb 造成骨折；
---   无镇痛时给患者加 severepain（剧痛 → 哀嚎 + 眩晕倒地）。
--- 本天赋：无视镇痛与技能要求直接复位，绝不造成骨折，
---   但保留 severepain —— 患者依然会痛得哀嚎倒地。
-local function WrapWrench()
-    if wrenchWrapped then return end
-
-    local itemStartsWithMethods = SafeGet(NT, "ItemStartsWithMethods", "wrench.ItemStartsWithMethods")
-    local originalWrench = GetFunction(itemStartsWithMethods, "wrench")
-    if originalWrench == nil then return end
-
-    local normalizeLimbType = GetFunction(HF, "NormalizeLimbType")
-    local limbIsDislocated = GetFunction(NT, "LimbIsDislocated")
-    local dislocateLimb = GetFunction(NT, "DislocateLimb")
-    local giveSkillScaled = GetFunction(HF, "GiveSkillScaled")
-    local hasAffliction = GetFunction(HF, "HasAffliction")
-    local addAffliction = GetFunction(HF, "AddAffliction")
-    -- Do not permanently install a half-working wrapper while dependencies are still loading.
-    if normalizeLimbType == nil or limbIsDislocated == nil or dislocateLimb == nil
-        or giveSkillScaled == nil or hasAffliction == nil or addAffliction == nil then
-        return
-    end
-
-    local function BoneSetterWrench(item, usingCharacter, targetCharacter, limb)
-        if usingCharacter ~= nil and targetCharacter ~= nil and limb ~= nil
-            and normalizeLimbType ~= nil and limbIsDislocated ~= nil and dislocateLimb ~= nil
-            and giveSkillScaled ~= nil and hasAffliction ~= nil and addAffliction ~= nil
-            and HasHealthFramework() then
-            local limbType = InvokeSafely("wrench.NormalizeLimbType", normalizeLimbType, SafeGet(limb, "type"))
-            local dislocated = limbType ~= nil
-                and InvokeSafely("wrench.LimbIsDislocated", limbIsDislocated, targetCharacter, limbType) == true
-            if dislocated and HasTalentSafe(usingCharacter, BONE_KEY) then
-                -- Directly reset the limb, bypassing skill and analgesia requirements.
-                InvokeSafely("wrench.DislocateLimb", dislocateLimb, targetCharacter, limbType, -1000)
-                InvokeSafely("wrench.GiveSkillScaled", giveSkillScaled, usingCharacter, "medical", 4000)
-                local hasAnalgesia = InvokeSafely("wrench.HasAffliction", hasAffliction, targetCharacter, "analgesia", 0.5)
-                if hasAnalgesia ~= true then
-                    InvokeSafely("wrench.AddAffliction", addAffliction, targetCharacter, "severepain", 5, usingCharacter)
-                end
-                return
-            end
-        end
-        return InvokeSafely("wrench.original", originalWrench, item, usingCharacter, targetCharacter, limb)
-    end
-
-    if not SafeSet(itemStartsWithMethods, "wrench", BoneSetterWrench, "wrench.install") then return end
-
-    -- These methods are copied by value by NT during load, so replace them too when present.
-    local itemMethods = SafeGet(NT, "ItemMethods", "wrench.ItemMethods")
-    if itemMethods ~= nil then
-        SafeSet(itemMethods, "heavywrench", BoneSetterWrench, "wrench.install.heavywrench")
-        SafeSet(itemMethods, "repairpack", BoneSetterWrench, "wrench.install.repairpack")
-    end
-    wrenchWrapped = true
-end
-
 -- ============================================================
 -- 身强体壮（buff）：骨折概率 -50%（NT anyfracturechance 乘数）
 -- NTC.AddHumanUpdateHook 在 NT 每次更新清空乘数后运行（约每 2 秒一次），
@@ -294,7 +233,6 @@ local function TryRegisterNTC()
 end
 
 local function UpdateLastStand()
-    WrapWrench() -- Retry until NT has finished loading.
     if not HasHealthFramework() then
         if not missingHealthFrameworkWarningShown then
             print("[TalentEnhancement] Neurotrauma HF.SetAffliction is unavailable; laststand is disabled.")
