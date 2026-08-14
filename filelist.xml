@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="[NT]精神创伤-天赋增强" modversion="1.1.0" corepackage="False" steamworkshopid="3545888282" gameversion="1.13.4.0" altnames="NT Talent Enhancement">
+<contentpackage name="[NT]精神创伤-天赋增强" modversion="1.2.0" corepackage="False" steamworkshopid="3545888282" gameversion="1.13.4.0" altnames="NT Talent Enhancement">
   <Afflictions file="%ModDir%/Talents/Afflictions.xml" />
   <Talents file="%ModDir%/Talents/TalentsSurgeon.xml" />
   <Talents file="%ModDir%/Talents/TalentsSecurity.xml" />
