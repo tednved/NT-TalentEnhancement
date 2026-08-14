@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Talents>
+    <!-- 基础天赋 -->
+    <!-- 机器狂人：维修机械设备可获得50经验,每个巡回6次 -->
+    <Talent identifier="machinemaniac" trackedstat="machinemaniac_counter" trackedmax="100">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="3,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.machinemaniacnew">
+        <Replace tag="[bonus]" value="50" color="gui.green" />
+        <Replace tag="[amount]" value="6" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.machinemaniac">
+        <Replace tag="[bonus]" value="80" color="gui.green" />
+        <Replace tag="[amount]" value="3" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.machinemaniac.30">
+        <Replace tag="[requirement]" value="12" color="gui.green" />
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[skill]" value="stattypenames.mechanicalskillbonus" color="gui.orange" />
+        <Replace tag="[xpamount]" value="500" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.machinemaniac.50">
+        <Replace tag="[requirement]" value="20" color="gui.green" />
+        <Replace tag="[level]" value="1" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.machinemaniac.100">
+        <Replace tag="[requirement]" value="40" color="gui.green" />
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="machinemaniac" value="6" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRoundEnd">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="machinemaniac" value="6" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="machinemaniac" min="1" />
+          <AbilityConditionItem tags="fabricator,door,engine,oxygengenerator,pump,turretammosource" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveExperience amount="50" />
+          <CharacterAbilityGivePermanentStat statidentifier="machinemaniac" value="-1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- Give the player stats that tracks if the rewards should be given -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="machinemaniac_30" value="1" maxvalue="1" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="machinemaniac_50" value="1" maxvalue="1" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="machinemaniac_100" value="1" maxvalue="1" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionItem tags="fabricator,door,engine,oxygengenerator,pump,turretammosource,deconstructor,medicalfabricator,ductblock" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="machinemaniac_counter" value="1" removeondeath="false" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="machinemaniac_30" min="1" />
+          <AbilityConditionHasPermanentStat statidentifier="machinemaniac_counter" min="12" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveExperience amount="500" />
+          <CharacterAbilityGivePermanentStat stattype="MechanicalSkillBonus" statidentifier="machinemaniac" value="10" setvalue="true" removeondeath="false" />
+          <CharacterAbilityResetPermanentStat statidentifier="machinemaniac_30" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="machinemaniac_50" min="1" />
+          <AbilityConditionHasPermanentStat statidentifier="machinemaniac_counter" min="20" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityUpgradeSubmarine upgradeprefab="increasemaxpumpflow" upgradecategory="pumps" level="1" />
+          <CharacterAbilityResetPermanentStat statidentifier="machinemaniac_50" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="machinemaniac_100" min="1" />
+          <AbilityConditionHasPermanentStat statidentifier="machinemaniac_counter" min="40" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGivePermanentStat stattype="MechanicalRepairSpeed" statidentifier="machinemaniac" value="0.5" setvalue="true" removeondeath="false" />
+          <CharacterAbilityResetPermanentStat statidentifier="machinemaniac_100" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 安全第一：移动到第二线，合并铁人 -->
+    <Talent identifier="safetyfirst">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="4,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.safetyharness,entityname.ironhelmet,entityname.makeshiftarmor" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="safetyharness" />
+      <AddedRecipe itemidentifier="ironhelmet" />
+      <AddedRecipe itemidentifier="makeshiftarmor" />
+    </Talent>
+    <!-- 第一系天赋 -->
+    <!-- 挖矿专家：分解矿石给与双倍产出 -->
+    <Talent identifier="miner">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.minernew" />
+      <Description tag="talentdescription.gainoredetachspeed">
+        <Replace tag="[amount]" value="100" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="RepairToolDeattachTimeMultiplier" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnItemDeconstructedMaterial">
+        <Conditions>
+          <AbilityConditionItem tags="ore" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="2" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 工具维护：增加氧气罐等质量加成 -->
+    <Talent identifier="toolmaintenance">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,5" sheetelementsize="128,128" />
+      <Description tag="talentdescription.toolmaintenance">
+        <Replace tag="[amount]" value="1" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.crafthighqualitytanks">
+        <Replace tag="[qualitybonus]" value="1" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="tool~toolmaintenance" stattype="IncreaseFabricationQuality" value="1" targetallies="true" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="oxygensource" stattype="IncreaseFabricationQuality" value="1" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="weldingtoolfuel" stattype="IncreaseFabricationQuality" value="1" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="60">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="tool~toolmaintenance" stattype="IncreaseFabricationQuality" value="1" targetallies="true" setvalue="true" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 钢铁风暴：使用废铁炮时造成的伤害翻倍 -->
+    <Talent identifier="ironstorm">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,5" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.scrapcannon" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.ironstormnew">
+        <Replace tag="[itemname]" value="entityname.scrapcannon" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.ironstorm">
+        <Replace tag="[chance]" value="10" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilitySetMetadataInt identifier="tiermodifieroverride" value="3" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData itemidentifier="scrapcannon" />
+          <AbilityConditionCharacter targettype="Enemy" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="scrapcannon" />
+    </Talent>
+    <!-- 第二系天赋 -->
+    <!-- 机器人技术：概率制造两台，可用扳手维修和上Buff -->
+    <Talent identifier="robotics">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,7" sheetelementsize="128,128" />
+      <Description tag="talentdescription.roboticsnew">
+        <Replace tag="[character]" value="entityname.defensebotspawner" color="gui.orange" />
+        <Replace tag="[probability]" value="65" color="gui.green" />
+        <Replace tag="[num]" value="2" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.roboticsfix">
+        <Replace tag="[itemname]" value="entityname.wrench" color="gui.orange" />
+        <Replace tag="[character]" value="entityname.defensebotspawner" color="gui.orange" />
+        <Replace tag="[seconds]" value="40" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.defensebotspawner,entityname.defensebotammobox" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnItemFabricatedAmount">
+        <Conditions>
+          <AbilityConditionServerRandom randomchance="0.65" />
+          <AbilityConditionItem identifiers="defensebotspawner" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="2" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData tags="wrenchitem" />
+          <AbilityConditionCharacter>
+            <Conditional speciesname="eq defensebot" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="-10.0" />
+          <CharacterAbilityGiveAffliction affliction="Repairandreinforcement" strength="41" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="defensebotspawner" />
+      <AddedRecipe itemidentifier="defensebotammobox" />
+    </Talent>
+    <!-- 第三系天赋 -->
+    <!-- 机·械·师：速度加成提到40％，解锁摄魂配方 -->
+    <Talent identifier="powerarmor">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,6" sheetelementsize="128,128" />
+      <Description tag="talentdescription.powerarmor">
+        <Replace tag="[bonusmovement]" value="40" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.exosuit,entityname.wrenchdementonite,entityname.crowbardementonite,entityname.screwdriverdementonite,entityname.divingknifedementonite" color="gui.orange" />
+      </Description>
+      <AbilityGroupInterval interval="0.9">
+        <Conditions>
+          <AbilityConditionHasItem tags="deepdivinglarge" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyStat stattype="MovementSpeed" value="0.4" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AddedRecipe itemidentifier="exosuit" />
+      <AddedRecipe itemidentifier="wrenchdementonite" />
+      <AddedRecipe itemidentifier="crowbardementonite" />
+      <AddedRecipe itemidentifier="screwdriverdementonite" />
+      <AddedRecipe itemidentifier="divingknifedementonite" />
+    </Talent>
+  </Talents>
+</Override>

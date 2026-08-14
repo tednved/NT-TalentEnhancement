@@ -1,6 +1,343 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Talents>
+    <!-- 基础天赋 -->
+    <!-- 体能训练：添加肌肉发达的+25％近战伤害效果 -->
+    <Talent identifier="physicalconditioning">
+      <Description tag="talentdescription.additionalstattypeself">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.movementspeed" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.additionalstattypeself">
+        <Replace tag="[amount]" value="25" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.meleeattackmultiplier" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.additionalresistanceself">
+        <Replace tag="[amount]" value="30" color="gui.green" />
+        <Replace tag="[affliction]" value="afflictionname.oxygenlow" color="gui.orange" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,2" sheetelementsize="128,128" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MovementSpeed" value="0.1" />
+          <CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="0.25" />
+          <CharacterAbilityGiveResistance resistanceid="oxygenlow" multiplier="0.7" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 战争故事：击杀敌对生物可获得20经验,每个巡回15次，增强新版本提供技能书效果 -->
+    <Talent identifier="warstories">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.warstoriesnew">
+        <Replace tag="[bonus]" value="20" color="gui.green" />
+        <Replace tag="[amount]" value="15" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.warstories">
+        <Replace tag="[minimumkills]" value="3" color="gui.green" />
+        <Replace tag="[book]" value="entityname.skillbooksubmarinewarfare" color="gui.green" />
+        <Replace tag="[skill]" value="skillname.weapons" color="gui.orange" />
+      </Description>
+      <!-- 初始设定数值：warstories为次数，warstorieskills为击杀数量 -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="warstories" value="15" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 每0.2触发一次判定是否给经验 -->
+      <AbilityGroupInterval Interval="0.2">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="warstorieskills" min="1" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveExperience amount="20" />
+          <CharacterAbilityGivePermanentStat statidentifier="warstorieskills" value="-1" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <!-- 击杀生物减少次数warstories -->
+      <AbilityGroupEffect abilityeffecttype="OnKillCharacter">
+        <Conditions>
+          <AbilityConditionCharacter targettypes="Enemy" />
+          <AbilityConditionHasPermanentStat statidentifier="warstories" min="1" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="warstories" value="-1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 击杀生物提供warstorieskills -->
+      <AbilityGroupEffect abilityeffecttype="OnKillCharacter">
+        <Conditions>
+          <AbilityConditionCharacter targettypes="Enemy" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="warstorieskills" value="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="warstorieskills_book" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 击杀生物提供warstorieskills 大型生物+2 共计3 -->
+      <AbilityGroupEffect abilityeffecttype="OnKillCharacter">
+        <Conditions>
+          <AbilityConditionCharacter targettypes="Enemy">
+            <Conditional maxhealth="ge 1000" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="warstorieskills" value="2" />
+          <CharacterAbilityGivePermanentStat statidentifier="warstorieskills_book" value="2" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 击杀生物提供warstorieskills 深渊+7 共计10 -->
+      <AbilityGroupEffect abilityeffecttype="OnKillCharacter">
+        <Conditions>
+          <AbilityConditionCharacter targettypes="Enemy">
+            <Conditional maxhealth="ge 5000" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="warstorieskills" value="7" />
+          <CharacterAbilityGivePermanentStat statidentifier="warstorieskills_book" value="7" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 回合结束给书 -->
+      <AbilityGroupEffect abilityeffecttype="OnRoundEnd">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="warstorieskills_book" min="1" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityWarStories target="warstorieskills_book" item="skillbook_warstories" normalqualitythreshold="3" goodqualitythreshold="7" excellentqualitythreshold="12" masterworkqualitythreshold="18" />
+          <CharacterAbilityResetPermanentStat statidentifier="warstorieskills_book" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 每个巡回结束重置数值 -->
+      <AbilityGroupEffect abilityeffecttype="OnRoundEnd">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="warstories" value="15" setvalue="true" />
+          <CharacterAbilityResetPermanentStat statidentifier="warstorieskills" />
+          <CharacterAbilityResetPermanentStat statidentifier="warstorieskills_book" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 见好就收：解锁Slug-独头弹配方-->
+    <Talent identifier="dontpushit">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="4,7" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.bandolier,entityname.shotgunslug,entityname.shotgunslugexplosive" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="bandolier" />
+      <AddedRecipe itemidentifier="shotgunslug" />
+      <AddedRecipe itemidentifier="shotgunslugexplosive" />
+    </Talent>
+    <!-- 第一系天赋 -->
+    <!-- 随和海龟：重做减伤效果机制 -->
+    <Talent identifier="easyturtle">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="4,4" sheetelementsize="128,128" />
+      <Description tag="talentdescription.easyturtle">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupInterval interval="0.9">
+        <Conditions>
+          <AbilityConditionInWater />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true" setvalue="true">
+                <Affliction identifier="easyturtle" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 特种部队：添加5％概率触发双倍 -->
+    <Talent identifier="specops">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="5,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.thermalgoggles" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.specopsnew">
+        <Replace tag="[probability1]" value="5" color="gui.green" />
+        <Replace tag="[probability2]" value="100" color="gui.green" />
+      </Description>
+      <AddedRecipe itemidentifier="thermalgoggles" />
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData weapontype="Turret" invert="true" />
+          <AbilityConditionCharacter targettype="Enemy">
+            <Conditional WasFullHealth="true" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionServerRandom randomchance="0.05" />
+          <AbilityConditionAttackData weapontype="Turret" invert="true" />
+          <AbilityConditionCharacter targettype="Enemy">
+            <Conditional WasFullHealth="false" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 第二系天赋 -->
+    <!-- 坚如磐石：添加常驻效果，受击加成翻倍 -->
+    <Talent identifier="stonewall">
+      <Description tag="talentdescription.stonewallnew">
+        <Replace tag="[resistance]" value="20" color="gui.green" />
+        <Replace tag="[seconds]" value="4" color="gui.green" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,3" sheetelementsize="128,128" />
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true" setvalue="true">
+                <Conditional stonewall="lte 1.0" targetself="true" />
+                <Affliction identifier="stonewall" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="OnAttackedResult">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" setvalue="true">
+                <Affliction identifier="stonewall" amount="5.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 第三系天赋 -->
+    <!-- 突击队：散布减少提高到85%，伤害加成提高到30% -->
+    <Talent identifier="commando">
+      <Description tag="talentdescription.commando">
+        <Replace tag="[spreadreduction]" value="85" color="gui.green" />
+        <Replace tag="[powerincrease]" value="30" color="gui.green" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,1" sheetelementsize="128,128" />
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionCrouched />
+          <AbilityConditionAttackData weapontype="handheldranged" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.30" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval>
+        <Conditions>
+          <AbilityConditionCrouched />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyStat stattype="RangedSpreadReduction" value="0.85" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 额外火药：增加榴弹发射器配方 -->
+    <Talent identifier="extrapowder">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="3,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.grenadelauncher" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.extrapowder">
+        <Replace tag="[rangeamount]" value="20" color="gui.green" />
+        <Replace tag="[damageamount]" value="10" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.crafthighqualityexplosives">
+        <Replace tag="[qualitybonus]" value="1" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="ExplosionRadiusMultiplier" value="0.2" />
+          <CharacterAbilityGiveStat stattype="ExplosionDamageMultiplier" value="0.1" />
+          <CharacterAbilityGivePermanentStat statidentifier="demolitionsexpert" stattype="IncreaseFabricationQuality" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="grenadelauncher" />
+    </Talent>
+    <!-- 暴力军阀：潜艇受击增加炮塔射速和伤害，每次10%持续3秒，最大50%加成。 -->
+    <Talent identifier="warlord">
+      <Description tag="talentdescription.warlordnew">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[seconds]" value="3" color="gui.green" />
+        <Replace tag="[maxamount]" value="50" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.warlord">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[maxamount]" value="50" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.hmg,entityname.hmgmagazine" color="gui.orange" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,4" sheetelementsize="128,128" />
+      <AddedRecipe itemidentifier="hmg" />
+      <AddedRecipe itemidentifier="hmgmagazine" />
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData weapontype="handheldranged" />
+          <AbilityConditionNearbyCharacterCount distance="500" targettypes="Enemy" count="1" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData weapontype="handheldranged" />
+          <AbilityConditionNearbyCharacterCount distance="500" targettypes="Enemy" count="2" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData weapontype="handheldranged" />
+          <AbilityConditionNearbyCharacterCount distance="500" targettypes="Enemy" count="3" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData weapontype="handheldranged" />
+          <AbilityConditionNearbyCharacterCount distance="500" targettypes="Enemy" count="4" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData weapontype="handheldranged" />
+          <AbilityConditionNearbyCharacterCount distance="500" targettypes="Enemy" count="5" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="AfterSubmarineAttacked">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+                <Affliction identifier="warlord" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+
     <!-- 急救训练：原版(+15 医疗技能、+35% 医疗物品效果) + 手术创伤性休克-50% + 精神创伤(cerebralhypoxia)抗性-30% -->
     <Talent identifier="firstaidtraining">
       <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,2" sheetelementsize="128,128" />
@@ -73,5 +410,5 @@
       <Description tag="talentdescription.tesp_implacable_amputate" />
       <Description tag="talentdescription.tesp_lastwave" />
     </Talent>
-  </Talents>
+    </Talents>
 </Override>

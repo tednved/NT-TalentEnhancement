@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <!-- 抵抗辐射 -->
+  <Affliction name="radiationsickness Resistance" identifier="radiationsicknessresistance" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="2" treatmentthreshold="1000" duration="2" iconcolors="126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="2" resistancefor="radiationsickness" minresistance="0.0" maxresistance="0.3" />
+    <icon texture="Content/UI/TalentsIcons2.png" sourcerect="896,0,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <!-- 尖晶强化 -->
+  <Affliction name="Spinelstrengthening" identifier="Spinelstrengthening" description="Gotta go fast." type="strengthening" isbuff="true" limbspecific="false" maxstrength="400" MedicalSkillGain="0.0001">
+    <Effect minstrength="0" maxstrength="30" strengthchange="-1" minspeedmultiplier="0.85" maxspeedmultiplier="0.85" resistancefor="damage" minresistance="-0.15" maxresistance="-0.15">
+      <StatValue stattype="MeleeAttackSpeed" minvalue="-0.15" maxvalue="-0.15" />
+      <StatValue stattype="SwimmingSpeed" minvalue="-0.15" maxvalue="-0.15" />
+      <StatValue stattype="maximumhealthmultiplier" minvalue="-0.15" maxvalue="-0.15" />
+      <StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+        <Affliction identifier="incrementalstun" strength="0.6" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="30" maxstrength="300" strengthchange="-0.9" minspeedmultiplier="1.15" maxspeedmultiplier="1.15" resistancefor="damage" minresistance="0" maxresistance="0.35">
+      <StatValue stattype="MeleeAttackSpeed" minvalue="0.15" maxvalue="0.15" />
+      <StatValue stattype="SwimmingSpeed" minvalue="0.15" maxvalue="0.15" />
+      <StatValue stattype="maximumhealthmultiplier" minvalue="0.15" maxvalue="0.15" />
+    </Effect>
+    <Effect minstrength="300" maxstrength="400" strengthchange="-2" minspeedmultiplier="1.3" maxspeedmultiplier="1.3" resistancefor="damage,stun" minresistance="0.35" maxresistance="0.75">
+      <StatValue stattype="MeleeAttackSpeed" minvalue="0.3" maxvalue="0.3" />
+      <StatValue stattype="SwimmingSpeed" minvalue="0.3" maxvalue="0.3" />
+      <StatValue stattype="maximumhealthmultiplier" minvalue="0.3" maxvalue="0.3" />
+      <StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+        <ReduceAffliction type="damage" strength="0.1" />
+        <ReduceAffliction type="burn" strength="0.1" />
+        <ReduceAffliction identifier="bloodloss" strength="0.1" />
+        <ReduceAffliction identifier="bleeding" strength="0.1" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <!-- 尖晶强化-宠物龙专用 -->
+  <Affliction name="PetSpinelstrengthening" identifier="PetSpinelstrengthening" description="Gotta go fast." type="strengthening" isbuff="true" limbspecific="false" maxstrength="40" showiconthreshold="100" MedicalSkillGain="0.0001">
+    <Effect minstrength="0" maxstrength="20" strengthchange="-5" minspeedmultiplier="1.3" maxspeedmultiplier="1.3" resistancefor="damage" minresistance="0" maxresistance="0.3" minfacetint="0,0,255,0" maxfacetint="0,0,255,150">
+      <StatValue stattype="MeleeAttackSpeed" minvalue="0.30" maxvalue="0.30" />
+      <StatValue stattype="SwimmingSpeed" minvalue="0.30" maxvalue="0.30" />
+      <StatValue stattype="maximumhealthmultiplier" minvalue="0.30" maxvalue="0.30" />
+      <StatusEffect target="Character" targetlimb="Head">
+        <ParticleEmitter particle="gazerage" AngleMax="360" ScaleMin="0.2" ScaleMax="0.3" ParticlesPerSecond="20" ColorMultiplier="255,255,0,255" copyentityangle="false" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="20" maxstrength="40" strengthchange="-5" minspeedmultiplier="1.6" maxspeedmultiplier="1.6" resistancefor="damage,stun" minresistance="0.6" maxresistance="0.6" minfacetint="0,0,255,150" maxfacetint="255,0,255,150">
+      <StatValue stattype="MeleeAttackSpeed" minvalue="0.60" maxvalue="0.60" />
+      <StatValue stattype="SwimmingSpeed" minvalue="0.60" maxvalue="0.60" />
+      <StatValue stattype="maximumhealthmultiplier" minvalue="0.60" maxvalue="0.60" />
+      <StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+        <ReduceAffliction type="damage" strength="0.2" />
+        <ReduceAffliction type="burn" strength="0.2" />
+        <ReduceAffliction identifier="bloodloss" strength="0.2" />
+        <ReduceAffliction identifier="bleeding" strength="0.2" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimb="Head">
+        <ParticleEmitter particle="gazerage" AngleMax="360" ScaleMin="0.3" ScaleMax="0.4" ParticlesPerSecond="20" ColorMultiplier="255,0,0,255" copyentityangle="false" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <!-- 维修加固 -->
+  <Affliction identifier="Repairandreinforcement" type="talentbuff" isbuff="true" hideiconafterdelay="true" limbspecific="false" maxstrength="41" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249" MedicalSkillGain="0.005">
+    <Effect minstrength="0" maxstrength="40" strengthchange="-1" resistancefor="damage" minresistance="0.25" maxresistance="0.65">
+      <StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+        <ReduceAffliction type="damage" strength="0.3" />
+        <ReduceAffliction type="burn" strength="0.3" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="40" maxstrength="41" strengthchange="-2" resistancefor="damage" minresistance="1" maxresistance="1">
+      <StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+        <ReduceAffliction type="damage" strength="37" />
+        <ReduceAffliction type="burn" strength="37" />
+      </StatusEffect>
+    </Effect>
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,6" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <!-- 随和海龟 -->
+  <Affliction identifier="easyturtle" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="10" maxstrength="1" duration="1" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="1" resistancefor="damage" minresistance="0.2" maxresistance="0.2" />
+    <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="2,1" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <!-- 暴力军阀 -->
+  <Affliction identifier="warlord" type="talentbuff" isbuff="true" duration="3" limbspecific="false" maxstrength="5" treatmentthreshold="1000" iconcolors="53,55,58;146,191,204;146,191,204;247,227,229">
+    <Effect minstrength="0" maxstrength="5">
+      <StatValue stattype="AttackMultiplier" minvalue="0.1" maxvalue="0.5" />
+      <StatValue stattype="turretattackspeed" minvalue="0.1" maxvalue="0.5" />
+    </Effect>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Override>
+    <!-- 闪电巫师 -->
+    <Affliction identifier="guarded" type="talentbuff" isbuff="true" hideiconafterdelay="true" limbspecific="false" showiconthreshold="8" maxstrength="8" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="8" strengthchange="0" />
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="1,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 坚如磐石 -->
+    <Affliction identifier="stonewall" type="talentbuff" isbuff="true" hideiconafterdelay="true" showiconthreshold="2" limbspecific="false" maxstrength="5" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0" resistancefor="damage,stun" minresistance="0.2" maxresistance="0.2" />
+      <Effect minstrength="1" maxstrength="5" strengthchange="-1" resistancefor="damage,stun" minresistance="0.4" maxresistance="0.4" />
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="1,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 破釜沉舟 -->
+    <Affliction identifier="implacable" type="talentbuff" isbuff="true" hideiconafterdelay="true" limbspecific="false" maxstrength="15" treatmentthreshold="1000" duration="15" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="15">
+        <StatValue stattype="AttackMultiplier" value="0.25" />
+        <AbilityFlag flagtype="AlwaysStayConscious" />
+        <AbilityFlag flagtype="CanNotDieToAfflictions" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="0,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 小丑之力 -->
+    <Affliction identifier="clownpower" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" duration="1" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" resistancefor="damage" minresistance="0.25" maxresistance="0.25">
+        <StatValue stattype="MovementSpeed" value="0.1" />
+        <StatusEffect target="Character">
+          <TriggerAnimation Type="Walk" filename="JollyWalk" priority="3" ExpectedSpecies="Human" />
+        </StatusEffect>
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+  </Override>
+</Afflictions>

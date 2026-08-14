@@ -32,4 +32,91 @@
   <talentdescription.truckernew>Quand vous terminez toutes les missions que vous avez sélectionnées, vous gagnez le bonus de compétence casque [skillamount].</talentdescription.truckernew>
   <talentdescription.uniquestrengthen>Whenever you open a container in a sunken ship for the first time, you have a [probability]% chance to find a special weapon. \nBy recrafting, special weapons can be upgraded to ‖color:gui.itemqualitycolormasterwork‖Masterwork quality‖end‖ and given special effects.</talentdescription.uniquestrengthen>
   <talentdescription.yourreputationnew>Lorsque vous entrez dans un nouvel avant-poste avec lequel vous avez une réputation positive, gagnez [amount] mk.\nDouble pour les villes.</talentdescription.yourreputationnew>
+  <afflictiondescription.PetSpinelstrengthening>La perception de la douleur est encore réduite, la vitesse motrice et les réflexes nerveux sont nettement améliorés, et vous vous sentirez très énergique.</afflictiondescription.PetSpinelstrengthening>
+  <afflictiondescription.Repairandreinforcement>Renforcé grâce à la réparation, les dommages subis sont réduits et le retour sanguin est stimulé.</afflictiondescription.Repairandreinforcement>
+  <afflictiondescription.Spinelstrengthening>La perception de la douleur diminue, la vitesse motrice et les réflexes neuronaux s'améliorent et vous vous sentez plein d'énergie.</afflictiondescription.Spinelstrengthening>
+  <afflictiondescription.easyturtle>Tortue géniale</afflictiondescription.easyturtle>
+  <afflictiondescription.figureheadnew>Faites tout ce qu'il faut pour sauver ce sous-marin.</afflictiondescription.figureheadnew>
+  <afflictiondescription.radiationsicknessresistance>Vous subissez moins de dommages dus aux radiations.</afflictiondescription.radiationsicknessresistance>
+  <afflictiondescription.warlord>Il est temps de riposter aux méchants qui ont attaqué le sous-marin !</afflictiondescription.warlord>
+  <afflictionname.PetSpinelstrengthening>Renforcement par spinelle</afflictionname.PetSpinelstrengthening>
+  <afflictionname.Repairandreinforcement>Réparation et renforcement</afflictionname.Repairandreinforcement>
+  <afflictionname.Spinelstrengthening>Renforcement par spinelle</afflictionname.Spinelstrengthening>
+  <afflictionname.easyturtle>Tortue géniale</afflictionname.easyturtle>
+  <afflictionname.figureheadnew>Sauvez ce sous-marin</afflictionname.figureheadnew>
+  <afflictionname.radiationsicknessresistance>Résistance aux radiations</afflictionname.radiationsicknessresistance>
+  <afflictionname.warlord>Contre-attaque !</afflictionname.warlord>
+  <depletedfuelbox>Boîte de munitions en combustible appauvri</depletedfuelbox>
+  <displayname.uniquestrengthen>[itemname] (amélioré)</displayname.uniquestrengthen>
+  <entitydescription.SpinelEnhancer>Un agent de renforcement très spécial, peut améliorer la force musculaire et la force du corps pendant une longue période, et peut également stimuler les nerfs pour rendre les gens excités ; semble très parfait agent de renforcement, mais dans la phase finale de l'effet de la drogue a ‖color:gui.orange‖side effects‖end‖.</entitydescription.SpinelEnhancer>
+  <entitydescription.alienpistolimproved>Un pistolet qui fonctionne grâce à des batteries aliens, Il a été amélioré par des ingénieurs et peut être utilisé en toute sécurité.</entitydescription.alienpistolimproved>
+  <entitydescription.alienpowercellImitation>Cellule d'énergie extraterrestre imitée artificiellement.</entitydescription.alienpowercellImitation>
+  <entitydescription.ancientweaponimproved>Une arme aux capacités incroyables, améliorés par les ingénieurs pour réduire la consommation d'énergie.</entitydescription.ancientweaponimproved>
+  <entitydescription.assaultriflemagazinedepletedfuel>Un chargeur conçu pour contenir des balles de 6.8mm en combustible appauvri. Améliore sa capacitée de pénétration et irradie la cible.</entitydescription.assaultriflemagazinedepletedfuel>
+  <entitydescription.assaultriflerounddepletedfuel>Balles de fusil d'assault en combustible appauvri</entitydescription.assaultriflerounddepletedfuel>
+  <entitydescription.chaingunammoboxdepletedfuel>Une lourde boîte de munitions pour le Chaingun, fabriquée à partir de combustible épuisé.</entitydescription.chaingunammoboxdepletedfuel>
+  <entitydescription.crowbarphysicorium>Crowbar, fait d'un mélange de matériaux, également mélangé avec du physicorium, semble dur et lourd.</entitydescription.crowbarphysicorium>
+  <entitydescription.flakboltdepletedfuel>Obus antiaérien (carburant épuisé)</entitydescription.flakboltdepletedfuel>
+  <entitydescription.flakcannonammoboxdepletedfuel>Une lourde boîte de munitions à éclats pour le canon de DCA. Fabriquée à partir de combustible épuisé, elle est efficace contre les essaims.</entitydescription.flakcannonammoboxdepletedfuel>
+  <entitydescription.flakshrapneldepletedfuel>Fragment d'obus antiaérien (carburant épuisé)</entitydescription.flakshrapneldepletedfuel>
+  <entitydescription.handcannonrounddepletedfuel>Énorme balle de revolver de calibre .61 en combustible appauvri. Améliore sa capacitée de pénétration et irradie la cible. </entitydescription.handcannonrounddepletedfuel>
+  <entitydescription.hmgmagazinedepletedfuel>Un chargeur de balles de 5,56mm pour le HMG, fabriqué à partir de carburant appauvri et utilisé dans les mitrailleuses lourdes.</entitydescription.hmgmagazinedepletedfuel>
+  <entitydescription.hmgrounddepletedfuel>Munition de mitrailleuse lourde (carburant épuisé)</entitydescription.hmgrounddepletedfuel>
+  <entitydescription.shotgunshelldepletedfuel>Cartouche de fusil à pompe fait à partir de combustible appauvri. Possède une faible capacité de pénétration et irradie la cible.</entitydescription.shotgunshelldepletedfuel>
+  <entitydescription.shotgunslug>Contient un puissant projectile unique pouvant percer du blindage, augmente la précision. </entitydescription.shotgunslug>
+  <entitydescription.shotgunslugdepletedfuel>Cartouche à balle lisse fait en combustible appauvri. Augmente d'avantage sa capacitée de pénétration et irradie la cible. </entitydescription.shotgunslugdepletedfuel>
+  <entityname.SpinelEnhancer>Rehausseur de spinelle</entityname.SpinelEnhancer>
+  <entityname.alienpistolimproved>Pistolet alien amélioré</entityname.alienpistolimproved>
+  <entityname.alienpowercellImitation>Imitation Alien Power Cell</entityname.alienpowercellImitation>
+  <entityname.ancientweaponimproved>Arme antique amélioré</entityname.ancientweaponimproved>
+  <entityname.assaultriflemagazinedepletedfuel>Chargeur de fusil d'assault en combustible appauvri</entityname.assaultriflemagazinedepletedfuel>
+  <entityname.assaultriflerounddepletedfuel>Balles de fusil d'assault en combustible appauvri</entityname.assaultriflerounddepletedfuel>
+  <entityname.chaingunammoboxdepletedfuel>Boîte de munitions pour canon automatique (carburant épuisé)</entityname.chaingunammoboxdepletedfuel>
+  <entityname.crowbarphysicorium>Physicorium Crowbar</entityname.crowbarphysicorium>
+  <entityname.flakboltdepletedfuel>Obus antiaérien (carburant épuisé)</entityname.flakboltdepletedfuel>
+  <entityname.flakcannonammoboxdepletedfuel>Caisse d'obus à dispersion pour canon antiaérien (carburant épuisé)</entityname.flakcannonammoboxdepletedfuel>
+  <entityname.flakshrapneldepletedfuel>Fragment d'obus antiaérien (carburant épuisé)</entityname.flakshrapneldepletedfuel>
+  <entityname.handcannonrounddepletedfuel>Balle de canon à main en combustible appauvri</entityname.handcannonrounddepletedfuel>
+  <entityname.hmgmagazinedepletedfuel>Chargeurs de HMG à carburant appauvri</entityname.hmgmagazinedepletedfuel>
+  <entityname.hmgrounddepletedfuel>Munition de mitrailleuse lourde (carburant épuisé)</entityname.hmgrounddepletedfuel>
+  <entityname.shotgunshelldepletedfuel>Cartouche de fusil à pompe en combustible appauvri</entityname.shotgunshelldepletedfuel>
+  <entityname.shotgunslug>Munition de fusil à pompe à balle lisse</entityname.shotgunslug>
+  <entityname.shotgunslugdepletedfuel>Munition de fusil à pompe à balle lisse en combustible appauvri</entityname.shotgunslugdepletedfuel>
+  <entityname.unidentifiedgeneticmaterial2>Matériel génétique non identifié‖color:gui.itemqualitycolorgood‖(Bonne qualité)‖end‖</entityname.unidentifiedgeneticmaterial2>
+  <subcategory.TalentEnhancement>Talent Enhancement</subcategory.TalentEnhancement>
+  <talentdescription.AlienResearch>Vous pouvez utiliser [itemname1] pour charger [itemname2] (dans Fabricateur)</talentdescription.AlienResearch>
+  <talentdescription.AlienResearch2>Vous pouvez améliorer [itemname1] et [itemname2] à Fabricateur</talentdescription.AlienResearch2>
+  <talentdescription.Chanceresetskills>Lorsque l'effet du talent se déclenche, il y a [probability]% de chances qu'il n'entre pas dans le temps de recharge.</talentdescription.Chanceresetskills>
+  <talentdescription.advancedsplicingnew>Lorsque vous ou un autre membre d'équipage allié combine ou raffine des matériaux génétiques, vous bénéficiez d'un bonus médical de [skillbonus].</talentdescription.advancedsplicingnew>
+  <talentdescription.buzzingnew>Le ‖color:gui.orange‖rendement maximal‖end‖ de votre réacteur augmente de [quantité1]% et le ‖color:gui.orange‖rendement énergétique‖end‖ augmente de [quantité2]%.</talentdescription.buzzingnew>
+  <talentdescription.cannotfallunconsciousforsecondsnew>Lorsque votre niveau de vie tombe en dessous de 0, vous soignez rapidement les dégâts normaux pendant une courte période et restez éveillé pendant [secondes] secondes tout en attaquant pour un [powerincrease]% supplémentaire, ‖color:gui.orange‖à partir duquel vous ne mourrez pas des dégâts que vous subissez.‖end‖.</talentdescription.cannotfallunconsciousforsecondsnew>
+  <talentdescription.crafthighqualityweaponsnew>Gagnez un bonus de vitesse d'attaque égal à votre [skillpercentage1]% compétence Arme et [skillpercentage2]% compétence Électricité.</talentdescription.crafthighqualityweaponsnew>
+  <talentdescription.crewlayaboutnew>La vitesse de réparation du personnage ami est augmentée de [repairspeed]% et toutes les compétences gagnent un bonus de [amount].</talentdescription.crewlayaboutnew>
+  <talentdescription.dangerzonenew>La résistance de tous les personnages amis à la ‖color:gui.orange‖Maladie de radiation‖end‖ est augmentée de [resistance]%, doublée lorsque le niveau dépasse [amount].</talentdescription.dangerzonenew>
+  <talentdescription.geneharvesternew>Lorsque vous dépecez un monstre, vous avez [probability1] % de chances d'y trouver du matériel génétique, ou [probability2] % de chances d'y trouver du matériel génétique avancé.</talentdescription.geneharvesternew>
+  <talentdescription.ironstormnew>Les dégâts que vous infligez avec votre [itemname] sont doublés.</talentdescription.ironstormnew>
+  <talentdescription.junctionjunkienew>Vous pouvez obtenir [bonus] récompenses d'expérience en réparant des ‖color:gui.orange‖appareils électriques‖end‖, [amount] fois par tour.</talentdescription.junctionjunkienew>
+  <talentdescription.lowlevel>\nLorsque le niveau est inférieur à [num] :</talentdescription.lowlevel>
+  <talentdescription.machinemaniacnew>Vous pouvez obtenir des [bonus] récompenses d'expérience en réparant des ‖color:gui.orange‖appareils mécaniques‖end‖, [amount] fois par tour.</talentdescription.machinemaniacnew>
+  <talentdescription.minernew>Le processus de décomposition du ‖color:gui.orange‖minerai‖end‖ double la production.</talentdescription.minernew>
+  <talentdescription.miracleworkernew>Les membres d'équipage à moins de [num] mètres ne peuvent pas succomber à leurs blessures à moins d'abandonner.</talentdescription.miracleworkernew>
+  <talentdescription.nobodyimportantdiesnew>Gagnez [xpbonus] % d'EXP supplémentaire en terminant une mission avec tous les membres d'équipage vivants.</talentdescription.nobodyimportantdiesnew>
+  <talentdescription.nuclearoptionnew>Les dégâts infligés par la ‖color:gui.orange‖Maladie de radiation‖end‖ sont augmentés de [amount]%.</talentdescription.nuclearoptionnew>
+  <talentdescription.nuclearoptionnew2>Vous pouvez utiliser [itemname1] non épuisé pour fabriquer [itemname2] et [itemname3] bon marché.</talentdescription.nuclearoptionnew2>
+  <talentdescription.pyromaniacnew>Les dégâts incendiaires infligés sont augmentés de [burnincrease1]%. Augmente jusqu'à [burnincrease2]% contre ‖color:gui.orange‖Flore ballast‖end‖.</talentdescription.pyromaniacnew>
+  <talentdescription.roboticsfix>Attaquer un [character] avec [itemname] ne lui inflige aucun dégât, mais le répare entièrement et le rend plus dur et plus fort pendant [seconds] secondes.</talentdescription.roboticsfix>
+  <talentdescription.roboticsnew>Construisez un drone puissant (mais fragile) pour surveiller vos arrières, qui a une [probabilité]% de chances de produire [num] lorsque vous le construisez.</talentdescription.roboticsnew>
+  <talentdescription.specopsnew>Vous avez [probability1]% de chances d'infliger le double de dégâts à un ennemi (hors tourelle), ce pourcentage passant à [probability2]% lorsque vous avez affaire à des ennemis ayant un maximum de vie.</talentdescription.specopsnew>
+  <talentdescription.stonewallnew>La résistance aux dégâts physiques et la résistance à l'étourdissement sont augmentées de [resistance]%, et l'effet est doublé pendant [seconds] secondes après que vous ayez été attaqué.</talentdescription.stonewallnew>
+  <talentdescription.thewaitinglistnew>[affliction] buff sur vous est également fourni aux [character] dans les [range] mètres de vous et double l'effet sur eux.\nchaque fois que vous ouvrez un conteneur dans l'épave pour la première fois, il y a une [probabilité]% de chances de trouver un [itemname].</talentdescription.thewaitinglistnew>
+  <talentdescription.truepotentialnew>Pouvoir de clown vous rendent également ‖color:gui.orange‖immunisé contre la pression de l'eau‖end‖.Le pouvoir du clown vous permet d'avoir [probability]% de chance de faire imploser votre cible avec des attaques de mélées, cette chance est doublée quand vous utiliser un ‖color:gui.orange‖marteau jouet‖end‖.</talentdescription.truepotentialnew>
+  <talentdescription.unlockrecipedepletedfuel>Débloquez toute les fabrications lié au combustible appauvri.</talentdescription.unlockrecipedepletedfuel>
+  <talentdescription.warlordnew>Lorsque votre sous-marin subit des dégâts suite à une attaque de monstre, les dégâts que vous infligez avec les tourelles et la cadence de tir des tourelles sont augmentés de [amount]% pendant [seconds] secondes. Maximum [maxamount]%.</talentdescription.warlordnew>
+  <talentdescription.warstoriesnew>[bonus] des récompenses d'expérience peuvent être obtenues en tuant des ennemis, [amount] fois par tour.</talentdescription.warstoriesnew>
+  <talentname.AlienResearch>Science extraterrestre</talentname.AlienResearch>
+  <talentname.campaigningnew>Collecte spéciale</talentname.campaigningnew>
+  <talentname.figureheadnew>Figure de proue</talentname.figureheadnew>
+  <talentname.thewaitinglistnew>Programme Spinelle</talentname.thewaitinglistnew>
+  <talentname.yourreputationnew>Prestige</talentname.yourreputationnew>
+  <talenttree.politician>Politicien</talenttree.politician>
 </infotexts>

@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Talents>
+    <!-- 基础天赋 -->
+    <!-- 炮灰：经验加成提高到15％，提供额外的用药加成 -->
+    <Talent identifier="nobodyimportantdies">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,7" sheetelementsize="128,128" />
+      <Description tag="talentdescription.nobodyimportantdies">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[penalty]" value="20" color="gui.red" />
+      </Description>
+      <Description tag="talentdescription.nobodyimportantdiesnew">
+        <Replace tag="[xpbonus]" value="15.0" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.assistantsdontcount" />
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionExperience">
+        <Conditions>
+          <AbilityConditionNoCrewDied assistantsdontcount="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.15" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnReduceAffliction">
+        <Conditions>
+          <AbilityConditionCharacter targetabilitytarget="true">
+            <Conditional jobidentifier="assistant" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="0.8" />
+        </Abilities>
+        <FallbackAbilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.1" />
+        </FallbackAbilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 自我保健：融合健康典范+20％最大生命值 -->
+    <Talent identifier="selfcare">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.additionalstattypeself">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.maximumhealthmultiplier" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.medicaleffectiveness">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="0.2" />
+          <CharacterAbilityGiveStat stattype="MedicalItemEffectivenessMultiplier" value="0.2" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 第一系天赋 -->
+    <!-- 医生-基因收割者：有额外10％概率获得2级基因 -->
+    <Talent identifier="geneharvester">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,6" sheetelementsize="128,128" />
+      <Description tag="talentdescription.geneharvesternew">
+        <Replace tag="[probability1]" value="25" color="gui.green" />
+        <Replace tag="[probability2]" value="10" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnRoundEnd">
+        <Abilities>
+          <CharacterAbilityResetPermanentStat statidentifier="geneharvester_*" value="1" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnLootCharacter">
+        <Conditions>
+          <AbilityConditionCharacter targettype="Monster">
+            <Conditional maxhealth="gt 25" />
+            <Conditional ismachine="false" />
+            <Conditional ispet="false" />
+          </AbilityConditionCharacter>
+          <AbilityConditionCharacterNotLooted identifier="geneharvester" />
+          <AbilityConditionServerRandom randomchance="0.25" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="UseTarget" spawnitemrandomly="true">
+                <SpawnItem identifiers="geneticmaterial_unresearched" spawnposition="ThisInventory" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnLootCharacter">
+        <Conditions>
+          <AbilityConditionCharacter targettype="Monster">
+            <Conditional maxhealth="gt 25" />
+            <Conditional ismachine="false" />
+            <Conditional ispet="false" />
+          </AbilityConditionCharacter>
+          <AbilityConditionCharacterNotLooted identifier="geneharvester" />
+          <AbilityConditionServerRandom randomchance="0.10" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="UseTarget" spawnitemrandomly="true">
+                <SpawnItem identifiers="geneticmaterial_unresearched2" spawnposition="ThisInventory" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnLootCharacter">
+        <Conditions>
+          <AbilityConditionCharacter targettype="Monster" />
+          <AbilityConditionCharacterNotLooted identifier="geneharvester" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityMarkAsLooted identifier="geneharvester" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 基因天才：改为100％，添加组合基因时+5医疗技能 -->
+    <Talent identifier="geneticgenious">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,6" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.advancedgenesplicer" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.geneticmaterialtaintedprobabilityreductiononcombine">
+        <Replace tag="[amount]" value="100" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.advancedsplicingnew">
+        <Replace tag="[skillbonus]" value="5" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.maxskillfromtalent">
+        <Replace tag="[skillamount]" value="100" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.bonuslostondeath" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="GeneticMaterialTaintedProbabilityReductionOnCombine" value="1.0" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnCrewGeneticMaterialCombinedOrRefined">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="advancedsplicing" stattype="MedicalSkillBonus" value="5" maxvalue="100" removeondeath="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="advancedgenesplicer" />
+    </Talent>
+    <!-- 第二系天赋 -->
+    <!-- 奇迹创造者：自身不再对"奇迹进行中"免疫 -->
+    <Talent identifier="miracleworker">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.miracleworkernew">
+        <Replace tag="[num]" value="6" color="gui.green" />
+      </Description>
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" allowself="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="miracleworker" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 第三系天赋 -->
+    <!-- 超级士兵：获得相当于你医疗技能30%的游泳速度、远程射击速度和近战攻击速度加成。 -->
+    <Talent identifier="supersoldiers">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,5" sheetelementsize="128,128" />
+      <Description tag="talentdescription.increaseappliedbuffduration">
+        <Replace tag="[amount]" value="25" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.combatstimulantsyringe" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.combatmedicnew">
+        <Replace tag="[skillpercentage]" value="30" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MedicalItemDurationMultiplier" value="0.25" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.5">
+        <Abilities>
+          <CharacterAbilityModifyStatToSkill stattype="swimmingspeed" maxvalue="0.3" skillidentifier="medical" />
+          <CharacterAbilityModifyStatToSkill stattype="MeleeAttackSpeed" maxvalue="0.3" skillidentifier="medical" />
+          <CharacterAbilityModifyStatToSkill stattype="RangedAttackSpeed" maxvalue="0.3" skillidentifier="medical" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AddedRecipe itemidentifier="combatstimulantsyringe" />
+    </Talent>
+    <!-- 大力出奇迹：伤害25％提高到40％ -->
+    <Talent identifier="macrodosing">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="1,5" sheetelementsize="128,128" />
+      <Description tag="talentdescription.increaseappliedbuffduration">
+        <Replace tag="[amount]" value="25" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.poisonsandacidsdealmoredamage">
+        <Replace tag="[amount]" value="40" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.endocrinebooster" color="gui.orange" />
+      </Description>
+      <Description tag="entitydescription.endocrinebooster" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MedicalItemDurationMultiplier" value="0.25" />
+          <CharacterAbilityGiveStat stattype="PoisonMultiplier" value="0.4" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAddDamageAffliction">
+        <Abilities>
+          <CharacterAbilityModifyAffliction afflictionidentifiers="acidburn" addedmultiplier="0.4" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="endocrinebooster" />
+    </Talent>
+  </Talents>
+</Override>

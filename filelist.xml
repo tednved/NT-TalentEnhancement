@@ -1,11 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="[NT]精神创伤-天赋增强" modversion="1.2.0" corepackage="False" steamworkshopid="3545888282" gameversion="1.13.4.0" altnames="NT Talent Enhancement">
+<contentpackage name="[NT]精神创伤-天赋增强" modversion="1.3.0" corepackage="False" steamworkshopid="3545888282" gameversion="1.13.4.0" altnames="NT Talent Enhancement">
   <Afflictions file="%ModDir%/Talents/Afflictions.xml" />
+  <Afflictions file="%ModDir%/Talents/TalentAfflictions.xml" />
+  <Afflictions file="%ModDir%/Talents/CaptainAfflictions.xml" />
   <Talents file="%ModDir%/Talents/TalentsSurgeon.xml" />
   <Talents file="%ModDir%/Talents/TalentsSecurity.xml" />
-  <TalentTrees file="%ModDir%/Talents/TalentTrees.xml" />
   <Talents file="%ModDir%/Talents/TalentsCaptain.xml" />
-  <Afflictions file="%ModDir%/Talents/CaptainAfflictions.xml" />
+  <Talents file="%ModDir%/Talents/TalentsAssistant.xml" />
+  <Talents file="%ModDir%/Talents/TalentsDoctor.xml" />
+  <Talents file="%ModDir%/Talents/TalentsEngineer.xml" />
+  <Talents file="%ModDir%/Talents/TalentsMechanic.xml" />
+  <TalentTrees file="%ModDir%/Talents/TalentTrees.xml" />
+  <Item file="%ModDir%/Talents/TalentItems.xml" />
   <Jobs file="%ModDir%/Jobs/Jobs.xml" />
   <Other file="%ModDir%/Lua/Autorun/init.lua" />
   <Text file="%ModDir%/Localization/Simplified_Chinese.xml" />

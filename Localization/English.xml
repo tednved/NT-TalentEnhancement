@@ -32,4 +32,93 @@
   <talentdescription.truckernew>Whenever you finish all your selected missions, Receive a Helm reward of [skillamount].</talentdescription.truckernew>
   <talentdescription.uniquestrengthen>Whenever you open a container in a sunken ship for the first time, you have a [probability]% chance to find a special weapon. \nBy recrafting, special weapons can be upgraded to ‖color:gui.itemqualitycolormasterwork‖Masterwork quality‖end‖ and given special effects.</talentdescription.uniquestrengthen>
   <talentdescription.yourreputationnew>When entering a new outpost you have positive reputation with, gain [amount] mk.\nDoubled for cities.</talentdescription.yourreputationnew>
+  <afflictiondescription.PetSpinelstrengthening>Pain perception is further reduced, motor speed and nerve reflexes are very much improved, and you will feel very energized.</afflictiondescription.PetSpinelstrengthening>
+  <afflictiondescription.Repairandreinforcement>Reinforced because of the repair, damage taken is reduced and blood return is boosted.</afflictiondescription.Repairandreinforcement>
+  <afflictiondescription.Spinelstrengthening>Pain perception decreases, motor speed and neural reflexes improve, and you feel energized.</afflictiondescription.Spinelstrengthening>
+  <afflictiondescription.easyturtle>Easy Turtle</afflictiondescription.easyturtle>
+  <afflictiondescription.figureheadnew>Do whatever it takes to save this ship.</afflictiondescription.figureheadnew>
+  <afflictiondescription.radiationsicknessresistance>You take less radiation damage.</afflictiondescription.radiationsicknessresistance>
+  <afflictiondescription.warlord>It's time to strike back at the bad guys who attacked the submarine!</afflictiondescription.warlord>
+  <afflictionname.PetSpinelstrengthening>Spinel Strengthening</afflictionname.PetSpinelstrengthening>
+  <afflictionname.Repairandreinforcement>Repair and reinforcement</afflictionname.Repairandreinforcement>
+  <afflictionname.Spinelstrengthening>Spinel Strengthening</afflictionname.Spinelstrengthening>
+  <afflictionname.easyturtle>Easy Turtle</afflictionname.easyturtle>
+  <afflictionname.figureheadnew>Save this ship</afflictionname.figureheadnew>
+  <afflictionname.radiationsicknessresistance>Resistance to radiation</afflictionname.radiationsicknessresistance>
+  <afflictionname.warlord>Counterattack!</afflictionname.warlord>
+  <depletedfuelbox>Depletedfuel Ammo Box</depletedfuelbox>
+  <displayname.uniquestrengthen>[itemname] (upgraded)</displayname.uniquestrengthen>
+  <entitydescription.SpinelEnhancer>Very special strengthening agent, can enhance muscle strength and body strength for a long time, and can also stimulate the nerves to make people excited; seems very perfect strengthening agent, but in the final stage of the effect of the drug has ‖color:gui.orange‖side effects‖end‖.</entitydescription.SpinelEnhancer>
+  <entitydescription.alienpistolimproved>A handgun powered by alien power cells, it has been improved by engineers and is safe to use.</entitydescription.alienpistolimproved>
+  <entitydescription.alienpowercellImitation>Artificially imitated alien power cell.</entitydescription.alienpowercellImitation>
+  <entitydescription.ancientweaponimproved>A weapon with powerful capabilities, improved by engineers to reduce energy consumption.</entitydescription.ancientweaponimproved>
+  <entitydescription.assaultriflemagazinedepletedfuel>A magazine designed to hold 6.8mm depleted fuel ammunation. Enhanced armor penetration capability and cause radiation sickness.</entitydescription.assaultriflemagazinedepletedfuel>
+  <entitydescription.assaultriflerounddepletedfuel>Depleted fuel assault rifle bullets</entitydescription.assaultriflerounddepletedfuel>
+  <entitydescription.chaingunammoboxdepletedfuel>A heavy box of ammo for the Chaingun, Made from depleted fuel material.</entitydescription.chaingunammoboxdepletedfuel>
+  <entitydescription.crowbarphysicorium>Crowbar, made of a mixture of materials, also mixed with physicorium, looks hard and heavy.</entitydescription.crowbarphysicorium>
+  <entitydescription.flakboltdepletedfuel>Depleted fuel Flak Shell</entitydescription.flakboltdepletedfuel>
+  <entitydescription.flakcannonammoboxdepletedfuel>A heavy box of wide-spread shrapnel ammo for the flak cannon. Made from depleted fuel material, good against swarms.</entitydescription.flakcannonammoboxdepletedfuel>
+  <entitydescription.flakshrapneldepletedfuel>Depleted fuel Flak Fragment</entitydescription.flakshrapneldepletedfuel>
+  <entitydescription.handcannonrounddepletedfuel>A very large caliber .61 revolver cartridge made with depleted fuel. Enhanced armor penetration capability and cause radiation sickness. </entitydescription.handcannonrounddepletedfuel>
+  <entitydescription.hmgmagazinedepletedfuel>A magazine of 5.56mm rounds for the HMG, made from depleted fuel and used in heavy machine guns.</entitydescription.hmgmagazinedepletedfuel>
+  <entitydescription.hmgrounddepletedfuel>Depleted fuel HMG round</entitydescription.hmgrounddepletedfuel>
+  <entitydescription.shotgunshelldepletedfuel> Shotgun ammunition made with depleted fuel. Has a small armor piercing capability and cause radiation sickness.</entitydescription.shotgunshelldepletedfuel>
+  <entitydescription.shotgunslug>A powerfull single heavy and accurate projectile able to pierce armor. </entitydescription.shotgunslug>
+  <entitydescription.shotgunslugdepletedfuel>Shotgun Slug made with depleted fuel, further increasing its armor penetration capability while causing radiation sickness. </entitydescription.shotgunslugdepletedfuel>
+  <entityname.SpinelEnhancer>Spinel Enhancer</entityname.SpinelEnhancer>
+  <entityname.alienpistolimproved>Improved Alien Pistol</entityname.alienpistolimproved>
+  <entityname.alienpowercellImitation>Imitation Alien Power Cell</entityname.alienpowercellImitation>
+  <entityname.ancientweaponimproved>Ancient Weapon</entityname.ancientweaponimproved>
+  <entityname.assaultriflemagazinedepletedfuel>Depleted fuel assault rifle magazine</entityname.assaultriflemagazinedepletedfuel>
+  <entityname.assaultriflerounddepletedfuel>Depleted fuel assault rifle bullets</entityname.assaultriflerounddepletedfuel>
+  <entityname.chaingunammoboxdepletedfuel>Depleted fuel Chaingun Ammunition Box</entityname.chaingunammoboxdepletedfuel>
+  <entityname.crowbarphysicorium>Physicorium Crowbar</entityname.crowbarphysicorium>
+  <entityname.flakboltdepletedfuel>Depleted fuel Flak Shell</entityname.flakboltdepletedfuel>
+  <entityname.flakcannonammoboxdepletedfuel>Depleted fuel Spreader Flak Shells Box</entityname.flakcannonammoboxdepletedfuel>
+  <entityname.flakshrapneldepletedfuel>Depleted fuel Flak Fragment</entityname.flakshrapneldepletedfuel>
+  <entityname.handcannonrounddepletedfuel>Depleted fuel hand cannon bullets</entityname.handcannonrounddepletedfuel>
+  <entityname.hmgmagazinedepletedfuel>Depleted fuel HMG magazines</entityname.hmgmagazinedepletedfuel>
+  <entityname.hmgrounddepletedfuel>Depleted fuel HMG round</entityname.hmgrounddepletedfuel>
+  <entityname.shotgunshelldepletedfuel>Depleted fuel shotgun ammo</entityname.shotgunshelldepletedfuel>
+  <entityname.shotgunslug>Shotgun Slug</entityname.shotgunslug>
+  <entityname.shotgunslugdepletedfuel>Depleted fuel shotgun Slug</entityname.shotgunslugdepletedfuel>
+  <entityname.unidentifiedgeneticmaterial2>Unidentified Genetic Material‖color:gui.itemqualitycolorgood‖(Good quality)‖end‖</entityname.unidentifiedgeneticmaterial2>
+  <subcategory.TalentEnhancement>Talent Enhancement</subcategory.TalentEnhancement>
+  <talentdescription.AlienResearch>You can use [itemname1] to charge [itemname2] in Fabricator.</talentdescription.AlienResearch>
+  <talentdescription.AlienResearch2>You can improve [itemname1] and [itemname2] at Fabricator.</talentdescription.AlienResearch2>
+  <talentdescription.Chanceresetskills>When talent effect triggers, there is a [probability]% chance that it will not go into cooldown.</talentdescription.Chanceresetskills>
+  <talentdescription.Newline>\n</talentdescription.Newline>
+  <talentdescription.advancedsplicingnew>Whenever you or another allied crewmember combines or refines genetic materials,Gain a [skillbonus] medical bonus.</talentdescription.advancedsplicingnew>
+  <talentdescription.buzzingnew>The ‖color:gui.orange‖maximum output‖end‖ of your reactor increases by [amount1]% and the ‖color:gui.orange‖fuel efficiency‖end‖ increases by [amount2]%.</talentdescription.buzzingnew>
+  <talentdescription.cannotfallunconsciousforsecondsnew>When your lifesteal falls below 0, heal normal type damage quickly for a short period of time and stay awake for [seconds] seconds while attacking for [powerincrease]% more, ‖color:gui.orange‖At this point, you won't die from taking damage.‖end‖</talentdescription.cannotfallunconsciousforsecondsnew>
+  <talentdescription.combatmedicnew>Gain an additional percentage to Swimming Speed, Ranged Fire Rate and Melee Attack Speed equal to [skillpercentage]% of your medical skill.</talentdescription.combatmedicnew>
+  <talentdescription.crafthighqualityweaponsnew>Gain an attack speed bonus equal to your [skillpercentage1]% Weapon skill and [skillpercentage2]% Electrical skill.</talentdescription.crafthighqualityweaponsnew>
+  <talentdescription.crewlayaboutnew>Friendly character repair speed is increased by [repairspeed]% and all skills gain [amount] bonus.</talentdescription.crewlayaboutnew>
+  <talentdescription.dangerzonenew>All friendly characters' resistance to ‖color:gui.orange‖Radiation sickness‖end‖ is increased by [resistance]%, doubled when level exceeds [amount].</talentdescription.dangerzonenew>
+  <talentdescription.geneharvesternew>When looting a monster, there is a [probability1]% chance of finding a genetic material on it, Or there is a [probability2]% chance of finding advanced genetic material on it.</talentdescription.geneharvesternew>
+  <talentdescription.ironstormnew>The damage you deal with your [itemname] is doubled.</talentdescription.ironstormnew>
+  <talentdescription.junctionjunkienew>You can get [bonus] experience rewards for repairing ‖color:gui.orange‖electrical devices‖end‖, [amount] times per round.</talentdescription.junctionjunkienew>
+  <talentdescription.lowlevel>\nWhen the ‖color:gui.orange‖level‖end‖ is lower than [num]:</talentdescription.lowlevel>
+  <talentdescription.machinemaniacnew>You can get [bonus] experience rewards for repairing ‖color:gui.orange‖mechanical devices‖end‖, [amount] times per round.</talentdescription.machinemaniacnew>
+  <talentdescription.minernew>Double the output when decomposing ‖color:gui.orange‖ores‖end‖.</talentdescription.minernew>
+  <talentdescription.miracleworkernew>Other crew members within [num] meters are unable to succumb to their injuries unless they give in.</talentdescription.miracleworkernew>
+  <talentdescription.nobodyimportantdiesnew>At the completion of a mission, if all crew members survive, you can receive a [xpbonus]% experience bonus.</talentdescription.nobodyimportantdiesnew>
+  <talentdescription.nuclearoptionnew>‖color:gui.orange‖Radiation sickness‖end‖ damage inflicted is increased by [amount]%.</talentdescription.nuclearoptionnew>
+  <talentdescription.nuclearoptionnew2>You can use the unexhausted [itemname1] to make cheap [itemname2] as well as [itemname3].</talentdescription.nuclearoptionnew2>
+  <talentdescription.pyromaniacnew>Incendiary damage dealt is increased by [burnincrease1]%. Increases to [burnincrease2]% against ‖color:gui.orange‖Ballast Flora‖end‖.</talentdescription.pyromaniacnew>
+  <talentdescription.roboticsfix>Attacking a [character] with [itemname] will deal no damage, instead causing it to fully repair and make it harder and stronger for [seconds] seconds.</talentdescription.roboticsfix>
+  <talentdescription.roboticsnew>Build a powerful (but fragile) drone to watch your back, which has a [probability]% chance of producing [num] when you build it.</talentdescription.roboticsnew>
+  <talentdescription.specopsnew>You have a [probability1]% chance of dealing double (non-turret) damage to enemies, increasing to [probability2]% against enemies with full health.</talentdescription.specopsnew>
+  <talentdescription.stonewallnew>Physical Damage Resistance and Stun Resistance are increased by [resistance]%, and the effect is doubled for [seconds] seconds after you are attacked.</talentdescription.stonewallnew>
+  <talentdescription.thewaitinglistnew>[affliction] buff on you is also provided to [character] within [range] meters of you and doubles the effect on them.\nwhenever you open a container in the wreck for the first time, there is a [probability]% chance of finding an [itemname].</talentdescription.thewaitinglistnew>
+  <talentdescription.truepotentialnew>Clown Power will also make you ‖color:gui.orange‖immune to pressure‖end‖.Clown powers allows you to hit characters with melee weapons with a [probability]% chance to make them implode, double the chances when attacking with a ‖color:gui.orange‖Toy Hammer‖end‖.</talentdescription.truepotentialnew>
+  <talentdescription.unlockrecipedepletedfuel>Unlocks all ‖color:gui.orange‖depleted fuel related‖end‖ recipes.</talentdescription.unlockrecipedepletedfuel>
+  <talentdescription.warlordnew>When your submarine takes damage from a monster attack, the damage you deal with turrets and the turret's rate of fire is increased by [amount]% for [seconds] seconds. Maximum [maxamount]%.</talentdescription.warlordnew>
+  <talentdescription.warstoriesnew>[bonus] experience rewards can be obtained by killing enemies, [amount] times per round.</talentdescription.warstoriesnew>
+  <talentname.AlienResearch>Alien Research</talentname.AlienResearch>
+  <talentname.campaigningnew>Special collection</talentname.campaigningnew>
+  <talentname.figureheadnew>Figurehead</talentname.figureheadnew>
+  <talentname.thewaitinglistnew>Spinel Program</talentname.thewaitinglistnew>
+  <talentname.yourreputationnew>Prestige</talentname.yourreputationnew>
+  <talenttree.politician>Politician</talenttree.politician>
 </infotexts>

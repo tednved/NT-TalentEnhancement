@@ -1,66 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <TalentTrees>
-    <TalentTree jobidentifier="surgeon">
-      <SubTree identifier="surgeon_primary" nameidentifier="talenttree.primary" type="primary">
-        <TalentOptions requiredtalents="1" maxchosentalents="4">
-          <TalentOption identifier="ntsp_surgeonsintuition" />
-          <TalentOption identifier="ntsp_adrenalinepump" />
-          <TalentOption identifier="ntsp_autodidact" />
-          <TalentOption identifier="selfcare" />
+    <!-- 船长天赋树 -->
+    <TalentTree jobidentifier="captain">
+      <SubTree identifier="captain_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="1" maxchosentalents="6">
+          <TalentOption identifier="bountyhunter" />
+          <TalentOption identifier="logisticsexpert" />
+          <TalentOption identifier="handsomestranger" />
+          <TalentOption identifier="inspirationalleader" />
+          <TalentOption identifier="veteran" />
+          <TalentOption identifier="travelingtradesman" />
         </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="5">
-          <TalentOption identifier="ntsp_homecarepackage" />
-          <TalentOption identifier="ntsp_injectorgeneral" />
-          <TalentOption identifier="ntsp_fellowtoaster" />
-          <TalentOption identifier="ntsp_unspecialisedspecialist" />
-          <TalentOption identifier="vitaminsupplements" />
-        </TalentOptions>
-      </SubTree>
-      <SubTree identifier="ethicalmedicine" type="specialization" requires="surgeon_primary">
-        <TalentOptions>
-          <TalentOption identifier="ntsp_underpressure" />
-        </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="1">
-          <TalentOption identifier="tesp_laststand" />
-        </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="ntsp_bedsidemanner" />
-          <TalentOption identifier="tesp_militarydoping" />
-        </TalentOptions>
-        <TalentOptions>
-          <TalentOption identifier="ntsp_brucereitzperk" />
+        <TalentOptions requiredtalents="1" maxchosentalents="6">
+          <TalentOption identifier="emergencymaneuvers" />
+          <TalentOption identifier="sailorwithnoname" />
+          <TalentOption identifier="camaraderie" />
+          <TalentOption identifier="downwiththeship" />
+          <TalentOption identifier="gunsmith" />
+          <TalentOption identifier="steadytune" />
         </TalentOptions>
       </SubTree>
-      <SubTree identifier="dabblingpharmacist" type="specialization" requires="surgeon_primary">
+      <SubTree identifier="gunslinger" type="specialization" requires="captain_primary">
         <TalentOptions>
-          <TalentOption identifier="ntsp_ultrasoniccleaner" />
-        </TalentOptions>
-        <TalentOptions>
-          <TalentOption identifier="ntsp_therapisttintraining" />
+          <TalentOption identifier="quickdraw" />
         </TalentOptions>
         <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="ntsp_mannitol" />
-          <TalentOption identifier="ntsp_experimental" />
+          <TalentOption identifier="lonewolf" />
+          <TalentOption identifier="deputy" />
         </TalentOptions>
         <TalentOptions>
-          <TalentOption identifier="ntsp_selfcare" />
+          <TalentOption identifier="drunkensailor" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="bigguns" />
         </TalentOptions>
       </SubTree>
-      <SubTree identifier="fieldsurgeon" type="specialization" requires="surgeon_primary">
+      <SubTree identifier="skipper" type="specialization" requires="captain_primary">
         <TalentOptions>
-          <TalentOption identifier="ntsp_rapiddeoployment" />
-        </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="ntsp_captainresist" />
-          <TalentOption identifier="ntsp_fallenandcantgetup" />
-        </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="ntsp_preventativepermit" />
-          <TalentOption identifier="ntsp_imadoctornota" />
+          <TalentOption identifier="leadingbyexample" />
         </TalentOptions>
         <TalentOptions>
-          <TalentOption identifier="ntsp_properfol" />
+          <TalentOption identifier="helmsman" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="inspiringpresence" />
+          <TalentOption identifier="trickledown" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="family" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="politician" type="specialization" requires="captain_primary">
+        <TalentOptions>
+          <TalentOption identifier="commendations" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="yourreputationnew" />
+          <TalentOption identifier="affiliation" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="campaigningnew" />
+          <TalentOption identifier="networking" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="figurehead" />
         </TalentOptions>
       </SubTree>
     </TalentTree>
@@ -131,6 +135,210 @@
         </TalentOptions>
       </SubTree>
     </TalentTree>
+    <!-- 助手天赋树 -->
+    <TalentTree jobidentifier="assistant">
+      <SubTree identifier="assistant_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="1" maxchosentalents="6">
+          <TalentOption identifier="playingcatchup" />
+          <TalentOption identifier="mailman" />
+          <TalentOption identifier="skedaddle" />
+          <TalentOption identifier="crewlayabout" />
+          <TalentOption identifier="starterquest" />
+          <TalentOption identifier="indenturedservitude" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="6">
+          <TalentOption identifier="revengesquad" />
+          <TalentOption identifier="inspiringtunes" />
+          <TalentOption identifier="bagitup" />
+          <TalentOption identifier="peerlearning" />
+          <TalentOption identifier="olympian" />
+          <TalentOption identifier="jengamaster" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="grayshirt" type="specialization" requires="assistant_primary">
+        <TalentOptions>
+          <TalentOption identifier="thefriendswemade" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="nonthreatening" />
+          <TalentOption identifier="tastytarget" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="insurancepolicy" />
+          <TalentOption identifier="anappleaday" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="thewaitinglistnew" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="apprentice" type="specialization" requires="assistant_primary">
+        <TalentOptions>
+          <ShowCaseTalent identifier="apprenticeship">
+            <TalentOption identifier="apprenticeship_captain" />
+            <TalentOption identifier="apprenticeship_doctor" />
+            <TalentOption identifier="apprenticeship_security" />
+            <TalentOption identifier="apprenticeship_mechanic" />
+            <TalentOption identifier="apprenticeship_engineer" />
+          </ShowCaseTalent>
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="logisticssystems" />
+          <TalentOption identifier="journeyman" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="loyalassistant" />
+          <TalentOption identifier="disloyalscum" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="graduationceremony" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="clown" type="specialization" requires="assistant_primary">
+        <TalentOptions>
+          <TalentOption identifier="enrollintoclowncollege" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="waterprankster" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="psychoclown" />
+          <TalentOption identifier="chonkyhonks" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="truepotential" />
+        </TalentOptions>
+      </SubTree>
+    </TalentTree>
+    <!-- 工程师天赋树 -->
+    <TalentTree jobidentifier="engineer">
+      <SubTree identifier="engineer_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
+          <TalentOption identifier="stationengineer" />
+          <TalentOption identifier="junctionjunkie" />
+          <TalentOption identifier="egghead" />
+          <TalentOption identifier="grounded" />
+          <TalentOption identifier="remotemonitor" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
+          <TalentOption identifier="funwithfission" />
+          <TalentOption identifier="melodicrespite" />
+          <TalentOption identifier="submarineofthings" />
+          <TalentOption identifier="aggressiveengineering" />
+          <TalentOption identifier="samplecollection" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="weaponsengineer" type="specialization" requires="engineer_primary">
+        <TalentOptions>
+          <TalentOption identifier="militaryapplications" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="heavyhitter" />
+          <TalentOption identifier="armsrace" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="weaponartisan" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="nuclearoption" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="electrician" type="specialization" requires="engineer_primary">
+        <TalentOptions>
+          <TalentOption identifier="gridmaintainer" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="pyromaniac" />
+          <TalentOption identifier="unlimitedpower" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="betterthannew" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="lightningwizard" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="physicist" type="specialization" requires="engineer_primary">
+        <TalentOptions>
+          <TalentOption identifier="unstoppablecuriosity" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="buzzing" />
+          <TalentOption identifier="AlienResearch" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="dangerzone" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="phdinnuclearphysics" />
+        </TalentOptions>
+      </SubTree>
+    </TalentTree>
+    <!-- 机修工天赋树 -->
+    <TalentTree jobidentifier="mechanic">
+      <SubTree identifier="mechanic_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
+          <TalentOption identifier="salvagecrew" />
+          <TalentOption identifier="machinemaniac" />
+          <TalentOption identifier="multifunctional" />
+          <TalentOption identifier="engineengineer" />
+          <TalentOption identifier="ballastdenizen" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
+          <TalentOption identifier="modularrepairs" />
+          <TalentOption identifier="oiledmachinery" />
+          <TalentOption identifier="pumpndump" />
+          <TalentOption identifier="safetyfirst" />
+          <TalentOption identifier="retrofit" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="scrapper" type="specialization" requires="mechanic_primary">
+        <TalentOptions>
+          <TalentOption identifier="miner" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="residualwaste" />
+          <TalentOption identifier="massproduction" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="scrapsavant" />
+          <TalentOption identifier="toolmaintenance" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="ironstorm" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="machinist" type="specialization" requires="mechanic_primary">
+        <TalentOptions>
+          <TalentOption identifier="hullfixer" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="tinkerer" />
+          <TalentOption identifier="quickfixer" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="letitdrain" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="robotics" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="brawler" type="specialization" requires="mechanic_primary">
+        <TalentOptions>
+          <TalentOption identifier="iamthatguy" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="heavylifting" />
+          <TalentOption identifier="mudraptorwrestler" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="foolhardy" />
+          <TalentOption identifier="berserker" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="powerarmor" />
+        </TalentOptions>
+      </SubTree>
+    </TalentTree>
     <!-- 医生天赋树 -->
     <TalentTree jobidentifier="medicaldoctor">
       <SubTree identifier="medical_primary" nameidentifier="talenttree.primary" type="primary">
@@ -198,70 +406,66 @@
         </TalentOptions>
       </SubTree>
     </TalentTree>
-<!-- 船长天赋树 -->
-    <TalentTree jobidentifier="captain">
-      <SubTree identifier="captain_primary" nameidentifier="talenttree.primary" type="primary">
-        <TalentOptions requiredtalents="1" maxchosentalents="6">
-          <TalentOption identifier="bountyhunter" />
-          <TalentOption identifier="logisticsexpert" />
-          <TalentOption identifier="handsomestranger" />
-          <TalentOption identifier="inspirationalleader" />
-          <TalentOption identifier="veteran" />
-          <TalentOption identifier="travelingtradesman" />
+      <TalentTree jobidentifier="surgeon">
+      <SubTree identifier="surgeon_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="1" maxchosentalents="4">
+          <TalentOption identifier="ntsp_surgeonsintuition" />
+          <TalentOption identifier="ntsp_adrenalinepump" />
+          <TalentOption identifier="ntsp_autodidact" />
+          <TalentOption identifier="selfcare" />
         </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="6">
-          <TalentOption identifier="emergencymaneuvers" />
-          <TalentOption identifier="sailorwithnoname" />
-          <TalentOption identifier="camaraderie" />
-          <TalentOption identifier="downwiththeship" />
-          <TalentOption identifier="gunsmith" />
-          <TalentOption identifier="steadytune" />
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
+          <TalentOption identifier="ntsp_homecarepackage" />
+          <TalentOption identifier="ntsp_injectorgeneral" />
+          <TalentOption identifier="ntsp_fellowtoaster" />
+          <TalentOption identifier="ntsp_unspecialisedspecialist" />
+          <TalentOption identifier="vitaminsupplements" />
         </TalentOptions>
       </SubTree>
-      <SubTree identifier="gunslinger" type="specialization" requires="captain_primary">
+      <SubTree identifier="ethicalmedicine" type="specialization" requires="surgeon_primary">
         <TalentOptions>
-          <TalentOption identifier="quickdraw" />
+          <TalentOption identifier="ntsp_underpressure" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="1">
+          <TalentOption identifier="tesp_laststand" />
         </TalentOptions>
         <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="lonewolf" />
-          <TalentOption identifier="deputy" />
+          <TalentOption identifier="ntsp_bedsidemanner" />
+          <TalentOption identifier="tesp_militarydoping" />
         </TalentOptions>
         <TalentOptions>
-          <TalentOption identifier="drunkensailor" />
-        </TalentOptions>
-        <TalentOptions>
-          <TalentOption identifier="bigguns" />
+          <TalentOption identifier="ntsp_brucereitzperk" />
         </TalentOptions>
       </SubTree>
-      <SubTree identifier="skipper" type="specialization" requires="captain_primary">
+      <SubTree identifier="dabblingpharmacist" type="specialization" requires="surgeon_primary">
         <TalentOptions>
-          <TalentOption identifier="leadingbyexample" />
+          <TalentOption identifier="ntsp_ultrasoniccleaner" />
         </TalentOptions>
         <TalentOptions>
-          <TalentOption identifier="helmsman" />
+          <TalentOption identifier="ntsp_therapisttintraining" />
         </TalentOptions>
         <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="inspiringpresence" />
-          <TalentOption identifier="trickledown" />
+          <TalentOption identifier="ntsp_mannitol" />
+          <TalentOption identifier="ntsp_experimental" />
         </TalentOptions>
         <TalentOptions>
-          <TalentOption identifier="family" />
+          <TalentOption identifier="ntsp_selfcare" />
         </TalentOptions>
       </SubTree>
-      <SubTree identifier="politician" type="specialization" requires="captain_primary">
+      <SubTree identifier="fieldsurgeon" type="specialization" requires="surgeon_primary">
         <TalentOptions>
-          <TalentOption identifier="commendations" />
+          <TalentOption identifier="ntsp_rapiddeoployment" />
         </TalentOptions>
         <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="yourreputationnew" />
-          <TalentOption identifier="affiliation" />
+          <TalentOption identifier="ntsp_captainresist" />
+          <TalentOption identifier="ntsp_fallenandcantgetup" />
         </TalentOptions>
         <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="campaigningnew" />
-          <TalentOption identifier="networking" />
+          <TalentOption identifier="ntsp_preventativepermit" />
+          <TalentOption identifier="ntsp_imadoctornota" />
         </TalentOptions>
         <TalentOptions>
-          <TalentOption identifier="figurehead" />
+          <TalentOption identifier="ntsp_properfol" />
         </TalentOptions>
       </SubTree>
     </TalentTree>

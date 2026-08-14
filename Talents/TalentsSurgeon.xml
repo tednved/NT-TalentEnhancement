@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Talents>
     <!-- Researcher -->
@@ -178,24 +178,6 @@
         <Replace tag="[base]" value="60" color="gui.green" />
         <Replace tag="[multiplier]" value="0.1" color="gui.green" />
       </Description>
-    </Talent>
-    <!-- 自我照顾：从「天赋增强[SP]」移植（+20% 最大生命、+20% 医疗物品效果），
-         本模组不再需要 te 前置。外科医生天赋树中的 selfcare 使用此增强版。 -->
-    <Talent identifier="selfcare">
-      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,0" sheetelementsize="128,128" />
-      <Description tag="talentdescription.additionalstattypeself">
-        <Replace tag="[amount]" value="20" color="gui.green" />
-        <Replace tag="[stattype]" value="stattypenames.maximumhealthmultiplier" color="gui.orange" />
-      </Description>
-      <Description tag="talentdescription.medicaleffectiveness">
-        <Replace tag="[amount]" value="20" color="gui.green" />
-      </Description>
-      <AbilityGroupEffect abilityeffecttype="None">
-        <Abilities>
-          <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="0.2" />
-          <CharacterAbilityGiveStat stattype="MedicalItemEffectivenessMultiplier" value="0.2" />
-        </Abilities>
-      </AbilityGroupEffect>
     </Talent>
   </Talents>
 </Override>

@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Talents>
+    <!-- 基础天赋 -->
+    <!-- 新增-奥林匹克：技能上限提到200 -->
+    <Talent identifier="olympian">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,4" sheetelementsize="128,128" />
+      <Description tag="talentdescription.gainskillspastmax" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveFlag flagtype="GainSkillPastMaximum" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 摸鱼船员：加成范围扩大到所有其他船员,debuff效果仅在20级前生效 -->
+    <Talent identifier="crewlayabout">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,4" sheetelementsize="128,128" />
+      <Description tag="talentdescription.crewlayaboutnew">
+        <Replace tag="[repairspeed]" value="25" color="gui.green" />
+        <Replace tag="[amount]" value="10" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.lowlevel">
+        <Replace tag="[num]" value="20" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.reductiontostattypeself">
+        <Replace tag="[stattype]" value="stattypenames.repairspeed" color="gui.orange" />
+        <Replace tag="[amount]" value="45" color="gui.red" />
+      </Description>
+      <Description tag="talentdescription.reductiontoallskills">
+        <Replace tag="[amount]" value="15" color="gui.red" />
+      </Description>
+      <AbilityGroupInterval interval="1">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="pickinguptheslack" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasLevel maxlevel="20" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="-15" />
+          <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="-15" />
+          <CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="-15" />
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="-15" />
+          <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="-15" />
+          <CharacterAbilityGiveStat stattype="RepairSpeed" value="-0.45" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 邮递员：融合搬山天赋-物品栏堆叠数+2 -->
+    <Talent identifier="mailman">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,4" sheetelementsize="128,128" />
+      <Description tag="talentdescription.mule">
+        <Replace tag="[amount]" value="2" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.mailman">
+        <Replace tag="[xpbonus]" value="15" color="gui.green" />
+        <Replace tag="[moneybonus]" value="150" color="gui.green" />
+        <Replace tag="[missiontype]" value="missiontype.cargo" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionExperience">
+        <Conditions>
+          <AbilityConditionMission missiontype="Cargo" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.15" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionMoney">
+        <Conditions>
+          <AbilityConditionMission missiontype="Cargo" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveMoney amount="150" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat stattype="InventoryExtraStackSize" statidentifier="Material" value="2" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 第一系天赋 -->
+    <!-- 交个朋友：移动到第一个天赋位 -->
+    <Talent identifier="thefriendswemade">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.thefriendswemade" />
+      <Description tag="talentdescription.thefriendswemadereminder">
+        <Replace tag="[amount]" value="2" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.petraptoregg" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="petraptoregg" />
+    </Talent>
+    <!-- 不惧威胁：和等待名单效果合并 -->
+    <Talent identifier="nonthreatening">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,4" sheetelementsize="128,128" />
+      <Description tag="talentdescription.thewaitinglist">
+        <Replace tag="[amount]" value="75" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.feigndeath">
+        <Replace tag="[seconds]" value="2" color="gui.green" />
+      </Description>
+      <AbilityGroupInterval>
+        <Conditions>
+          <AbilityConditionAboveVitality invert="true" vitalitypercentage="0" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyResistance resistanceid="oxygenlow" multiplier="0.25" />
+          <CharacterAbilityModifyResistance resistanceid="bleeding" multiplier="0.25" />
+          <CharacterAbilityModifyResistance resistanceid="bloodloss" multiplier="0.25" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupInterval effectdelay="2">
+        <Conditions>
+          <AbilityConditionRagdolled />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyFlag flagtype="IgnoredByEnemyAI" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 一天一个苹果：100%抗性 -->
+    <Talent identifier="anappleaday">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="3,4" sheetelementsize="128,128" />
+      <Description tag="talentdescription.anappleaday">
+        <Replace tag="[amount]" value="100" color="gui.green" />
+        <Replace tag="[amount2]" value="100" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveResistance resistanceid="skilllossdeath" multiplier="0" />
+          <CharacterAbilityGiveResistance resistanceid="skilllossrespawn" multiplier="0.25" />
+          <CharacterAbilityGiveResistance resistanceid="reaperstax" multiplier="0" />
+          <!-- Legacy -->
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 保险政策：MK加成提高到400 -->
+    <Talent identifier="insurancepolicy">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,5" sheetelementsize="128,128" />
+      <Description tag="talentdescription.insurancepolicy">
+        <Replace tag="[amount]" value="400" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnDieToCharacter">
+        <Conditions>
+          <AbilityConditionCharacter invert="true" targettypes="Ally" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityInsurancePolicy moneypermission="400" requiresalive="false" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 等待名单->尖晶计划：扩散自己的尖晶强化效果给宠物，在沉船有10％的概率找到迅猛龙蛋 -->
+    <Talent identifier="thewaitinglistnew">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,4" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.SpinelEnhancer" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.thewaitinglistnew">
+        <Replace tag="[affliction]" value="afflictionname.Spinelstrengthening" color="gui.orange" />
+        <Replace tag="[range]" value="8" color="gui.green" />
+        <Replace tag="[character]" value="character.mudraptor_pet" color="gui.orange" />
+        <Replace tag="[probability]" value="10" color="gui.green" />
+        <Replace tag="[itemname]" value="entityname.mudraptoregg" color="gui.orange" />
+      </Description>
+      <!-- 向宠物提供特殊尖晶强化效果 -->
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects nearbyCharactersAppliesToEnemies="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="NearbyCharacters" targets="human,mudraptor_pet,mudraptor_largepet" multiplyafflictionsbymaxvitality="true" range="800" disabledeltatime="true" setvalue="true">
+                <Conditional Spinelstrengthening="gte 30.0" targetself="true" />
+                <Affliction identifier="PetSpinelstrengthening" strength="20.0" />
+              </StatusEffect>
+              <StatusEffect type="OnAbility" target="NearbyCharacters" targets="human,mudraptor_pet,mudraptor_largepet" multiplyafflictionsbymaxvitality="true" range="800" disabledeltatime="true" setvalue="true">
+                <Conditional Spinelstrengthening="gte 300.0" targetself="true" />
+                <Affliction identifier="PetSpinelstrengthening" strength="40.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <!-- 屏蔽队友的特殊尖晶强化效果 -->
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="NearbyCharacters" targets="human" multiplyafflictionsbymaxvitality="true" range="900" disabledeltatime="true" setvalue="true">
+                <Affliction identifier="PetSpinelstrengthening" strength="0.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <!-- 打开沉船概率找到迅猛龙蛋 -->
+      <AbilityGroupEffect abilityeffecttype="OnOpenItemContainer">
+        <Conditions>
+          <AbilityConditionItemInSubmarine submarinetype="Wreck" />
+          <AbilityConditionItem tags="container" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilitySpawnItemsToContainer randomchance="0.10" oncepercontainer="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="UseTarget" spawnitemrandomly="true">
+                <SpawnItem identifiers="smallmudraptoregg" spawnposition="ThisInventory" spawnifcantbecontained="false" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilitySpawnItemsToContainer>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 解锁配方 -->
+      <AddedRecipe itemidentifier="SpinelEnhancer" />
+    </Talent>
+    <!-- 第二系天赋 -->
+    <!-- 毕业典礼：还原近战伤害、修理速度、炮塔耗能降低、游泳速度加成 -->
+    <Talent identifier="graduationceremony">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,5" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.ceremonialsword" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.unlockapprenticeshiptalents" />
+      <Description tag="talentdescription.olympian">
+        <Replace tag="[skillpercentage]" value="50%" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.olympiannew">
+        <Replace tag="[project1]" value="stattypenames.meleeattackmultiplier" color="gui.orange" />
+        <Replace tag="[project2]" value="stattypenames.repairspeed" color="gui.orange" />
+        <Replace tag="[project3]" value="stattypenames.turretpowercostreduction" color="gui.orange" />
+        <Replace tag="[project4]" value="stattypenames.swimmingspeed" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="graduationceremony" min="1" invert="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityUnlockApprenticeshipTalentTree />
+          <CharacterAbilityGivePermanentStat statidentifier="graduationceremony" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.5">
+        <Abilities>
+          <CharacterAbilityModifyStatToSkill stattype="meleeattackmultiplier" maxvalue="0.5" skillidentifier="all" />
+          <CharacterAbilityModifyStatToSkill stattype="repairspeed" maxvalue="0.5" skillidentifier="all" />
+          <CharacterAbilityModifyStatToSkill stattype="turretpowercostreduction" maxvalue="0.5" skillidentifier="all" />
+          <CharacterAbilityModifyStatToSkill stattype="swimmingspeed" maxvalue="0.5" skillidentifier="all" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AddedRecipe itemidentifier="ceremonialsword" />
+    </Talent>
+    <!-- 第三系天赋 -->
+    <!-- 小丑修行：提供的物抗提高到25% -->
+    <Talent identifier="enrollintoclowncollege">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="4,5" sheetelementsize="128,128" />
+      <Description tag="talentdescription.enrollintoclowncollege">
+        <Replace tag="[afflictionname]" value="afflictionname.clownpower" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.clownpowerbenefits" />
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.movementspeed" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="25" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.physicalresistance" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.clowncrate" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="clowncrate" />
+      <AbilityGroupInterval interval="0.9">
+        <Conditions>
+          <AbilityConditionHasItem tags="clowngear,clownmask" requireall="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="clownpower" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 哔哔叭叭：加上小丑之力要求描述 -->
+    <Talent identifier="chonkyhonks">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="6,7" sheetelementsize="128,128" />
+      <Description tag="talentdescription.clownpowerbenefits" />
+      <Description tag="talentdescription.chonkyhonks">
+        <Replace tag="[chance]" value="50" color="gui.green" />
+        <Replace tag="[duration]" value="1" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem tags="hornitem" />
+          <AbilityConditionHasAffliction afflictionidentifier="clownpower" />
+          <AbilityConditionServerRandom randomchance="0.5" />
+        </Conditions>
+        <Abilities>
+          <!-- TODO loud sound? -->
+          <CharacterAbilityApplyStatusEffectToNonHumans maxdistance="600">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="stun" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectToNonHumans>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 潜力无穷：小丑之力提供压力免疫，还原使用锤子攻击->使用近战武器，内爆概率0.75％->3.5％，玩具锤概率翻倍(7％) -->
+    <Talent identifier="truepotential">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,6" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.clownexosuit" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.truepotentialnew">
+        <Replace tag="[probability]" value="3.5" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.truepotentialtemporary">
+        <Replace tag="[affliction]" value="afflictionname.combatstimulant" color="gui.orange" />
+        <Replace tag="[duration]" value="15" color="gui.green" />
+      </Description>
+      <!-- 给予战斗兴奋剂效果 -->
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionCharacterUnconcious />
+          <AbilityConditionAttackData itemidentifier="toyhammer" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveAffliction affliction="combatstimulant" strength="15" setvalue="true" />
+          <CharacterAbilityReduceAffliction affliction="oxygenlow" amount="200" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 玩具锤内爆 -->
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionHasAffliction afflictionidentifier="clownpower" />
+          <AbilityConditionAttackData itemidentifier="toyhammer" />
+          <AbilityConditionCharacter targettypes="Enemy,Monster">
+            <Conditional mass="lt 1000" />
+          </AbilityConditionCharacter>
+          <AbilityConditionServerRandom randomchance="0.07" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData implode="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 近战武器内爆 -->
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionHasAffliction afflictionidentifier="clownpower" />
+          <AbilityConditionAttackData weapontype="Melee" />
+          <AbilityConditionAttackData tags="weapon" />
+          <AbilityConditionCharacter targettypes="Enemy,Monster">
+            <Conditional mass="lt 1000" />
+          </AbilityConditionCharacter>
+          <AbilityConditionServerRandom randomchance="0.035" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData implode="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 小丑之力免疫水压 -->
+      <AbilityGroupInterval>
+        <Conditions>
+          <AbilityConditionHasAffliction afflictionidentifier="clownpower" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyFlag flagtype="ImmuneToPressure" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AddedRecipe itemidentifier="clownexosuit" />
+    </Talent>
+  </Talents>
+</Override>

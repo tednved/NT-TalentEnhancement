@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Talents>
+    <!-- 基础天赋 -->
+    <!-- 电路迷：维修电器设备可获得30经验,每个巡回10次，增加新版本维修次数奖励 -->
+    <Talent identifier="junctionjunkie" trackedstat="junctionjunkie_counter" trackedmax="100">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.junctionjunkienew">
+        <Replace tag="[bonus]" value="30" color="gui.green" />
+        <Replace tag="[amount]" value="10" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.junctionjunkie">
+        <Replace tag="[bonus]" value="80" color="gui.green" />
+        <Replace tag="[amount]" value="3" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.junctionjunkie.30">
+        <Replace tag="[requirement]" value="30" color="gui.green" />
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[skill]" value="stattypenames.electricalskillbonus" color="gui.orange" />
+        <Replace tag="[xpamount]" value="500" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.junctionjunkie.50">
+        <Replace tag="[requirement]" value="50" color="gui.green" />
+        <Replace tag="[level]" value="1" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.junctionjunkie.100">
+        <Replace tag="[requirement]" value="100" color="gui.green" />
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="junctionjunkie" value="10" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRoundEnd">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="junctionjunkie" value="10" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="junctionjunkie" min="1" />
+          <AbilityConditionItem tags="junctionbox,battery,navterminal,sonarmonitaor,supercapacitor,electrical" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveExperience amount="30" />
+          <CharacterAbilityGivePermanentStat statidentifier="junctionjunkie" value="-1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- Give the player stats that tracks if the rewards should be given -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="junctionjunkie_30" value="1" maxvalue="1" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="junctionjunkie_50" value="1" maxvalue="1" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="junctionjunkie_100" value="1" maxvalue="1" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionItem tags="junctionbox,supercapacitor,battery,reactor,sonarmonitor,statusmonitor,navterminal" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="junctionjunkie_counter" value="1" removeondeath="false" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="junctionjunkie_30" min="1" />
+          <AbilityConditionHasPermanentStat statidentifier="junctionjunkie_counter" min="30" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveExperience amount="600" />
+          <CharacterAbilityGivePermanentStat stattype="ElectricalSkillBonus" statidentifier="junctionjunkie" value="10" setvalue="true" removeondeath="false" />
+          <CharacterAbilityResetPermanentStat statidentifier="junctionjunkie_30" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="junctionjunkie_50" min="1" />
+          <AbilityConditionHasPermanentStat statidentifier="junctionjunkie_counter" min="50" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityUpgradeSubmarine upgradeprefab="increaseovervoltageresistance" upgradecategory="junctionboxes" level="1" />
+          <CharacterAbilityResetPermanentStat statidentifier="junctionjunkie_50" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="junctionjunkie_100" min="1" />
+          <AbilityConditionHasPermanentStat statidentifier="junctionjunkie_counter" min="100" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGivePermanentStat stattype="ElectricalRepairSpeed" statidentifier="junctionjunkie" value="0.5" setvalue="true" removeondeath="false" />
+          <CharacterAbilityResetPermanentStat statidentifier="junctionjunkie_100" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 第一系天赋 -->
+    <!-- 军事应用：增加额外的贫化燃料弹药箱配方 -->
+    <Talent identifier="militaryapplications">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,6" sheetelementsize="128,128" />
+      <Description tag="talentdescription.skillbonus">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.weapons" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.depletedfuel,depletedfuelbox" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="20" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="depletedfuel" />
+      <AddedRecipe itemidentifier="flakcannonammoboxdepletedfuel" />
+      <AddedRecipe itemidentifier="chaingunammoboxdepletedfuel" />
+      <AddedRecipe itemidentifier="coilgunammoboxdepletedfuel" />
+    </Talent>
+    <!-- 军备竞赛：增加额外的贫化燃料弹药配方 -->
+    <Talent identifier="armsrace">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,7" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipedepletedfuel" />
+      <AddedRecipe itemidentifier="handcannonrounddepletedfuel" />
+      <AddedRecipe itemidentifier="assaultriflemagazinedepletedfuel" />
+      <AddedRecipe itemidentifier="shotgunshelldepletedfuel" />
+      <AddedRecipe itemidentifier="shotgunslugdepletedfuel" />
+      <AddedRecipe itemidentifier="smgmagazinedepletedfuel" />
+      <AddedRecipe itemidentifier="revolverrounddepletedfuel" />
+      <AddedRecipe itemidentifier="hmgmagazinedepletedfuel" />
+    </Talent>
+    <!-- 武器技工：获得相当于你武器和电气技能总和的15%的攻击速度奖励。 -->
+    <Talent identifier="weaponartisan">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.crafthighqualityweapons">
+        <Replace tag="[qualitybonus]" value="1" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.crafthighqualityweaponsnew">
+        <Replace tag="[skillpercentage1]" value="15" color="gui.green" />
+        <Replace tag="[skillpercentage2]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="weapon" stattype="IncreaseFabricationQuality" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.5">
+        <Abilities>
+          <CharacterAbilityModifyStatToSkill stattype="turretattackspeed" maxvalue="0.2" skillidentifier="electrical" />
+          <CharacterAbilityModifyStatToSkill stattype="MeleeAttackSpeed" maxvalue="0.2" skillidentifier="electrical" />
+          <CharacterAbilityModifyStatToSkill stattype="RangedAttackSpeed" maxvalue="0.2" skillidentifier="electrical" />
+          <CharacterAbilityModifyStatToSkill stattype="turretattackspeed" maxvalue="0.15" skillidentifier="weapons" />
+          <CharacterAbilityModifyStatToSkill stattype="MeleeAttackSpeed" maxvalue="0.15" skillidentifier="weapons" />
+          <CharacterAbilityModifyStatToSkill stattype="RangedAttackSpeed" maxvalue="0.15" skillidentifier="weapons" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 世界核平：解锁脏弹配方，增加100％辐射伤害 -->
+    <Talent identifier="nuclearoption">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,7" sheetelementsize="128,128" />
+      <Description tag="talentdescription.nuclearoptionnew">
+        <Replace tag="[amount]" value="100" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.nuclearoptionnew2">
+        <Replace tag="[itemname1]" value="entityname.fuelrod" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.nuclearshell" color="gui.orange" />
+        <Replace tag="[itemname3]" value="entityname.nucleardepthcharge" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.nucleargun,entityname.dirtybomb" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAddDamageAffliction">
+        <Abilities>
+          <CharacterAbilityModifyAffliction afflictionidentifiers="radiationsickness" addedmultiplier="1.0" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="dirtybomb" />
+      <AddedRecipe itemidentifier="nucleargun" />
+      <AddedRecipe itemidentifier="nuclearshellcheap" />
+      <AddedRecipe itemidentifier="nucleardepthchargecheap" />
+      <AddedRecipe itemidentifier="nucleardepthdecoycheap" />
+    </Talent>
+    <!-- 第二系天赋 -->
+    <!-- 无限力量：对异星电池提供质量加成 -->
+    <Talent identifier="unlimitedpower">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="3,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.crafthighqualitybatteries">
+        <Replace tag="[qualitybonus]" value="1" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlimitedpower">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="mobilebattery" stattype="IncreaseFabricationQuality" value="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="alienpowercell" stattype="IncreaseFabricationQuality" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="60">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="supercapacitor,battery" stattype="BatteryCapacity" value="1.1" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="supercapacitor,battery" stattype="BatteryCapacity" value="1.1" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 火焰狂人：烧伤加成提高到35％，对丘脑的伤害提高到100％ -->
+    <Talent identifier="pyromaniac">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.pyromaniacnew">
+        <Replace tag="[burnincrease1]" value="35" color="gui.green" />
+        <Replace tag="[burnincrease2]" value="100" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.flamer" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAddDamageAffliction">
+        <Abilities>
+          <CharacterAbilityModifyAffliction afflictionidentifiers="burn" addedmultiplier="0.35" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="BallastFloraDamageMultiplier" value="1.0" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="flamer" />
+    </Talent>
+    <!-- 闪电巫师：+45电气技能，30％概率立即准备好第二次-->
+    <Talent identifier="lightningwizard">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="4,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.skillbonus">
+        <Replace tag="[amount]" value="45" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.electrical" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.arcemitter" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.electrochemist">
+        <Replace tag="[seconds]" value="8" color="gui.green" />
+        <Replace tag="[powerreduction]" value="80" color="gui.green" />
+        <Replace tag="[stunseconds]" value="4" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.Chanceresetskills">
+        <Replace tag="[probability]" value="30" color="gui.green" />
+      </Description>
+      <AbilityGroupInterval interval="1">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+                <Affliction identifier="guarded" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="OnAttacked">
+        <Conditions>
+          <AbilityConditionHasAffliction afflictionidentifier="guarded" minimumpercentage="1.0" />
+          <AbilityConditionAttackData ignorenonharmfulattacks="true" weapontype="NoWeapon,Melee" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.8" />
+          <CharacterAbilityApplyStatusEffectsToAttacker>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character">
+                <Affliction identifier="stun" amount="4.0" />
+                <ParticleEmitter particle="ElectricShock" distancemin="0" distancemax="50" particleamount="5" anglemin="0" anglemax="360" scalemin="0.1" scalemax="0.2" />
+                <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge1.ogg" range="500" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAttacker>
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttackedResult">
+        <Conditions>
+          <AbilityConditionServerRandom randomchance="0.70" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This">
+                <ReduceAffliction identifier="guarded" strength="10.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="45" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="arcemitter" />
+    </Talent>
+    <!-- 第三系天赋 -->
+    <!-- 无限好奇：与核物理博士叠加 -->
+    <Talent identifier="unstoppablecuriosity">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,7" sheetelementsize="128,128" />
+      <Description tag="talentdescription.gainforcedoorsopenspeed">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.phdinnuclearphysics">
+        <Replace tag="[powerincrease]" value="100" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData tags="crowbaritem" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnItemPicked">
+        <Conditions>
+          <AbilityConditionItem tags="door,aliendoor" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="0.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 嗡鸣者：融合巡航者技能，修正描述错误 -->
+    <Talent identifier="buzzing">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="3,7" sheetelementsize="128,128" />
+      <Description tag="talentdescription.buzzingnew">
+        <Replace tag="[amount1]" value="10" color="gui.green" />
+        <Replace tag="[amount2]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupInterval interval="60">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="reactor" stattype="ReactorMaxOutput" value="1.1" />
+          <CharacterAbilityGiveItemStatToTags tags="reactor" stattype="ReactorFuelConsumption" value="0.8" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="reactor" stattype="ReactorMaxOutput" value="1.1" />
+          <CharacterAbilityGiveItemStatToTags tags="reactor" stattype="ReactorFuelConsumption" value="0.8" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 巡航者->异星研究：可仿制和回收异星电池，可改良异星武器 -->
+    <Talent identifier="AlienResearch">
+      <Icon texture="%ModDir%/Talents/talenticon.png" sheetindex="0,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.alienpowercellImitation" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.AlienResearch">
+        <Replace tag="[itemname1]" value="entityname.fulgurium" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.alienpowercell" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.AlienResearch2">
+        <Replace tag="[itemname1]" value="entityname.alienpistol" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.ancientweapon" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="alienpowercell" />
+      <AddedRecipe itemidentifier="alienpowercellImitation" />
+      <AddedRecipe itemidentifier="alienpistolimproved" />
+      <AddedRecipe itemidentifier="ancientweaponimproved" />
+    </Talent>
+    <!-- 危险区：所有友方角色对辐射病抗性提高15%，等级超过12级时效果翻倍。 -->
+    <Talent identifier="dangerzone">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.dangerzonenew">
+        <Replace tag="[resistance]" value="15" color="gui.green" />
+        <Replace tag="[amount]" value="12" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.fulguriumfuelrodvolatile" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="fulguriumfuelrodvolatile" />
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" setvalue="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="radiationsicknessresistance" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupInterval interval="0.9">
+        <Conditions>
+          <AbilityConditionHasLevel minlevel="12" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" setvalue="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="radiationsicknessresistance" strength="2.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 核物理博士：剔除不叠加的说明，修正描述错误，添加混刚撬棍配方 -->
+    <Talent identifier="phdinnuclearphysics">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="3,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.phdinnuclearphysics">
+        <Replace tag="[powerincrease]" value="200" color="gui.green" />
+      </Description>
+      <!-- <Description tag="talentdescription.buccaneer">
+        <Replace tag="[amount]" value="100" color="gui.green" />
+      </Description> -->
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.pucs,entityname.crowbarphysicorium" color="gui.orange" />
+      </Description>
+      <!-- 蓄力伤害翻倍 -->
+      <!-- <AbilityGroupInterval>
+        <Conditions>
+          <AbilityConditionIsAiming weapontype="melee" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="powerattack" amount="2.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupInterval>
+        <Conditions>
+          <AbilityConditionIsAiming weapontype="melee" hittingcountsasaiming="true" invert="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This" disabledeltatime="true">
+                <ReduceAffliction identifier="powerattack" strength="1.5" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="OnAttackResult">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This">
+                <ReduceAffliction identifier="powerattack" strength="1.5" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect> -->
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData tags="crowbaritem" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="2" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="crowbarphysicorium" />
+      <AddedRecipe itemidentifier="pucs" />
+    </Talent>
+  </Talents>
+</Override>

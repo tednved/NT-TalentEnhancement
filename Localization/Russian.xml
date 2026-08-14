@@ -32,4 +32,92 @@
   <talentdescription.truckernew>Получите бонус в размере [skillamount] к навыку управления, если выполните все миссии.</talentdescription.truckernew>
   <talentdescription.uniquestrengthen>Всякий раз, когда вы впервые открываете контейнер на затонувшем корабле, у вас есть [probability]% шанс найти особое оружие. \nПутем переделки специальное оружие может быть улучшено до ‖color:gui.itemqualitycolormasterwork‖(Превосходное качество)‖end‖ и наделено особыми эффектами.</talentdescription.uniquestrengthen>
   <talentdescription.yourreputationnew>При входе в новый аванпост, с которым у вас положительная репутация, получите [amount] кредитов. Удвоено для городов.</talentdescription.yourreputationnew>
+  <afflictiondescription.PetSpinelstrengthening>Восприимчивость боли снижена сильнее, двигательные рефлексы улучшены ещё больше, вы чувствуете себя невероятно энергичным.</afflictiondescription.PetSpinelstrengthening>
+  <afflictiondescription.Repairandreinforcement>Укреплён и починен. Получаемый урон снижен, урон увеличен.</afflictiondescription.Repairandreinforcement>
+  <afflictiondescription.Spinelstrengthening>Восприимчивость боли снижена, двигательные рефлексы улучшены, вы чувствуете себя энергичным.</afflictiondescription.Spinelstrengthening>
+  <afflictiondescription.easyturtle>Спокойная черепаха</afflictiondescription.easyturtle>
+  <afflictiondescription.figureheadnew>Делайте всё возможное, чтобы спасти эту подлодку!</afflictiondescription.figureheadnew>
+  <afflictiondescription.radiationsicknessresistance>Вы получаете меньше урона от радиации.</afflictiondescription.radiationsicknessresistance>
+  <afflictiondescription.warlord>Пришло время нанести ответный удар по плохим парням, напавшим на подводную лодку!</afflictiondescription.warlord>
+  <afflictionname.PetSpinelstrengthening>Усиление "Шпинель"</afflictionname.PetSpinelstrengthening>
+  <afflictionname.Repairandreinforcement>Починка и укрепление</afflictionname.Repairandreinforcement>
+  <afflictionname.Spinelstrengthening>Усиление "Шпинель"</afflictionname.Spinelstrengthening>
+  <afflictionname.easyturtle>Спокойная черепаха</afflictionname.easyturtle>
+  <afflictionname.figureheadnew>Спасите эту подлодку!</afflictionname.figureheadnew>
+  <afflictionname.radiationsicknessresistance>Устойчивость к радиации</afflictionname.radiationsicknessresistance>
+  <afflictionname.warlord>Контратака!</afflictionname.warlord>
+  <depletedfuelbox>Ящик для боеприпасов с обедненным топливом</depletedfuelbox>
+  <displayname.uniquestrengthen>[itemname] (улучшено)</displayname.uniquestrengthen>
+  <entitydescription.SpinelEnhancer>Необыкновенное усилительное средство, может увеличить мышечную силу и прочность тела на продолжительное вермя, так же стимулирует нервную систему - делает людей возбуждёнными; выглядит, как отличное усилительное средство, но по окончании действия эффект препарата проявляет некоторые ‖color:gui.orange‖странные побочные эффекты‖end‖.</entitydescription.SpinelEnhancer>
+  <entitydescription.alienpistolimproved>Пистолет, работающий на энергоблоках инопланетян, он усовершенствован инженерами и безопасен в использовании.</entitydescription.alienpistolimproved>
+  <entitydescription.alienpowercellImitation>Искуственно воссозданный инопланетный энергоблок.</entitydescription.alienpowercellImitation>
+  <entitydescription.ancientweaponimproved>Очень мощное оружие, усовершенствованные инженерами с целью снижения энергопотребления.</entitydescription.ancientweaponimproved>
+  <entitydescription.assaultriflemagazinedepletedfuel>Магазин, предназначенный для хранения 6,8-мм пуль, который содержит патроны с обедненным топливом. Увеличенная пробиваемость, вызывает облучение. </entitydescription.assaultriflemagazinedepletedfuel>
+  <entitydescription.assaultriflerounddepletedfuel>Пули для штурмовой винтовки с обедненным топливом</entitydescription.assaultriflerounddepletedfuel>
+  <entitydescription.chaingunammoboxdepletedfuel>Тяжелый ящик с боеприпасами для цепной пушки, сделан из обедненного топлива.</entitydescription.chaingunammoboxdepletedfuel>
+  <entitydescription.crowbarphysicorium>Лом, созданный из смеси материалов, в том числе физикория. На взгляд крепкий и тяжёлый.</entitydescription.crowbarphysicorium>
+  <entitydescription.flakboltdepletedfuel>Снаряд зенитной пунки из обедненного топлива</entitydescription.flakboltdepletedfuel>
+  <entitydescription.flakcannonammoboxdepletedfuel>Ящик шрапнельных снарядов широкого рассеивания из обедненного топлива для зенитной пушки. Сделано из обедненного топлива, хорошо работает против скопления противников.</entitydescription.flakcannonammoboxdepletedfuel>
+  <entitydescription.flakshrapneldepletedfuel>Фрагмент зенитной пунки из обедненного топлива</entitydescription.flakshrapneldepletedfuel>
+  <entitydescription.handcannonrounddepletedfuel>Револьверный патрон .61 очень большого калибра, изготовленный с добавлением обедненного топлива. Увеличенная пробиваемость, вызывает облучение. </entitydescription.handcannonrounddepletedfuel>
+  <entitydescription.hmgmagazinedepletedfuel>Магазин 5.56мм для ТП, сделанные из обедненного топлива.</entitydescription.hmgmagazinedepletedfuel>
+  <entitydescription.hmgrounddepletedfuel>Патрон ТП из обедненного топлива</entitydescription.hmgrounddepletedfuel>
+  <entitydescription.shotgunshelldepletedfuel> Боеприпасы для дробовика, изготовленные из обедненного топлива. Увеличена пробиваемость, вызывает облучение.</entitydescription.shotgunshelldepletedfuel>
+  <entitydescription.shotgunslug>Мощный одиночный тяжелый и точный снаряд, способный пробивать броню.</entitydescription.shotgunslug>
+  <entitydescription.shotgunslugdepletedfuel>Пуля из дробовика, изготовленная из обедненного топлива. Увеличена пробиваемость, вызывает облучение. </entitydescription.shotgunslugdepletedfuel>
+  <entityname.SpinelEnhancer>Усилитель "Шпинель"</entityname.SpinelEnhancer>
+  <entityname.alienpistolimproved>Улучшенная Инопланетный пистолет</entityname.alienpistolimproved>
+  <entityname.alienpowercellImitation>Инопланетный энергоблок (Иммитация)</entityname.alienpowercellImitation>
+  <entityname.ancientweaponimproved>Улучшенная Древнее оружие</entityname.ancientweaponimproved>
+  <entityname.assaultriflemagazinedepletedfuel>Магазин штурмовой винтовки с обедненным топливом</entityname.assaultriflemagazinedepletedfuel>
+  <entityname.assaultriflerounddepletedfuel>Пули для штурмовой винтовки с обедненным топливом</entityname.assaultriflerounddepletedfuel>
+  <entityname.chaingunammoboxdepletedfuel>Боеприпасы для цепной пушки из обедненного топлива</entityname.chaingunammoboxdepletedfuel>
+  <entityname.crowbarphysicorium>Физикориевый лом</entityname.crowbarphysicorium>
+  <entityname.flakboltdepletedfuel>Снаряд зенитной пунки из обедненного топлива</entityname.flakboltdepletedfuel>
+  <entityname.flakcannonammoboxdepletedfuel>Ящик шрапнельных снарядов широкого рассеивания из обедненного топлива</entityname.flakcannonammoboxdepletedfuel>
+  <entityname.flakshrapneldepletedfuel>Фрагмент зенитной пунки из обедненного топлива</entityname.flakshrapneldepletedfuel>
+  <entityname.handcannonrounddepletedfuel>Пули ручной пушки с истощенным топливом</entityname.handcannonrounddepletedfuel>
+  <entityname.hmgmagazinedepletedfuel>Магазины ТП с обедненным топливом.</entityname.hmgmagazinedepletedfuel>
+  <entityname.hmgrounddepletedfuel>Патрон ТП из обедненного топлива</entityname.hmgrounddepletedfuel>
+  <entityname.shotgunshelldepletedfuel>Боеприпасы для дробовика с обедненным топливом</entityname.shotgunshelldepletedfuel>
+  <entityname.shotgunslug>Патроны для дробовика</entityname.shotgunslug>
+  <entityname.shotgunslugdepletedfuel>Патроны для дробовика с обедненным топливом.</entityname.shotgunslugdepletedfuel>
+  <entityname.unidentifiedgeneticmaterial2>Неизвестный генетический материал‖color:gui.itemqualitycolorgood‖(Хорошее качество)‖end‖</entityname.unidentifiedgeneticmaterial2>
+  <subcategory.TalentEnhancement>Улучшенные таланты</subcategory.TalentEnhancement>
+  <talentdescription.AlienResearch>Вы можете использовать [itemname1], чтобы зарядить [itemname2] в фабрикаторе.</talentdescription.AlienResearch>
+  <talentdescription.AlienResearch2>Вы можете улучшить [itemname1] и [itemname2] в фабрикаторе</talentdescription.AlienResearch2>
+  <talentdescription.Chanceresetskills>Когда эффект таланта приходит в действие, есть [probability]% шанс избежать перезарядку навыка.</talentdescription.Chanceresetskills>
+  <talentdescription.advancedsplicingnew>Всякий раз, когда вы или другой член экипажа комбинируете или перерабатываете генетические материалы, вы получаете бонус в размере [skillbonus] к навыку медицины.</talentdescription.advancedsplicingnew>
+  <talentdescription.buzzingnew>Максимальная ‖color:gui.orange‖мощность‖end‖ вашего реактора увеличивется на [amount1]% и ‖color:gui.orange‖эффективность топлива‖end‖ увеличивается на [amount2]%.</talentdescription.buzzingnew>
+  <talentdescription.cannotfallunconsciousforsecondsnew>Если ваше здоровье кончится, то вы начнёте быстро регенерировать и останетесь в сознании. Так же вы получите [powerincrease]% бонус к урону на [seconds] секунд, ‖color:gui.orange‖В этот момент вы не умрете от полученного урона..‖end‖</talentdescription.cannotfallunconsciousforsecondsnew>
+  <talentdescription.combatmedicnew>Вы получаете прибавку к скорости плавания, скорости стрельбы и скорости ближнего боя, равную [skillpercentage]% вашего навыка медика.</talentdescription.combatmedicnew>
+  <talentdescription.crafthighqualityweaponsnew>Получите дополнительный процент к скорости атаки, равному [skillpercentage1]% навыка оружия и [skillpercentage2]% электрики.</talentdescription.crafthighqualityweaponsnew>
+  <talentdescription.crewlayaboutnew>Скорость починки членов команды увеличена на [repairspeed]%, так же даёт бонус ко всем навыкам в размере [amount].</talentdescription.crewlayaboutnew>
+  <talentdescription.dangerzonenew>Сопротивление всех членов команды к ‖color:gui.orange‖Радиации‖end‖ увеличено на [resistance]%, удваивается, когда радиация превышает [amount].</talentdescription.dangerzonenew>
+  <talentdescription.geneharvesternew>Из останков монстра вы с вероятностью [probability1]% получите генетический материал, Существует с вероятностью [probability2]% получите передовой генетический материал.</talentdescription.geneharvesternew>
+  <talentdescription.ironstormnew>Урон, наносимый [itemname] увеличен вдвое.</talentdescription.ironstormnew>
+  <talentdescription.junctionjunkienew>Вы можете получить [bonus] опыта в награду за ремонт ‖color:gui.orange‖электрических устройств‖end‖; Максимум [amount] раз за раунд.</talentdescription.junctionjunkienew>
+  <talentdescription.lowlevel>\nЕсли ‖color:gui.orange‖уровень персонажа‖end‖ ниже, чем [num] уровней:</talentdescription.lowlevel>
+  <talentdescription.machinemaniacnew>Вы можете получить [bonus] опыта в награду за ремонт ‖color:gui.orange‖механических устройствв‖end‖; Максимум [amount] раз за раунд.</talentdescription.machinemaniacnew>
+  <talentdescription.minernew>Удвойте доходность при разложении ‖color:gui.orange‖руды‖end‖.</talentdescription.minernew>
+  <talentdescription.miracleworkernew>Члены команды в пределах [num] метров не погибают от ранений, если не сдаются.</talentdescription.miracleworkernew>
+  <talentdescription.nobodyimportantdiesnew>Дает на [xpbonus]% больше опыта за миссии, в которых выжил весь ваш экипаж.</talentdescription.nobodyimportantdiesnew>
+  <talentdescription.nuclearoptionnew>‖color:gui.orange‖Радиация‖end‖ наносит на [amount]% больше урона.</talentdescription.nuclearoptionnew>
+  <talentdescription.nuclearoptionnew2>Вы можете использовать остатки [itemname1], чтобы сделать [itemname2] или [itemname3].</talentdescription.nuclearoptionnew2>
+  <talentdescription.pyromaniacnew>Огненный урон увеличен на [burnincrease1]%. Огненный урон увеличен до [burnincrease2]% против ‖color:gui.orange‖Балластной флоры‖end‖.</talentdescription.pyromaniacnew>
+  <talentdescription.roboticsfix>Атака по [character] с помощью [itemname] не нанесёт урона, вместо этого вы почините его и увеличите его здоровье и урон на [seconds] секунд.</talentdescription.roboticsfix>
+  <talentdescription.roboticsnew>Сконструируйте мощного (но хрупкого) дрона для прикрытия. Вы имеете [probability]% шанс создать [num] штуки при его конструировании.</talentdescription.roboticsnew>
+  <talentdescription.specopsnew>У вас есть [probability1]% нанести двойной урон врагу (кроме туррелей), шанс увеличивается до [probability2]% если враг с полным здоровьем.</talentdescription.specopsnew>
+  <talentdescription.stonewallnew>Сопротивление физическому урону и сопротивление оглушению увеличиваются на [resistance]%, и эффект удваивается на [seconds] секунд после того, как вы были атакованы.</talentdescription.stonewallnew>
+  <talentdescription.thewaitinglistnew>Бафф [affliction] так же распространяется на [character] на расстоянии [range] метров от вас и действует на них с удвоенной силой.\nВсякий раз, когда вы впервые открываете контейнер на затонувшей подлодке вы имеете [probability]% шанс найти [itemname].</talentdescription.thewaitinglistnew>
+  <talentdescription.truepotentialnew>Сила клоуна также делает вас ‖color:gui.orange‖невосприимчивым к давлению воды‖end‖.Джокер замахивается своим оружием ближнего боя достаточно сильно, чтобы поразить цель, с вероятностью [probability]%, что цель взорвется от одного удара, что удваивает вероятность срабатывания при использовании ‖color:gui.orange‖игрушечным молотом‖end‖.</talentdescription.truepotentialnew>
+  <talentdescription.unlockrecipedepletedfuel>Разблокирует все рецепты, связанные с обедненным топливом.</talentdescription.unlockrecipedepletedfuel>
+  <talentdescription.warlordnew>Когда ваша подводная лодка получает урон от атаки монстра, урон, наносимый турелями, и скорострельность турелей увеличиваются на [amount]% на [seconds] секунд. Максимальное значение [maxamount]%.</talentdescription.warlordnew>
+  <talentdescription.warstoriesnew>Вы можете получить [bonus] опыта в награду за нейтрализацию угроз; Максимум [amount] раз за раунд.</talentdescription.warstoriesnew>
+  <talentname.AlienResearch>Изучение чужих</talentname.AlienResearch>
+  <talentname.campaigningnew>Коллекция</talentname.campaigningnew>
+  <talentname.figureheadnew>Подставное лицо</talentname.figureheadnew>
+  <talentname.thewaitinglistnew>Кампания "Шпинель"</talentname.thewaitinglistnew>
+  <talentname.yourreputationnew>Престиж</talentname.yourreputationnew>
+  <talenttree.politician>Политик</talenttree.politician>
 </infotexts>
