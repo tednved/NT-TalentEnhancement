@@ -153,7 +153,8 @@
       <AbilityGroupEffect abilityeffecttype="OnAnyMissionCompleted">
         <Abilities>
           <CharacterAbilityPutItem itemidentifier="suture" amount="3" />
-          <CharacterAbilityPutItem itemidentifier="bloodpackominus" amount="2" />
+          <!-- O-血袋：bloodpackominus 只是显示名（nameidentifier），真实 identifier 是 antibloodloss2 -->
+          <CharacterAbilityPutItem itemidentifier="antibloodloss2" amount="2" />
           <CharacterAbilityPutItem itemidentifier="opium" amount="2" />
         </Abilities>
       </AbilityGroupEffect>
