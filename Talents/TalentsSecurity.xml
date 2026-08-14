@@ -365,6 +365,10 @@
     <Talent identifier="buff">
       <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,4" sheetelementsize="128,128" />
       <Description tag="talentdescription.additionalstattypeself">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.maximumhealthmultiplier" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.additionalstattypeself">
         <Replace tag="[amount]" value="50" color="gui.green" />
         <Replace tag="[stattype]" value="stattypenames.buffdurationmultiplier" color="gui.orange" />
       </Description>
@@ -378,6 +382,7 @@
       </Description>
       <AbilityGroupEffect abilityeffecttype="None">
         <Abilities>
+          <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="0.1" />
           <CharacterAbilityGiveStat stattype="BuffDurationMultiplier" value="0.5" />
           <CharacterAbilityGiveResistance resistanceid="opiateaddiction" multiplier="0.75" />
           <CharacterAbilityGiveResistance resistance="blunttrauma" multiplier="0.8" />
