@@ -20,4 +20,16 @@
   <afflictiondescription.tesp_implacable>Deathbed struggle</afflictiondescription.tesp_implacable>
   <afflictionname.tesp_lastwave>The Last Wave</afflictionname.tesp_lastwave>
   <afflictiondescription.tesp_lastwave>The price of holding on: max health -20%. Curable only at a medical clinic.</afflictiondescription.tesp_lastwave>
+  <talentdescription.affiliationnew>Whenever you complete a mission without any crew members dying, your crew members gain an extra [extraexperience]% experience and [largegain]% increased maximum life, capped at [maxgain]%</talentdescription.affiliationnew>
+  <talentdescription.bountyhunter>Whenever you or an allied crewmember kills a monster, your crew gains additional marks equal to [percentage]% of the creature's maximum health.</talentdescription.bountyhunter>
+  <talentdescription.commendationsnew>Whenever you complete at least one quest, you will get [num] [itemname]. When you use [itemname] on other characters, it gives them [selfxpgain] experience.</talentdescription.commendationsnew>
+  <talentdescription.crafthighqualitypistolitem>Increase the quality level of handguns you make by [qualitybonus].</talentdescription.crafthighqualitypistolitem>
+  <talentdescription.deputynew>‖color:gui.orange‖You‖end‖ and the nearby ‖color:gui.orange‖assistants‖end‖ within [num] meters get [skillbonus] ‖color:gui.orange‖helm‖end‖ and [skillbonus] ‖color:gui.orange‖weapons‖end‖ skills, and the upgrade speed of these two skills is doubled.</talentdescription.deputynew>
+  <talentdescription.factiondiscountnew>If you are on your submarine and it becomes at least [flooded]% flooded, you will remain fully conscious for [duration] seconds.</talentdescription.factiondiscountnew>
+  <talentdescription.figureheadnew>Replace [itemname1] with [itemname2], when you use [itemname2] on other characters, both you and him will gain [selfxpgain] experience. If his level is lower than [level], he is promoted to [level].</talentdescription.figureheadnew>
+  <talentdescription.lonewolfnew>Gain the following effects, doubled if no other crew members are within [num] meters nearby:</talentdescription.lonewolfnew>
+  <talentdescription.quickdrawnew>If you haven't fired your handgun for [seconds] seconds, your next shot will deal [damage]% more damage, this effect can stack [num] times to allow consecutive shots.</talentdescription.quickdrawnew>
+  <talentdescription.truckernew>Whenever you finish all your selected missions, Receive a Helm reward of [skillamount].</talentdescription.truckernew>
+  <talentdescription.uniquestrengthen>Whenever you open a container in a sunken ship for the first time, you have a [probability]% chance to find a special weapon. \nBy recrafting, special weapons can be upgraded to ‖color:gui.itemqualitycolormasterwork‖Masterwork quality‖end‖ and given special effects.</talentdescription.uniquestrengthen>
+  <talentdescription.yourreputationnew>When entering a new outpost you have positive reputation with, gain [amount] mk.\nDoubled for cities.</talentdescription.yourreputationnew>
 </infotexts>

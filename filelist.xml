@@ -4,6 +4,8 @@
   <Talents file="%ModDir%/Talents/TalentsSurgeon.xml" />
   <Talents file="%ModDir%/Talents/TalentsSecurity.xml" />
   <TalentTrees file="%ModDir%/Talents/TalentTrees.xml" />
+  <Talents file="%ModDir%/Talents/TalentsCaptain.xml" />
+  <Afflictions file="%ModDir%/Talents/CaptainAfflictions.xml" />
   <Jobs file="%ModDir%/Jobs/Jobs.xml" />
   <Other file="%ModDir%/Lua/Autorun/init.lua" />
   <Text file="%ModDir%/Localization/Simplified_Chinese.xml" />

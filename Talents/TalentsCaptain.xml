@@ -1,0 +1,979 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<override>
+  <Talents>
+    <!-- 基础天赋-第一行 -->
+    <!-- 赏金猎人-->
+    <Talent identifier="bountyhunter">
+      <!-- 文本：完成怪物或巢穴任务时，获得15%的经验奖励和15%的金钱奖励。 -->
+      <Description tag="talentdescription.logisticsexpert">
+        <Replace tag="[xpbonus]" value="15" color="gui.green" />
+        <Replace tag="[moneybonus]" value="15" color="gui.green" />
+        <Replace tag="[missiontype1]" value="missiontype.monster" color="gui.orange" />
+        <Replace tag="[missiontype2]" value="missiontype.nest" color="gui.orange" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,0" sheetelementsize="128,128" />
+      <!-- 完成怪物或巢穴任务时获得金钱提升 -->
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionMoney">
+        <Conditions>
+          <AbilityConditionMission missiontype="Monster,Nest" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.15" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 完成怪物或巢穴任务时获得经验提升 -->
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionExperience">
+        <Conditions>
+          <AbilityConditionMission missiontype="Monster,Nest" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.15" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 文本：你或其他盟友击杀怪物后，额外获得该怪物生命值上限5%的马克奖励。 -->
+      <Description tag="talentdescription.bountyhunter">
+        <Replace tag="[percentage]" value="5" color="gui.green" />
+      </Description>
+      <!-- 击杀怪物时提供MK -->
+      <AbilityGroupEffect abilityeffecttype="OnCrewKillCharacter">
+        <Conditions>
+          <AbilityConditionCharacter targettypes="Monster" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityBountyHunter vitalitypercentage="0.05" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 物流专家：完成货物或客运任务时，获得20%的经验奖励和20%的金钱奖励。 -->
+    <Talent identifier="logisticsexpert">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,6" sheetelementsize="128,128" />
+      <Description tag="talentdescription.logisticsexpert">
+        <Replace tag="[xpbonus]" value="20" color="gui.green" />
+        <Replace tag="[moneybonus]" value="20" color="gui.green" />
+        <Replace tag="[missiontype1]" value="missiontype.cargo" color="gui.orange" />
+        <Replace tag="[missiontype2]" value="missiontype.personneltransport" color="gui.orange" />
+      </Description>
+      <!-- 完成货物或客运任务时获得金钱提升 -->
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionMoney">
+        <Conditions>
+          <AbilityConditionMission missiontype="Cargo,Escort" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.2" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 完成货物或客运任务时获得经验提升 -->
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionExperience">
+        <Conditions>
+          <AbilityConditionMission missiontype="Cargo,Escort" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.2" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 木卫二旧事 -->
+    <Talent identifier="handsomestranger">
+      <!-- 文本：获得驾驶水平经验的同时，也会获得武器操作的经验。 -->
+      <Description tag="talentdescription.simultaneousskillgain">
+        <Replace tag="[skillname1]" value="skillname.helm" color="gui.orange" />
+        <Replace tag="[skillname2]" value="skillname.weapons" color="gui.orange" />
+      </Description>
+      <!-- 文本：只要你的驾驶水平技能是100或更高，即可获得两倍的武器操作技能。 -->
+      <Description tag="talentdescription.gaindoubleskillatskill">
+        <Replace tag="[skillname1]" value="skillname.helm" color="gui.orange" />
+        <Replace tag="[skilltotal]" value="100" color="gui.green" />
+        <Replace tag="[skillname2]" value="skillname.weapons" color="gui.orange" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,0" sheetelementsize="128,128" />
+      <!-- 获得驾驶技能点时，获得1点武器技能 -->
+      <AbilityGroupEffect abilityeffecttype="OnGainSkillPoint">
+        <Conditions>
+          <AbilityConditionSkill skillidentifier="helm" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGainSimultaneousSkill skillidentifier="weapons" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 获得驾驶技能点且驾驶技能至少有100点，获得1点武器技能 -->
+      <AbilityGroupEffect abilityeffecttype="OnGainSkillPoint">
+        <Conditions>
+          <AbilityConditionSkill skillidentifier="weapons" />
+          <AbilityConditionHasSkill skillidentifier="helm" minvalue="100" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGainSimultaneousSkill skillidentifier="weapons" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 天生领袖 -->
+    <Talent identifier="inspirationalleader">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,1" sheetelementsize="128,128" />
+      <!-- 文本：+50%技能获取速度 -->
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.skillgainspeed" color="gui.orange" />
+      </Description>
+      <!-- 给所有船员：+25％ 技能获取速度 -->
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="inspirationalleader" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+      <!-- 文本：换行 -->
+      <Description tag="talentdescription.Newline" />
+      <!-- 文本：给所有船员 -->
+      <Description tag="talentdescription.appliestoallcrew" />
+      <!-- 文本：+25％ 技能获取速度 -->
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="25" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.skillgainspeed" color="gui.orange" />
+      </Description>
+      <AbilityGroupInterval>
+        <Abilities>
+          <CharacterAbilityModifyStat stattype="SkillGainSpeed" value="0.5" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 老手：未改动 -->
+    <Talent identifier="veteran">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,1" sheetelementsize="128,128" />
+      <!-- 文本：获得一次性的20驾驶和5所有其他技能奖励。 -->
+      <Description tag="talentdescription.veteran">
+        <Replace tag="[helmbonus]" value="20" color="gui.green" />
+        <Replace tag="[otherbonus]" value="5" color="gui.green" />
+      </Description>
+      <!-- 文本：+10%维修速度 -->
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.repairspeed" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="20" />
+          <CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="5" />
+          <CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="5" />
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="5" />
+          <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="5" />
+          <CharacterAbilityGiveStat stattype="RepairSpeed" value="0.1" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 行商 -->
+    <Talent identifier="travelingtradesman">
+      <!-- 文本：给所有船员 -->
+      <Description tag="talentdescription.appliestoallcrew">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+      </Description>
+      <!-- 文本：特价销售会多提供3个物品。 -->
+      <Description tag="talentdescription.specialsaleitemincrease">
+        <Replace tag="[itemcount]" value="3" color="gui.green" />
+      </Description>
+      <!-- 文本：+20%物品出售价值 -->
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.storesellmultiplier" color="gui.orange" />
+      </Description>
+      <!-- 文本：多个相同天赋效果不叠加。 -->
+      <Description tag="talentdescription.doesnotstack" />
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,0" sheetelementsize="128,128" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <!-- 特价销售+3 -->
+          <CharacterAbilityGiveStat stattype="ExtraSpecialSalesCount" value="3" />
+          <!-- +20% 物品出售价值 -->
+          <CharacterAbilityGivePermanentStat statidentifier="all" stattype="StoreSellMultiplier" value="0.2" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 基础天赋-第二行 -->
+    <!-- 应急演习 -->
+    <Talent identifier="emergencymaneuvers">
+      <!-- 每当你的潜艇受到怪物的伤害时，获得最大驾驶技能，持续 5 秒。 -->
+      <Description tag="talentdescription.emergencymaneuvers">
+        <Replace tag="[seconds]" value="5" color="gui.green" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,0" sheetelementsize="128,128" />
+      <!-- 潜艇受到攻击 -->
+      <AbilityGroupEffect abilityeffecttype="AfterSubmarineAttacked">
+        <Conditions>
+          <!-- 受到攻击的是我方潜艇、该角色在潜艇上，伤害来源不是友方（只与AfterSubmarineAttacked连用） -->
+          <AbilityConditionEvasiveManeuvers />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+                <Affliction identifier="evasivemaneuvers" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 无名水手 -->
+    <Talent identifier="sailorwithnoname">
+      <!-- 文本：医疗水平获得20的成长。 -->
+      <Description tag="talentdescription.skillbonus">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.medical" color="gui.orange" />
+      </Description>
+      <!-- 文本：解锁配方：雪茄 -->
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.cigar" color="gui.orange" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,1" sheetelementsize="128,128" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="20" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="cigar" />
+    </Talent>
+    <!-- 战友之情 -->
+    <Talent identifier="camaraderie">
+      <!-- 文本：每当你完成任务而没有任何船员死亡，你的船员就会获得额外10%经验和额外的5%物理伤害抗性。 -->
+      <Description tag="talentdescription.camaraderienew">
+        <Replace tag="[extraexperience]" value="10" color="gui.green" />
+        <Replace tag="[resistanceamount]" value="5" color="gui.green" />
+      </Description>
+      <!-- 文本：助手的死亡不计算在内。 -->
+      <Description tag="talentdescription.assistantsdontcount" />
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,1" sheetelementsize="128,128" />
+      <!-- 船员获得任务经验时 -->
+      <AbilityGroupEffect abilityeffecttype="OnAllyGainMissionExperience">
+        <Conditions>
+          <!-- 没有人死亡（排除助手） -->
+          <AbilityConditionNoCrewDied />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.9">
+        <Conditions>
+          <AbilityConditionNoCrewDied />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="camaraderie" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 与舰休戚 -->
+    <Talent identifier="downwiththeship">
+      <!-- 文本：如果你在你的潜艇上，并且已经进水50%，你的游泳速度提高50%，并且修复船壳速度提高50%，持续60秒。 -->
+      <Description tag="talentdescription.downwiththeship">
+        <Replace tag="[flooded]" value="50" color="gui.green" />
+        <Replace tag="[swimmingboost]" value="50" color="gui.green" />
+        <Replace tag="[repairspeed]" value="50" color="gui.green" />
+        <Replace tag="[duration]" value="60" color="gui.green" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,1" sheetelementsize="128,128" />
+      <AbilityGroupInterval interval="1">
+        <Conditions>
+          <!-- 进水达到50% -->
+          <AbilityConditionShipFlooded floodpercentage="0.5" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="downwiththeship" amount="60.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 玩枪妙手 -->
+    <Talent identifier="gunsmith">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,3" sheetelementsize="128,128" />
+      <!-- 文本：解锁配方：手枪、手枪子弹 -->
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.revolver,entityname.revolverround" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="revolver" />
+      <AddedRecipe itemidentifier="revolverround" />
+    </Talent>
+    <!-- 稳稳当当 -->
+    <Talent identifier="steadytune">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,3" sheetelementsize="128,128" />
+      <!-- 文本：演奏口琴至少10秒后，你和附近的盟友获得+100% 精神抗性，持续60秒。 -->
+      <Description tag="talentdescription.steadytune">
+        <Replace tag="[duration]" value="10" color="gui.green" />
+        <Replace tag="[buffamount]" value="100" color="gui.green" />
+        <Replace tag="[buffname]" value="afflictionname.psychosisresistance" color="gui.orange" />
+        <Replace tag="[buffduration]" value="60" color="gui.green" />
+      </Description>
+      <!-- 使用远程武器 -->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <!-- 口琴 -->
+          <AbilityConditionItem identifiers="harmonica" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character">
+                <!-- 使用Affliction计时 -->
+                <Affliction identifier="steadytune_charging" amount="2" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 使用远程武器 -->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <!-- 口琴 -->
+          <AbilityConditionItem identifiers="harmonica" />
+          <!-- 计时Affliction达到90% -->
+          <AbilityConditionHasAffliction afflictionidentifier="steadytune_charging" minimumpercentage="0.9" />
+        </Conditions>
+        <Abilities>
+          <!-- 对船员生效,范围600(6米) -->
+          <CharacterAbilityApplyStatusEffectsToAllies range="600">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true">
+                <Affliction identifier="psychosisimmunity" amount="60" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 第一系天赋 -->
+    <!-- 快枪手 -->
+    <Talent identifier="quickdraw">
+      <!-- 文本：每经过4秒，下一次手枪造成的伤害提升50%，最多触发2次。 -->
+      <Description tag="talentdescription.quickdrawnew">
+        <Replace tag="[seconds]" value="4" color="gui.green" />
+        <Replace tag="[damage]" value="50" color="gui.green" />
+        <Replace tag="[num]" value="2" color="gui.green" />
+      </Description>
+      <!-- 文本：减少远程武器双持惩罚50% -->
+      <Description tag="talentdescription.reducedualwieldpenalty">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,0" sheetelementsize="128,128" />
+      <!-- 每秒增加1点quickdrawing -->
+      <AbilityGroupInterval interval="1">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+                <Affliction identifier="quickdrawing" strength="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <!-- 当攻击时 -->
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <!-- quickdrawing大于50%（至少4点） -->
+          <AbilityConditionHasAffliction afflictionidentifier="quickdrawing" minimumpercentage="0.5" />
+          <!-- 攻击物包含Tags pistolammoitem (手枪弹药) -->
+          <AbilityConditionAttackData tags="pistolammoitem" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 使用远程武器 -->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <!-- 使用武器Tags pistolitem(手枪) -->
+          <AbilityConditionItem tags="pistolitem" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This">
+                <!-- 减少quickdrawing(4点即一半) -->
+                <ReduceAffliction identifier="quickdrawing" strength="4.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 双持惩罚减少50% -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="DualWieldingPenaltyReduction" value="0.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 孤狼：获得以下效果，如果附近20米内没有其他船员则效果翻倍：+20％ 物理伤害抗性、+20％ 晕眩抗性、+20％ 造成近战伤害-->
+    <Talent identifier="lonewolf">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,5" sheetelementsize="128,128" />
+      <!-- 文本：获得以下效果，如果附近20米内没有其他船员则效果翻倍： -->
+      <Description tag="talentdescription.lonewolfnew">
+        <Replace tag="[num]" value="20" color="gui.green" />
+      </Description>
+      <!-- 文本：+20% 物理伤害抗性 -->
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.physicalresistance" color="gui.orange" />
+      </Description>
+      <!-- 文本：+20% 晕眩抗性 -->
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.stunresistance" color="gui.orange" />
+      </Description>
+      <!-- 文本：+20% 近战伤害 -->
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.meleedamagebonus" color="gui.orange" />
+      </Description>
+      <!-- 提供1点lonewolf -->
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true" setvalue="true">
+                <Affliction identifier="lonewolf" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupInterval interval="0.9">
+        <Conditions>
+          <AbilityConditionAllyNearby distance="2000" truthywhen="NoCharacterMatches" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true" setvalue="true">
+                <Affliction identifier="lonewolf" strength="3.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 副手 -->
+    <Talent identifier="deputy">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,5" sheetelementsize="128,128" />
+      <!-- 文本：你和附近6米内的助手获得20 驾驶以及20 武器技能，并且这两项技能升级速度加倍。 -->
+      <Description tag="talentdescription.deputynew">
+        <Replace tag="[num]" value="6" color="gui.green" />
+        <Replace tag="[skillbonus]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" jobs="assistant" allowself="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="deputy" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character">
+                <Affliction identifier="deputy" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 醉汉水手 -->
+    <Talent identifier="drunkensailor">
+      <!-- 文本：醉酒时获得75%晕眩抗性，并且免疫醉酒的负面效果。 -->
+      <Description tag="talentdescription.drunkensailor">
+        <Replace tag="[stunresistance]" value="75" color="gui.green" />
+      </Description>
+      <!-- 文本：解锁配方：朗姆酒 -->
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.rum" color="gui.orange" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,0" sheetelementsize="128,128" />
+      <AbilityGroupInterval interval="1.0">
+        <Conditions>
+          <AbilityConditionHasAffliction afflictionidentifier="drunknodebuffs" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyResistance resistanceid="stun" multiplier="0.25" />
+          <CharacterAbilityModifyResistance resistanceid="nausea" multiplier="0" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupInterval interval="1.0">
+        <Abilities>
+          <CharacterAbilityReplaceAffliction affliction="drunk" newaffliction="drunknodebuffs" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AddedRecipe itemidentifier="rum" />
+    </Talent>
+    <!-- 重炮手 -->
+    <Talent identifier="bigguns">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,4" sheetelementsize="128,128" />
+      <!-- 文本：你制造的手枪质量提升1。 -->
+      <Description tag="talentdescription.crafthighqualitypistolitem">
+        <Replace tag="[qualitybonus]" value="1" color="gui.green" />
+      </Description>
+      <!-- 文本：使用左轮和手炮对怪物造成的伤害增加40%。 -->
+      <Description tag="talentdescription.bigguns">
+        <Replace tag="[amount]" value="40" color="gui.green" />
+      </Description>
+      <!-- 文本：减少远程武器双持惩罚[amount]% -->
+      <Description tag="talentdescription.reducedualwieldpenalty">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <!-- 文本：解锁配方：手炮,手炮子弹 -->
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.handcannon, entityname.handcannonround" color="gui.orange" />
+      </Description>
+      <!-- 攻击时 -->
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <!-- 对敌人、怪物 -->
+          <AbilityConditionCharacter targettypes="Enemy,Monster" />
+          <!-- 使用手枪弹药 -->
+          <AbilityConditionAttackData tags="pistolammoitem" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.4" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <!-- 制造的手枪质量提升1。 -->
+          <CharacterAbilityGivePermanentStat statidentifier="pistolitem" stattype="IncreaseFabricationQuality" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 双持惩罚减少 -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="DualWieldingPenaltyReduction" value="0.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="handcannon" />
+      <AddedRecipe itemidentifier="handcannonround" />
+    </Talent>
+    <!-- 第二系列天赋 -->
+    <!-- 以身作则 -->
+    <Talent identifier="leadingbyexample">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,5" sheetelementsize="128,128" />
+      <!-- 文本：只要你还活着，所有船员都会获得士气高涨并获得以下好处： -->
+      <Description tag="talentdescription.leadingbyexample" />
+      <!-- 文本：+20% 修复速度 -->
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.repairspeed" color="gui.orange" />
+      </Description>
+      <!-- 文本：+20% 船体修复速度 -->
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.repairtoolstructurerepairmultiplier" color="gui.orange" />
+      </Description>
+      <!-- 文本：+5% 移动速度 -->
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="5" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.movementspeed" color="gui.orange" />
+      </Description>
+      <AbilityGroupInterval interval="0.9">
+        <Conditions>
+          <!-- 所有船员中是否有人持有family(家庭)天赋 -->
+          <AbilityConditionAllyHasTalent identifier="family" />
+          <AbilityConditionNoCrewDied />
+        </Conditions>
+        <Abilities>
+          <!-- 给所有船员施加excellentmorale -->
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true" allowclientsimulation="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="excellentmorale" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+        <FallbackAbilities>
+          <!-- 如果角色没有"family"天赋，则给予"high morale" -->
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true" allowclientsimulation="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="highmorale" strength="1.0" />
+                <ReduceAffliction identifier="excellentmorale" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </FallbackAbilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 舵手 -->
+    <Talent identifier="helmsman">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,4" sheetelementsize="128,128" />
+      <!-- 文本：你的驾驶技能提高30。 -->
+      <Description tag="talentdescription.helmsman">
+        <Replace tag="[amount]" value="30" color="gui.green" />
+      </Description>
+      <!-- 引擎和水泵效率提高20%。 -->
+      <Description tag="talentdescription.increaseeffectiveness">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+      </Description>
+      <!-- 多个相同天赋效果不叠加。 -->
+      <Description tag="talentdescription.doesnotstack" />
+      <!-- 提供30驾驶技能 -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="30" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 每60秒提供一次 引擎和水泵效率提升（解决换船、复活等情况） -->
+      <AbilityGroupInterval interval="60">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="pump" stattype="PumpSpeed" stackable="false" value="1.2" />
+          <CharacterAbilityGiveItemStatToTags tags="engine" stattype="EngineSpeed" stackable="false" value="1.2" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <!-- 提供引擎和水泵效率提升 -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="pump" stattype="PumpSpeed" stackable="false" value="1.2" />
+          <CharacterAbilityGiveItemStatToTags tags="engine" stattype="EngineSpeed" stackable="false" value="1.2" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 鼓舞人心 -->
+    <Talent identifier="inspiringpresence">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,1" sheetelementsize="128,128" />
+      <!-- 文本：所有在同舱室获得技能点的船员将获得3点。船员步行速度提高5%。 -->
+      <Description tag="talentdescription.inspiringpresence">
+        <Replace tag="[amount]" value="3" color="gui.green" />
+        <Replace tag="[movespeed]" value="5" color="gui.green" />
+      </Description>
+      <!-- 同舱室，排除自己，给予inspiringpresence -->
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies insameroom="true" allowself="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="inspiringpresence" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+      <!-- 为所有船员提供步行速度加成 -->
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="inspiringpresence_walkspeed" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 涓涓细流 -->
+    <Talent identifier="trickledown">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,1" sheetelementsize="128,128" />
+      <!-- 文本：你获得技能点时其他船员也都将获得技能点。船员游泳速度提高10%。 -->
+      <Description tag="talentdescription.trickledown">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+      </Description>
+      <!-- 技能点时其他船员也获得技能点。 -->
+      <AbilityGroupEffect abilityeffecttype="OnGainSkillPoint">
+        <Abilities>
+          <CharacterAbilityGainSimultaneousSkill skillidentifier="inherit" targetallies="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 船员游泳速度提高10%。 -->
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="trickledown" strength="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- 家庭：解锁时:每位船员提高一级。如果任务中没有任何船员死亡，则将士气高涨升级为亢进士气，加成加倍。每次你在巡回中完成所有任务后，会获得10点驾驶技能奖励，此天赋只能给与至多200技能点，这个奖励会在死亡时消失。 -->
+    <Talent identifier="family">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,1" sheetelementsize="128,128" />
+      <!-- 文本：解锁时:每位船员提高一级。-->
+      <Description tag="talentdescription.family" />
+      <!-- 文本：如果任务中没有任何船员死亡，则将士气高涨升级为亢进士气，加成加倍。-->
+      <Description tag="talentdescription.family2" />
+      <!-- 文本：每次你在巡回中完成所有任务后，会获得10点驾驶技能奖励。 -->
+      <Description tag="talentdescription.truckernew">
+        <Replace tag="[skillamount]" value="10" color="gui.green" />
+      </Description>
+      <!-- 文本：此天赋只能给与至多200技能点。 -->
+      <Description tag="talentdescription.maxskillfromtalent">
+        <Replace tag="[skillamount]" value="200" color="gui.green" />
+      </Description>
+      <!-- 文本：这个奖励会在死亡时消失。 -->
+      <Description tag="talentdescription.bonuslostondeath" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="family" min="1" invert="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveTalentPointsToAllies amount="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="family" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 在所有任务完成后 -->
+      <AbilityGroupEffect abilityeffecttype="OnAllMissionsCompleted">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="trucker" stattype="HelmSkillBonus" value="10" maxvalue="200" removeondeath="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 第三系天赋 -->
+    <!-- 赞扬-->
+    <Talent identifier="commendations">
+      <!-- 每当你完成至少一个任务，就会获得2个联盟奖章。当你对其他角色使用联盟奖章时，会给他们275经验。 -->
+      <Description tag="talentdescription.commendationsnew">
+        <Replace tag="[num]" value="2" color="gui.green" />
+        <Replace tag="[itemname]" value="entityname.coalitioncommendation" color="gui.orange" />
+        <Replace tag="[selfxpgain]" value="275" color="gui.green" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,1" sheetelementsize="128,128" />
+      <!-- 完成至少一个任务提供2个物品 -->
+      <AbilityGroupEffect abilityeffecttype="OnAnyMissionCompleted">
+        <Conditions>
+          <!-- 检查是否拥有figurehead天赋 -->
+          <AbilityConditionHasTalent identifier="figurehead" />
+        </Conditions>
+        <Abilities>
+          <!-- 如果拥有figurehead天赋，则给予coalitionmedal(联盟勋章) -->
+          <CharacterAbilityPutItem itemidentifier="coalitionmedal" amount="2" />
+        </Abilities>
+        <FallbackAbilities>
+          <!-- 如果没有figurehead天赋，则给予coalitioncommendation(联盟奖章) -->
+          <CharacterAbilityPutItem itemidentifier="coalitioncommendation" amount="2" />
+        </FallbackAbilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 威望 -->
+    <Talent identifier="yourreputationnew">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,6" sheetelementsize="128,128" />
+      <!-- 文本：你可以多选择一个任务。 -->
+      <Description tag="talentdescription.extramission" />
+      <!-- 文本：船员的声望获取量提升 50%。 -->
+      <Description tag="talentdescription.increasereputationgains">
+        <Replace tag="[value]" value="50" color="gui.green" />
+      </Description>
+      <!-- 文本：每当你进入拥有声望的新前哨，就会得到500马克，城市翻倍。 -->
+      <Description tag="talentdescription.yourreputationnew">
+        <Replace tag="[amount]" value="500" color="gui.green" />
+      </Description>
+      <!-- 效果：增加 1 任务选择数量和 50% 声望获取 -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="ExtraMissionCount" value="1" />
+          <CharacterAbilityGiveStat stattype="ReputationGainMultiplier" value="0.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 效果：进入拥有声望的新前哨时获得马克 -->
+      <AbilityGroupEffect abilityeffecttype="OnLocationDiscovered">
+        <Conditions>
+          <AbilityConditionLocation hasoutpost="true" ispositivereputation="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveMoney amount="500" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 效果：进入拥有声望的新城市前哨时获得马克（城市翻倍） -->
+      <AbilityGroupEffect abilityeffecttype="OnLocationDiscovered">
+        <Conditions>
+          <AbilityConditionLocation hasoutpost="true" ispositivereputation="true" locationtype="City" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveMoney amount="500" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 盟约：完成任务没人死亡，全队任务经验+30％，血量+5％ -->
+    <Talent identifier="affiliation">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,4" sheetelementsize="128,128" />
+      <!-- 文本：完成附属阵营任务的马克奖励提高20% -->
+      <Description tag="talentdescription.affiliationbenefit">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+      </Description>
+      <!-- 文本：每当你完成任务而没有任何船员死亡，你的船员就会获得额外30%经验，并增加5%的最大生命，上限为30%的最大生命。 -->
+      <Description tag="talentdescription.affiliationnew">
+        <Replace tag="[extraexperience]" value="30" color="gui.green" />
+        <Replace tag="[largegain]" value="5" color="gui.green" />
+        <Replace tag="[maxgain]" value="30" color="gui.green" />
+      </Description>
+      <!-- 文本：助手的死亡不计算在内。 -->
+      <Description tag="talentdescription.assistantsdontcount" />
+      <!-- 文本：附属阵营：你声望最高的阵营。 -->
+      <Description tag="talentdescription.affiliationfactionreminder" />
+      <!-- 效果：附属阵营任务提高20%马克 -->
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionMoney">
+        <Conditions>
+          <AbilityConditionMission isaffiliated="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyValue="1.2" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 效果：完成任务且无人死亡时获得额外经验与生命值 -->
+      <AbilityGroupEffect abilityeffecttype="OnAllyGainMissionExperience">
+        <Conditions>
+          <AbilityConditionNoCrewDied />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.3" />
+          <CharacterAbilityGivePermanentStat statidentifier="trustbuilding" stattype="MaximumHealthMultiplier" value="0.05" maxvalue="0.30" targetallies="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 特别收藏 -->
+    <Talent identifier="campaigningnew">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,4" sheetelementsize="128,128" />
+      <!-- 文本：你可以多选择一个任务。 -->
+      <Description tag="talentdescription.extramission" />
+      <!-- 文本：每当你第一次打开沉船中的容器时，你有5%的概率找到一把特殊武器。你可以通过重新制造，将特殊武器的质量提升到大师并且赋予特殊效果。 -->
+      <Description tag="talentdescription.uniquestrengthen">
+        <Replace tag="[probability]" value="5" color="gui.green" />
+      </Description>
+      <!-- 效果：制造的特殊武器质量提升3 -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="ExtraMissionCount" value="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="unique" stattype="IncreaseFabricationQuality" value="3" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 效果：打开沉船容器时5%概率找到特殊武器 -->
+      <AbilityGroupEffect abilityeffecttype="OnOpenItemContainer">
+        <Conditions>
+          <AbilityConditionItemInSubmarine submarinetype="Wreck" />
+          <AbilityConditionItem tags="container" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilitySpawnItemsToContainer randomchance="0.05" oncepercontainer="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="UseTarget" spawnitemrandomly="true">
+                <SpawnItem identifiers="shotgununique" spawnposition="ThisInventory" spawnifcantbecontained="false" />
+                <SpawnItem identifiers="divingknifeunique" spawnposition="ThisInventory" spawnifcantbecontained="false" />
+                <SpawnItem identifiers="smgunique" spawnposition="ThisInventory" spawnifcantbecontained="false" />
+                <SpawnItem identifiers="spearunique" spawnposition="ThisInventory" spawnifcantbecontained="false" />
+                <SpawnItem identifiers="flamerunique" spawnposition="ThisInventory" spawnifcantbecontained="false" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilitySpawnItemsToContainer>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 解锁强化配方 -->
+      <AddedRecipe itemidentifier="shotgununique" />
+      <AddedRecipe itemidentifier="divingknifeunique" />
+      <AddedRecipe itemidentifier="smgunique" />
+      <AddedRecipe itemidentifier="spearunique" />
+      <AddedRecipe itemidentifier="flamerunique" />
+    </Talent>
+    <!-- 人脉 -->
+    <Talent identifier="networking">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,2" sheetelementsize="128,128" />
+      <!-- 文本：附属阵营的船厂在升级和购买潜艇时提供20%的折扣。 -->
+      <Description tag="talentdescription.campaigning">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+      </Description>
+      <!-- 文本：附属阵营的商店提供20%折扣。对于派系独占物品，折扣翻倍。 -->
+      <Description tag="talentdescription.networking">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+      </Description>
+      <!-- 文本：附属阵营：你声望最高的阵营。 -->
+      <Description tag="talentdescription.affiliationfactionreminder" />
+      <!-- 效果：提供20%的折扣。 -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="campaigning" stattype="ShipyardBuyMultiplierAffiliated" value="0.2" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="all~networking" stattype="StoreBuyMultiplierAffiliated" value="0.2" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="coalition" stattype="StoreBuyMultiplierAffiliated" value="0.2" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="clowns" stattype="StoreBuyMultiplierAffiliated" value="0.2" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="huskcult" stattype="StoreBuyMultiplierAffiliated" value="0.2" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="separatists" stattype="StoreBuyMultiplierAffiliated" value="0.2" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- 领袖人物 -->
+    <Talent identifier="figurehead">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,4" sheetelementsize="128,128" />
+      <!-- 文本：所有附属阵营前哨站的服务都有20%的折扣。 -->
+      <Description tag="talentdescription.factiondiscount">
+        <Replace tag="[discount]" value="20" color="gui.green" />
+      </Description>
+      <!-- 文本：替换联盟勋章为联盟奖章，当你对其他角色使用联盟勋章时，同时给予自己和对方550经验。如果该角色的等级低于5，则提升到5级。 -->
+      <Description tag="talentdescription.figureheadnew">
+        <Replace tag="[itemname1]" value="entityname.coalitioncommendation" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.coalitionmedal" color="gui.orange" />
+        <Replace tag="[selfxpgain]" value="550" color="gui.green" />
+        <Replace tag="[level]" value="5" color="gui.green" />
+      </Description>
+      <!-- 文本：如果你在你的潜艇上，并且已经进水80%，你会保持完全清醒的状态，至少持续15秒。 -->
+      <Description tag="talentdescription.factiondiscountnew">
+        <Replace tag="[flooded]" value="80" color="gui.green" />
+        <Replace tag="[duration]" value="15" color="gui.green" />
+      </Description>
+      <!-- 效果：提供20%的折扣。 -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="all~figurehead" stattype="StoreBuyMultiplierAffiliated" value="0.2" targetallies="true" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="all~figurehead" stattype="ShipyardBuyMultiplierAffiliated" value="0.2" targetallies="true" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 效果：使用联盟勋章时，给予自己和对方经验。 -->
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData itemidentifier="coalitionmedal" />
+        </Conditions>
+        <Abilities>
+          <!-- 等级提升到5级 -->
+          <CharacterAbilityGiveExperience level="5" />
+          <!-- 给予经验 -->
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This">
+                <GiveExperience amount="550" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 效果：潜艇淹没80%时保持清醒 -->
+      <AbilityGroupInterval interval="1">
+        <Conditions>
+          <AbilityConditionShipFlooded floodpercentage="0.8" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="figureheadnew" amount="15.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+  </Talents>
+</override>

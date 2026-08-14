@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <Override>
+    <!-- 机动回避：该角色掌舵水平暂时提升。 -->
+    <Affliction identifier="evasivemaneuvers" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="1" duration="5" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1">
+        <StatValue stattype="HelmSkillOverride" value="100" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="5,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 怒海金兰：获得额外的经验加成以及物理伤害抗性。 -->
+    <Affliction identifier="camaraderie" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="1" duration="1" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" resistancefor="damage" minresistance="0.05" maxresistance="0.05" />
+      <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="3,3" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 与舰休戚：拒绝弃船，并愿意做任何事情来保住这艘舰船。 -->
+    <Affliction identifier="downwiththeship" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="1" maxstrength="60" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="60" strengthchange="-1.0">
+        <StatValue stattype="RepairToolStructureRepairMultiplier" value="0.5" />
+        <!-- +50% -->
+        <StatValue stattype="SwimmingSpeed" value="0.5" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 稳稳当当-演奏口琴计时Affliction(不显示) -->
+    <Affliction identifier="steadytune_charging" nameidentifier="talentname.steadytune" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="12" duration="12" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="12" strengthchange="-1" />
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="5,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 稳稳当当-精神病抗性Affliction(不显示) -->
+    <Affliction identifier="psychosisimmunity" translationoverride="psychosisresistance" type="immunity" isbuff="true" limbspecific="false" indicatorlimb="Head" maxstrength="60" affectmachines="false">
+      <Effect minstrength="0" maxstrength="60" strengthchange="-1" resistancefor="psychosis" minresistance="1.0" maxresistance="1.0" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,896,128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 快枪手：该角色已准备好随时拔枪。 -->
+    <Affliction identifier="quickdrawing" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="4" maxstrength="8" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="8" strengthchange="0" />
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 孤狼：孤身一人使你更加强大。没有别人的干扰时你的能力会得到加强。 -->
+    <Affliction identifier="lonewolf" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="0" maxstrength="3" duration="1" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Description textidentifier="afflictiondescription.lonewolf.low" minstrength="0" maxstrength="1" />
+      <Description textidentifier="afflictiondescription.lonewolf.high" minstrength="2" maxstrength="3" />
+      <Effect minstrength="0" maxstrength="1" resistancefor="damage,stun" minresistance="0.2" maxresistance="0.2">
+        <StatValue stattype="MeleeAttackMultiplier" value="0.2" />
+      </Effect>
+      <Effect minstrength="2" maxstrength="3" resistancefor="damage,stun" minresistance="0.4" maxresistance="0.4">
+        <StatValue stattype="MeleeAttackMultiplier" value="0.4" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="2,1" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 副手：你的队长信任你，在他们不在的情况下，你会照顾好这个分队。你不会让他们失望的。 -->
+    <Affliction identifier="deputy" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="1" maxstrength="1" duration="1" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1">
+        <StatValue stattype="HelmSkillBonus" value="20" />
+        <StatValue stattype="WeaponsSkillBonus" value="20" />
+        <StatValue stattype="WeaponsSkillGainSpeed" value="1" />
+        <StatValue stattype="HelmSkillGainSpeed" value="1" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="3,1" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 醉汉水手-醉酒Buff（不显示） -->
+    <Affliction identifier="drunknodebuffs" type="debuff" translationoverride="drunk" limbspecific="false" indicatorlimb="Head" activationthreshold="20" maxstrength="100" affectmachines="false">
+      <Effect minstrength="0" maxstrength="20" strengthchange="-0.1" />
+      <Effect minstrength="20" maxstrength="40" minscreendistort="0" maxscreendistort="0.1" strengthchange="-0.1" minfacetint="255,0,0,0" maxfacetint="255,0,0,50"></Effect>
+      <Effect minstrength="40" maxstrength="80" minscreendistort="0.1" maxscreendistort="1.0" minscreenblur="0.1" maxscreenblur="0.5" strengthchange="-0.2" minradialdistort="0.0" maxradialdistort="2.0" dialogflag="DrunkMedium" minfacetint="255,0,0,50" maxfacetint="255,0,0,100"></Effect>
+      <Effect minstrength="80" maxstrength="100" minscreendistort="1.0" maxscreendistort="3.0" minscreenblur="0.5" maxscreenblur="1.0" strengthchange="-0.2" minradialdistort="2.0" maxradialdistort="3.0" dialogflag="DrunkHigh" minfacetint="255,0,0,150" maxfacetint="255,0,0,150"></Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="384,640,128,128" color="170,194,147,255" origin="0,0" />
+    </Affliction>
+    <!-- 高涨士气：你的舰长以身作则。你感到自信和精力充沛。 -->
+    <Affliction identifier="highmorale" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="1" maxstrength="1" duration="1" showbarinhealthmenu="false" treatmentthreshold="1000" iconcolors="227,247,249">
+      <Effect minstrength="0" maxstrength="1">
+        <StatValue stattype="RepairSpeed" value="0.2" />
+        <StatValue stattype="RepairToolStructureRepairMultiplier" value="0.2" />
+        <StatValue stattype="MovementSpeed" value="0.05" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="4,1" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 亢进士气：这个船员对你来说就像一个家庭。没有人敢招惹你的潜艇小家庭。 -->
+    <Affliction identifier="excellentmorale" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="1" maxstrength="1" duration="1" treatmentthreshold="1000" showbarinhealthmenu="false" iconcolors="227,247,249">
+      <Effect minstrength="0" maxstrength="1">
+        <StatValue stattype="RepairSpeed" value="0.4" />
+        <StatValue stattype="RepairToolStructureRepairMultiplier" value="0.4" />
+        <StatValue stattype="MovementSpeed" value="0.1" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="5,1" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 注意我：船长的存在使你急于表现。 -->
+    <Affliction identifier="inspiringpresence" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="1" maxstrength="1" duration="1" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1">
+        <StatValue stattype="ExtraLevelGain" value="2" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="6,1" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 鼓舞人心-步行速度加成(不显示) -->
+    <Affliction identifier="inspiringpresence_walkspeed" nameidentifier="talentname.inspiringpresence" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="1" duration="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1">
+        <StatValue stattype="WalkingSpeed" value="0.05" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="2,3" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 涓涓细流-游泳速度加成(不显示) -->
+    <Affliction identifier="trickledown" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="1" duration="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1">
+        <StatValue stattype="SwimmingSpeed" value="0.1" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <!-- 与舰同在：不惜一切代价来保住这艘舰船。 -->
+  <Affliction identifier="figureheadnew" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="1" maxstrength="15" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="1" strengthchange="-1">
+      <AbilityFlag flagtype="AlwaysStayConscious" />
+    </Effect>
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+</Afflictions>

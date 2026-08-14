@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <TalentTrees>
     <TalentTree jobidentifier="surgeon">
@@ -195,6 +195,73 @@
         </TalentOptions>
         <TalentOptions>
           <TalentOption identifier="macrodosing" />
+        </TalentOptions>
+      </SubTree>
+    </TalentTree>
+<!-- 船长天赋树 -->
+    <TalentTree jobidentifier="captain">
+      <SubTree identifier="captain_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="1" maxchosentalents="6">
+          <TalentOption identifier="bountyhunter" />
+          <TalentOption identifier="logisticsexpert" />
+          <TalentOption identifier="handsomestranger" />
+          <TalentOption identifier="inspirationalleader" />
+          <TalentOption identifier="veteran" />
+          <TalentOption identifier="travelingtradesman" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="6">
+          <TalentOption identifier="emergencymaneuvers" />
+          <TalentOption identifier="sailorwithnoname" />
+          <TalentOption identifier="camaraderie" />
+          <TalentOption identifier="downwiththeship" />
+          <TalentOption identifier="gunsmith" />
+          <TalentOption identifier="steadytune" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="gunslinger" type="specialization" requires="captain_primary">
+        <TalentOptions>
+          <TalentOption identifier="quickdraw" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="lonewolf" />
+          <TalentOption identifier="deputy" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="drunkensailor" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="bigguns" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="skipper" type="specialization" requires="captain_primary">
+        <TalentOptions>
+          <TalentOption identifier="leadingbyexample" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="helmsman" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="inspiringpresence" />
+          <TalentOption identifier="trickledown" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="family" />
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="politician" type="specialization" requires="captain_primary">
+        <TalentOptions>
+          <TalentOption identifier="commendations" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="yourreputationnew" />
+          <TalentOption identifier="affiliation" />
+        </TalentOptions>
+        <TalentOptions requiredtalents="1" maxchosentalents="2">
+          <TalentOption identifier="campaigningnew" />
+          <TalentOption identifier="networking" />
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="figurehead" />
         </TalentOptions>
       </SubTree>
     </TalentTree>

@@ -20,4 +20,19 @@
   <afflictiondescription.tesp_implacable>濒死挣扎</afflictiondescription.tesp_implacable>
   <afflictionname.tesp_lastwave>最后的波纹</afflictionname.tesp_lastwave>
   <afflictiondescription.tesp_lastwave>强行续命的代价：最大生命值-20%，只能在站点医生处治疗。</afflictiondescription.tesp_lastwave>
+  <afflictiondescription.lonewolf.high>‖color:gui.orange‖孤身一人‖end‖，提高‖color:gui.green‖40%‖end‖ ‖color:gui.orange‖物理伤害抗性‖end‖、‖color:gui.orange‖晕眩抗性‖end‖、‖color:gui.orange‖近战伤害‖end‖</afflictiondescription.lonewolf.high>
+  <afflictiondescription.lonewolf.low>‖color:gui.orange‖船员在侧‖end‖，提高‖color:gui.green‖20%‖end‖ ‖color:gui.orange‖物理伤害抗性‖end‖、‖color:gui.orange‖晕眩抗性‖end‖、‖color:gui.orange‖近战伤害‖end‖</afflictiondescription.lonewolf.low>
+  <talentdescription.affiliationnew>每当你完成任务而没有任何船员死亡，你的船员就会获得额外[extraexperience]%经验，并增加[largegain]%的最大生命，上限为[maxgain]%的最大生命。</talentdescription.affiliationnew>
+  <talentdescription.bountyhunter>你或其他盟友击杀怪物后，额外获得该怪物生命值上限[percentage]%的马克奖励。</talentdescription.bountyhunter>
+  <talentdescription.commendationsnew>每当你完成至少一个任务，就会获得[num]个[itemname]。当你对其他角色使用[itemname]时，会给他们[selfxpgain]经验。</talentdescription.commendationsnew>
+  <talentdescription.crafthighqualitypistolitem>你制造的手枪质量提升[qualitybonus]。</talentdescription.crafthighqualitypistolitem>
+  <talentdescription.deputynew>‖color:gui.orange‖你‖end‖和附近[num]米内的‖color:gui.orange‖助手‖end‖获得[skillbonus] ‖color:gui.orange‖驾驶‖end‖、‖color:gui.orange‖武器‖end‖技能增益，并且这两项技能升级速度加倍。</talentdescription.deputynew>
+  <talentdescription.drunkensailor>醉酒时获得[stunresistance]%晕眩抗性，大幅降低醉酒带来的屏幕效果，并且免疫醉酒的以下负面效果：\n‖color:gui.orange‖醉酒伤害‖end‖\n‖color:gui.orange‖醉酒减速‖end‖\n‖color:gui.orange‖醉汉步态‖end‖\n‖color:gui.orange‖醉酒恶心‖end‖</talentdescription.drunkensailor>
+  <talentdescription.factiondiscountnew>如果你在你的潜艇上，并且已经进水[flooded]%，你会保持完全清醒的状态，至少持续[duration]秒。</talentdescription.factiondiscountnew>
+  <talentdescription.figureheadnew>替换[itemname1]为[itemname2]，当你对其他角色使用[itemname2]时，同时给予自己和对方[selfxpgain]经验。如果该角色的等级低于[level]，则提升到[level]级。</talentdescription.figureheadnew>
+  <talentdescription.lonewolfnew>获得以下效果，如果附近[num]米内没有其他船员则效果翻倍：</talentdescription.lonewolfnew>
+  <talentdescription.quickdrawnew>每经过[seconds]秒，下一次手枪造成的伤害提升[damage]%，最多触发[num]次。</talentdescription.quickdrawnew>
+  <talentdescription.truckernew>每次你在巡回中完成所有任务后，会获得[skillamount]点驾驶技能奖励。</talentdescription.truckernew>
+  <talentdescription.uniquestrengthen>每当你第一次打开沉船中的容器时，你有[probability]%的概率找到一把特殊武器。\n你可以通过重新制造，将特殊武器的质量提升到‖color:gui.itemqualitycolormasterwork‖大师‖end‖并且赋予特殊效果。</talentdescription.uniquestrengthen>
+  <talentdescription.yourreputationnew>每当你进入拥有声望的新前哨，就会得到[amount]马克，城市翻倍。</talentdescription.yourreputationnew>
 </infotexts>

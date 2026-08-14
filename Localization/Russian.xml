@@ -20,4 +20,16 @@
   <afflictiondescription.tesp_implacable>Борьба на грани</afflictiondescription.tesp_implacable>
   <afflictionname.tesp_lastwave>Последняя волна</afflictionname.tesp_lastwave>
   <afflictiondescription.tesp_lastwave>Цена выживания: макс. здоровье -20%. Лечится только в медклинике.</afflictiondescription.tesp_lastwave>
+  <talentdescription.affiliationnew>Всякий раз, когда вы выполняете миссию без потерей среди экипажа, матросы получают дополнительно [extraexperience]% опыта и [largegain]% дополнительного запаса здоровья, ограниченного [maxgain]%</talentdescription.affiliationnew>
+  <talentdescription.bountyhunter>Когда вы или кто-то из вашей команды убивает монстра, команда получает дополнительные кредиты в размере [percentage]% от максимального здоровья монстра.</talentdescription.bountyhunter>
+  <talentdescription.commendationsnew>Каждый раз, когда вы выполняете хотя бы одно задание, вы получаете [num] [itemname]. Когда вы используете [itemname] на других персонажах, это дает им [selfxpgain] опыта.</talentdescription.commendationsnew>
+  <talentdescription.crafthighqualitypistolitem>Созданный вами Револьвер будет на [qualitybonus] выше качеством.</talentdescription.crafthighqualitypistolitem>
+  <talentdescription.deputynew>‖color:gui.orange‖Вы‖end‖ и ближайшие ‖color:gui.orange‖помощники‖end‖ в пределах [num] метров получаете навыки [skillbonus] ‖color:gui.orange‖Управление‖end‖ и [skillbonus] ‖color:gui.orange‖Оружие‖end‖, а скорость улучшения этих навыков удваивается.</talentdescription.deputynew>
+  <talentdescription.factiondiscountnew>Если вы находитесь на своей подводной лодке, которая на [flooded]% затоплена, вы остаетесь в полном сознании в течение [duration] секунд.</talentdescription.factiondiscountnew>
+  <talentdescription.figureheadnew>[itemname1] заменяются на [itemname2]; когда вы используете [itemname2] на других персонажах, и вы, и он получите [selfxpgain] опыта. Если его уровень ниже [level], он повышается до [level].</talentdescription.figureheadnew>
+  <talentdescription.lonewolfnew>Вы получаете следующие эффекты, которые удваиваются, если в радиусе [num] метров поблизости нет других членов экипажа:</talentdescription.lonewolfnew>
+  <talentdescription.quickdrawnew>Если вы применяли Револьвер более [seconds] назад, ваш следующий выстрел из Револьвера нанесет на [damage]% больше урона до [num] раз подряд.</talentdescription.quickdrawnew>
+  <talentdescription.truckernew>Получите бонус в размере [skillamount] к навыку управления, если выполните все миссии.</talentdescription.truckernew>
+  <talentdescription.uniquestrengthen>Всякий раз, когда вы впервые открываете контейнер на затонувшем корабле, у вас есть [probability]% шанс найти особое оружие. \nПутем переделки специальное оружие может быть улучшено до ‖color:gui.itemqualitycolormasterwork‖(Превосходное качество)‖end‖ и наделено особыми эффектами.</talentdescription.uniquestrengthen>
+  <talentdescription.yourreputationnew>При входе в новый аванпост, с которым у вас положительная репутация, получите [amount] кредитов. Удвоено для городов.</talentdescription.yourreputationnew>
 </infotexts>
