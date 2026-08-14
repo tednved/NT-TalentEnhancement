@@ -267,8 +267,33 @@ local function WrapWrench()
     wrenchWrapped = true
 end
 
+-- ============================================================
+-- 身强体壮（buff）：骨折概率 -50%（NT anyfracturechance 乘数）
+-- NTC.AddHumanUpdateHook 在 NT 每次更新清空乘数后运行（约每 2 秒一次），
+-- 此时 SetMultiplier(0.5) 会从 1 稳定乘到 0.5，避免每帧累积。
+-- ============================================================
+local ntcHookRegistered = false
+local function TryRegisterNTC()
+    if ntcHookRegistered then return end
+    local addHumanUpdateHook = GetFunction(NTC, "AddHumanUpdateHook")
+    local setMultiplier = GetFunction(NTC, "SetMultiplier")
+    if addHumanUpdateHook == nil or setMultiplier == nil then return end
+
+    local ok, err = pcall(addHumanUpdateHook, function(character)
+        InvokeSafely("NTC.humanUpdate", function()
+            if character ~= nil and HasTalentSafe(character, "buff") then
+                InvokeSafely("NTC.SetMultiplier", setMultiplier, character, "anyfracturechance", 0.5)
+            end
+        end)
+    end)
+    if ok then
+        ntcHookRegistered = true
+    else
+        WarnRuntimeError("NTC.AddHumanUpdateHook", err)
+    end
+end
+
 local function UpdateLastStand()
-    TryRegisterNTC() -- Retry until NTC has finished loading.
     WrapWrench() -- Retry until NT has finished loading.
     if not HasHealthFramework() then
         if not missingHealthFrameworkWarningShown then
@@ -317,34 +342,10 @@ local function UpdateLastStand()
 end
 
 Hook.Add("think", "tesp.laststand", function()
+    TryRegisterNTC() -- Retry until NTC has finished loading（此处 TryRegisterNTC 已定义，见下方身强体壮区块）
     InvokeSafely("laststand.think", UpdateLastStand)
 end)
 
--- ============================================================
--- 身强体壮（buff）：骨折概率 -50%（NT anyfracturechance 乘数）
--- NTC.AddHumanUpdateHook 在 NT 每次更新清空乘数后运行（约每 2 秒一次），
--- 此时 SetMultiplier(0.5) 会从 1 稳定乘到 0.5，避免每帧累积。
--- ============================================================
-local ntcHookRegistered = false
-local function TryRegisterNTC()
-    if ntcHookRegistered then return end
-    local addHumanUpdateHook = GetFunction(NTC, "AddHumanUpdateHook")
-    local setMultiplier = GetFunction(NTC, "SetMultiplier")
-    if addHumanUpdateHook == nil or setMultiplier == nil then return end
-
-    local ok, err = pcall(addHumanUpdateHook, function(character)
-        InvokeSafely("NTC.humanUpdate", function()
-            if character ~= nil and HasTalentSafe(character, "buff") then
-                InvokeSafely("NTC.SetMultiplier", setMultiplier, character, "anyfracturechance", 0.5)
-            end
-        end)
-    end)
-    if ok then
-        ntcHookRegistered = true
-    else
-        WarnRuntimeError("NTC.AddHumanUpdateHook", err)
-    end
-end
 
 -- ============================================================
 -- 老水手（crustyseaman）：受击后 10 秒内每秒修复 2 点普通出血（冷却 60 秒）
