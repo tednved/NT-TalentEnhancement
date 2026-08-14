@@ -21,7 +21,7 @@
         <TalentOptions>
           <TalentOption identifier="ntsp_underpressure" />
         </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="2">
+        <TalentOptions requiredtalents="1" maxchosentalents="1">
           <TalentOption identifier="tesp_laststand" />
         </TalentOptions>
         <TalentOptions requiredtalents="1" maxchosentalents="2">
