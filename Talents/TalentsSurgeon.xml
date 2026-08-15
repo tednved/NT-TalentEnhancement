@@ -18,8 +18,16 @@
       </AbilityGroupEffect>
     </Talent>
     <!-- Field surgeon -->
-    <!-- 我是一个医生！而不是...（N选一，ShowCaseTalent 外壳 identifier="ntsp_imadoctornota"，见 TalentTrees.xml）：
-         6 个选项：医疗/机械/电气/武器/舵手 各 +50（单选）；全面发展 = 5 技能各 +10。
+    <!-- 我是一个医生！而不是...（N选一，ShowCaseTalent 外壳：必须有此定义游戏才显示外壳） -->
+    <Talent identifier="ntsp_imadoctornota">
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.tesp_imadoctornota_base">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+        <Replace tag="[allamount]" value="10" color="gui.green" />
+        <Replace tag="[skillpercentage]" value="30" color="gui.green" />
+      </Description>
+    </Talent>
+    <!-- 6 个选项：医疗/机械/电气/武器/舵手 各 +50（单选）；全面发展 = 5 技能各 +10。
          所有选项均带：外科技能 30% 的设计（制造）速度 + 近战/远程攻击速度加成。 -->
     <Talent identifier="tesp_imadoctornota_medical">
       <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />

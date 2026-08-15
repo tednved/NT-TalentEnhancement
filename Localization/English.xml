@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
   <!-- TALENTS -->
+  <talentdescription.tesp_imadoctornota_base>Choose a specialization: +[amount] in one skill, or Well-Rounded (+[allamount] in all skills). Either way, gain fabrication speed, melee and ranged attack speed equal to [skillpercentage]% of your surgery skill.</talentdescription.tesp_imadoctornota_base>
   <talentname.tesp_imadoctornota_medical>Medical Specialization</talentname.tesp_imadoctornota_medical>
   <talentname.tesp_imadoctornota_mechanical>Mechanical Specialization</talentname.tesp_imadoctornota_mechanical>
   <talentname.tesp_imadoctornota_electrical>Electrical Specialization</talentname.tesp_imadoctornota_electrical>

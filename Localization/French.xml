@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="French" nowhitespace="true" translatedname="French">
   <!-- TALENTS -->
+  <talentdescription.tesp_imadoctornota_base>Choisissez une spécialisation : +[amount] dans une compétence, ou Polyvalent (+[allamount] dans toutes). Dans tous les cas, gagnez une vitesse de fabrication, de mêlée et à distance équivalente à [skillpercentage]% de votre compétence de chirurgie.</talentdescription.tesp_imadoctornota_base>
   <talentname.tesp_imadoctornota_medical>Spécialisation médicale</talentname.tesp_imadoctornota_medical>
   <talentname.tesp_imadoctornota_mechanical>Spécialisation mécanique</talentname.tesp_imadoctornota_mechanical>
   <talentname.tesp_imadoctornota_electrical>Spécialisation électrique</talentname.tesp_imadoctornota_electrical>

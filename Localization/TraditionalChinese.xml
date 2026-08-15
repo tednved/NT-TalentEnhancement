@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Traditional Chinese" nowhitespace="true" translatedname="中文(繁體)">
   <!-- TALENTS -->
+  <talentdescription.tesp_imadoctornota_base>選擇一項專精：單項技能 +[amount]，或全面發展（全部技能各 +[allamount]）。無論怎麼選，都獲得相當於外科技能 [skillpercentage]% 的設計速度與近戰/遠程攻擊速度加成。</talentdescription.tesp_imadoctornota_base>
   <talentname.tesp_imadoctornota_medical>醫療專精</talentname.tesp_imadoctornota_medical>
   <talentname.tesp_imadoctornota_mechanical>機械專精</talentname.tesp_imadoctornota_mechanical>
   <talentname.tesp_imadoctornota_electrical>電氣專精</talentname.tesp_imadoctornota_electrical>

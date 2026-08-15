@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Russian" nowhitespace="false" translatedname="Русский">
   <!-- TALENTS -->
+  <talentdescription.tesp_imadoctornota_base>Выберите специализацию: +[amount] к одному навыку или «Разносторонний» (+[allamount] ко всем навыкам). В любом случае получите скорость создания, ближнего и дальнего боя, равную [skillpercentage]% вашего навыка хирургии.</talentdescription.tesp_imadoctornota_base>
   <talentname.tesp_imadoctornota_medical>Медицинская специализация</talentname.tesp_imadoctornota_medical>
   <talentname.tesp_imadoctornota_mechanical>Механическая специализация</talentname.tesp_imadoctornota_mechanical>
   <talentname.tesp_imadoctornota_electrical>Электрическая специализация</talentname.tesp_imadoctornota_electrical>
