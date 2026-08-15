@@ -27,6 +27,7 @@
   <afflictiondescription.tesp_inspiringpresence>La présence du capitaine vous inspire : -25% de choc traumatique, -50% de neurotraumatisme.</afflictiondescription.tesp_inspiringpresence>
   <talentdescription.tesp_quickdraw_order>Le dernier membre d'équipage à qui vous avez donné un ordre gagne une marque : +[amount]% de cadence de tir à distance, +[damage]% de dégâts, jusqu'à ce que vous ordonniez à quelqu'un d'autre.</talentdescription.tesp_quickdraw_order>
   <talentdescription.tesp_inspiringpresence>Tant que vous êtes en vie, tout l'équipage gagne -[traumashock]% de choc traumatique et -[neurotrauma]% de neurotraumatisme.</talentdescription.tesp_inspiringpresence>
+  <talentdescription.tesp_leadingbyexample_extra>Le moral élevé accordé à l'équipage fournit également : +[resistance]% de résistance aux dégâts physiques, -[fracture]% de risque de fracture.</talentdescription.tesp_leadingbyexample_extra>
   <afflictiondescription.tesp_laststand>Conscience forcée ; tension, rythme cardiaque et perte de sang stabilisés.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Séquelle</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>Le prix de la survie : vie max -15 %. La Course contre la mort ne peut pas se déclencher tant que ce debuff est actif.</afflictiondescription.tesp_laststand_aftermath>

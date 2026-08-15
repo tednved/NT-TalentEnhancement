@@ -27,6 +27,7 @@
   <afflictiondescription.tesp_inspiringpresence>The captain's presence inspires you: -25% traumatic shock, -50% neurotrauma.</afflictiondescription.tesp_inspiringpresence>
   <talentdescription.tesp_quickdraw_order>The last crew member you ordered gains a mark: +[amount]% ranged fire rate, +[damage]% damage, until you order someone else.</talentdescription.tesp_quickdraw_order>
   <talentdescription.tesp_inspiringpresence>While you are alive, all crew gain -[traumashock]% traumatic shock and -[neurotrauma]% neurotrauma.</talentdescription.tesp_inspiringpresence>
+  <talentdescription.tesp_leadingbyexample_extra>The High Morale granted to crew additionally provides: +[resistance]% physical damage resistance, -[fracture]% fracture chance.</talentdescription.tesp_leadingbyexample_extra>
   <afflictiondescription.tesp_laststand>Forced consciousness; blood pressure, heart rate and blood loss are stabilized.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Aftermath of the Surge</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>The price of holding on: max health -15%. Race with Death cannot trigger while this debuff is active.</afflictiondescription.tesp_laststand_aftermath>

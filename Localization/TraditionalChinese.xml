@@ -67,6 +67,7 @@
   <afflictiondescription.tesp_inspiringpresence>艦長的存在鼓舞了你：創傷性休克-25%、精神創傷-50%。</afflictiondescription.tesp_inspiringpresence>
   <talentdescription.tesp_quickdraw_order>你最後一次下達指令的船員獲得標記：遠程射速+[amount]%、傷害+[damage]%，直到你指揮別人。</talentdescription.tesp_quickdraw_order>
   <talentdescription.tesp_inspiringpresence>只要你還活著，全體船員手術中受到的創傷性休克-[traumashock]%，精神創傷-[neurotrauma]%。</talentdescription.tesp_inspiringpresence>
+  <talentdescription.tesp_leadingbyexample_extra>船員獲得的士氣高漲額外提供：物理傷害抗性+[resistance]%、骨折概率-[fracture]%。</talentdescription.tesp_leadingbyexample_extra>
   <afflictiondescription.inspiringpresence>船长的存在使你急于表现，你获得任意‖color:gui.orange‖技能‖end‖时，额外获得‖color:gui.green‖2‖end‖点。</afflictiondescription.inspiringpresence>
   <afflictiondescription.quickdrawing_cs>使用手枪造成的伤害提高‖color:gui.green‖50%‖end‖，可用‖color:gui.green‖[=strength gte 8f ? 2:1]‖end‖次。</afflictiondescription.quickdrawing_cs>
   <afflictiondescription.radiationsicknessresistance>你受到的辐射伤害降低了。</afflictiondescription.radiationsicknessresistance>

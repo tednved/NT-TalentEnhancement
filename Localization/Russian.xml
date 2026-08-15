@@ -27,6 +27,7 @@
   <afflictiondescription.tesp_inspiringpresence>Присутствие капитана воодушевляет вас: -25% к травматическому шоку, -50% к нейротравме.</afflictiondescription.tesp_inspiringpresence>
   <talentdescription.tesp_quickdraw_order>Последний член экипажа, которому вы отдали приказ, получает метку: +[amount]% к скорострельности, +[damage]% к урону, пока вы не отдадите приказ другому.</talentdescription.tesp_quickdraw_order>
   <talentdescription.tesp_inspiringpresence>Пока вы живы, все члены экипажа получают -[traumashock]% к травматическому шоку и -[neurotrauma]% к нейротравме.</talentdescription.tesp_inspiringpresence>
+  <talentdescription.tesp_leadingbyexample_extra>Высокий боевой дух, выдаваемый членам экипажа, дополнительно даёт: +[resistance]% к сопротивлению физическому урону, -[fracture]% к шансу перелома.</talentdescription.tesp_leadingbyexample_extra>
   <afflictiondescription.tesp_laststand>Принудительное сознание; давление, пульс и кровопотеря стабилизированы.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Последствие</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>Цена выживания: макс. здоровье -15%. Пока действует этот дебафф, Гонка со смертью не может сработать.</afflictiondescription.tesp_laststand_aftermath>

@@ -531,6 +531,11 @@
       <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,5" sheetelementsize="128,128" />
       <!-- 文本：只要你还活着，所有船员都会获得士气高涨并获得以下好处： -->
       <Description tag="talentdescription.leadingbyexample" />
+      <!-- 文本：士气高涨额外效果（物理伤害抗性+15%、骨折概率-20%） -->
+      <Description tag="talentdescription.tesp_leadingbyexample_extra">
+        <Replace tag="[resistance]" value="15" color="gui.green" />
+        <Replace tag="[fracture]" value="20" color="gui.green" />
+      </Description>
       <!-- 文本：+20% 修复速度 -->
       <Description tag="talentdescription.additionalstattype">
         <Replace tag="[amount]" value="20" color="gui.green" />

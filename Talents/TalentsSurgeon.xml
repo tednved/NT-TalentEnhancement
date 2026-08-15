@@ -23,7 +23,7 @@
       <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,6" sheetelementsize="128,128" />
       <Description tag="talentdescription.tesp_imadoctornota_base">
         <Replace tag="[amount]" value="50" color="gui.green" />
-        <Replace tag="[allamount]" value="10" color="gui.green" />
+        <Replace tag="[allamount]" value="20" color="gui.green" />
         <Replace tag="[skillpercentage]" value="30" color="gui.green" />
       </Description>
     </Talent>
@@ -142,18 +142,18 @@
     <Talent identifier="tesp_imadoctornota_all">
       <Icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,256,128,128" origin="0.5,0.5" />
       <Description tag="talentdescription.tesp_imadoctornota_all">
-        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[amount]" value="20" color="gui.green" />
       </Description>
       <Description tag="talentdescription.tesp_imadoctornota_surgspeed">
         <Replace tag="[skillpercentage]" value="30" color="gui.green" />
       </Description>
       <AbilityGroupEffect abilityeffecttype="None">
         <Abilities>
-          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="10" />
-          <CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="10" />
-          <CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="10" />
-          <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="10" />
-          <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="10" />
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="20" />
+          <CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="20" />
+          <CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="20" />
+          <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="20" />
+          <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="20" />
         </Abilities>
       </AbilityGroupEffect>
       <AbilityGroupInterval interval="0.5">

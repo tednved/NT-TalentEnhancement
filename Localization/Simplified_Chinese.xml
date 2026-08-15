@@ -2,7 +2,7 @@
 <infotexts language="Simplified Chinese" nowhitespace="true" translatedname="中文(简体)">
   <!-- TALENTS -->
   <talentdescription.downwiththeship>如果你在你的潜艇上，并且已经进水[flooded]%，所有船员的游泳速度提高[swimmingboost]%，并且修复船壳速度提高[repairspeed]%，持续[duration]秒。</talentdescription.downwiththeship>
-  <talentdescription.tesp_imadoctornota_base>选择一项专精：单项技能 +[amount]，或全面发展（全部技能各 +[allamount]）。无论怎么选，都获得相当于外科技能 [skillpercentage]% 的设计速度与近战/远程攻击速度加成。</talentdescription.tesp_imadoctornota_base>
+  <talentdescription.tesp_imadoctornota_base>选择一项专精：单项技能 +[amount]，或全面发展（全部技能各 +[allamount]）。并获得相当于外科技能 [skillpercentage]% 的设计速度与近战/远程攻击速度加成。</talentdescription.tesp_imadoctornota_base>
   <talentname.tesp_imadoctornota_medical>医疗专精</talentname.tesp_imadoctornota_medical>
   <talentname.tesp_imadoctornota_mechanical>机械专精</talentname.tesp_imadoctornota_mechanical>
   <talentname.tesp_imadoctornota_electrical>电气专精</talentname.tesp_imadoctornota_electrical>
@@ -18,21 +18,21 @@
   <talentname.tesp_militarydoping>军用兴奋剂</talentname.tesp_militarydoping>
   <talentdescription.ntsp_preventativepermit>最后一个得到你命令的人以及6米内的友军(包括自身)获得[physicalresistance]%的伤害抗性，并避免其受到致命的打击。</talentdescription.ntsp_preventativepermit>
   <talentname.tesp_laststand>与死神赛跑</talentname.tesp_laststand>
-  <talentdescription.tesp_laststand>一个合格的医生不但要会治疗别人，也应该能治疗自己。濒死时，你会获得 [base] 秒 + 外科技能×[multiplier] 秒的强制清醒。锁血结束后最大生命-15%，只能在站点医生处治疗。</talentdescription.tesp_laststand>
+  <talentdescription.tesp_laststand>濒死时，你会获得一段时间的强制清醒。结束后最大生命-15%，只能在站点医生处治疗。</talentdescription.tesp_laststand>
   <afflictionname.tesp_laststand>与死神赛跑</afflictionname.tesp_laststand>
   <afflictiondescription.tesp_laststand>强制清醒，血压、心率和失血被稳定。</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>爆发后遗症</afflictionname.tesp_laststand_aftermath>
-  <afflictiondescription.tesp_laststand_aftermath>强行续命的代价：最大生命值-15%。有此debuff时与死神赛跑无法生效</afflictiondescription.tesp_laststand_aftermath>
+  <afflictiondescription.tesp_laststand_aftermath>强行续命的代价：最大生命值-15%。</afflictiondescription.tesp_laststand_aftermath>
   <talentdescription.tesp_firstaidtraining>手术中受到的创伤性休克减少[traumashockresistance]%，对精神创伤的抗性提高[neurotraumaresistance]%。</talentdescription.tesp_firstaidtraining>
   <talentdescription.tesp_buff>受到的钝器伤害减少[bluntresistance]%，全身骨折的出现概率降低[fracturechance]%。</talentdescription.tesp_buff>
   <talentdescription.tesp_crustyseaman>受到攻击后的[duration]秒内，以每秒[bleedheal]点的速度修复身上各肢体的普通出血。</talentdescription.tesp_crustyseaman>
-  <talentdescription.tesp_implacable>当你的生命值低于0时，获得[base]+武器技能×[multiplier]秒的挣扎时间：快速治疗普通伤害、强制清醒、攻击力+25%、不会因伤害致死。</talentdescription.tesp_implacable>
+  <talentdescription.tesp_implacable>濒死时，你将做最后一博：治疗断肢和骨折、强制清醒、攻击力+25%、不会因伤害致死。</talentdescription.tesp_implacable>
   <talentdescription.tesp_implacable_amputate>触发时治愈身上的断肢、骨折和脱臼；持续期间不会新增断肢、骨折或脱臼。</talentdescription.tesp_implacable_amputate>
-  <talentdescription.tesp_lastwave>结束后最大生命-20%，只能在站点医生处治疗，并短暂晕眩；有此debuff时破釜沉舟无法生效</talentdescription.tesp_lastwave>
+  <talentdescription.tesp_lastwave>结束后最大生命-20%，只能在站点医生处治疗。</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>破釜沉舟</afflictionname.tesp_implacable>
   <afflictiondescription.tesp_implacable>濒死挣扎</afflictiondescription.tesp_implacable>
   <afflictionname.tesp_lastwave>最后的波纹</afflictionname.tesp_lastwave>
-  <afflictiondescription.tesp_lastwave>强行续命的代价：最大生命值-20%，只能在站点医生处治疗。</afflictiondescription.tesp_lastwave>
+  <afflictiondescription.tesp_lastwave>回光返照后遗症：最大生命值-20%。</afflictiondescription.tesp_lastwave>
   <afflictiondescription.lonewolf.high>‖color:gui.orange‖孤身一人‖end‖，提高‖color:gui.green‖40%‖end‖ ‖color:gui.orange‖物理伤害抗性‖end‖、‖color:gui.orange‖晕眩抗性‖end‖、‖color:gui.orange‖近战伤害‖end‖</afflictiondescription.lonewolf.high>
   <afflictiondescription.lonewolf.low>‖color:gui.orange‖船员在侧‖end‖，提高‖color:gui.green‖20%‖end‖ ‖color:gui.orange‖物理伤害抗性‖end‖、‖color:gui.orange‖晕眩抗性‖end‖、‖color:gui.orange‖近战伤害‖end‖</afflictiondescription.lonewolf.low>
   <talentdescription.affiliationnew>每当你完成任务而没有任何船员死亡，你的船员就会获得额外[extraexperience]%经验，并增加[largegain]%的最大生命，上限为[maxgain]%的最大生命。</talentdescription.affiliationnew>
@@ -61,12 +61,13 @@
   <afflictiondescription.figureheadnew>你将‖color:gui.orange‖保持清醒‖end‖，不惜一切代价来保住这艘舰船。</afflictiondescription.figureheadnew>
   <afflictiondescription.figureheadnew_cs>你将在‖color:gui.green‖[=strength]‖end‖秒的时间内‖color:gui.orange‖保持清醒‖end‖，不惜一切代价来保住这艘舰船。</afflictiondescription.figureheadnew_cs>
   <afflictiondescription.highmorale>你的舰长以身作则。你感到自信和精力充沛。已获得以下效果：\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖修复速度‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖船体修复速度‖end‖\n‖color:gui.green‖5%‖end‖‖color:gui.orange‖移动速度‖end‖\n‖color:gui.green‖15%‖end‖‖color:gui.orange‖物理伤害抗性‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖骨折概率降低‖end‖</afflictiondescription.highmorale>
-  <afflictionname.quickdraworder>快枪手指令</afflictionname.quickdraworder>
-  <afflictiondescription.quickdraworder>舰长的最后指令：远程射速+100%、伤害+50%。当舰长指挥其他人后移除。</afflictiondescription.quickdraworder>
+  <afflictionname.quickdraworder>救赎</afflictionname.quickdraworder>
+  <afflictiondescription.quickdraworder>离开这个鬼地方！去做一个顶天立地的人！</afflictiondescription.quickdraworder>
   <afflictionname.tesp_inspiringpresence>鼓舞人心</afflictionname.tesp_inspiringpresence>
   <afflictiondescription.tesp_inspiringpresence>舰长的存在鼓舞了你：创伤性休克-25%、精神创伤-50%。</afflictiondescription.tesp_inspiringpresence>
-  <talentdescription.tesp_quickdraw_order>你最后一次下达指令的船员获得标记：远程射速+[amount]%、伤害+[damage]%，直到你指挥别人。</talentdescription.tesp_quickdraw_order>
+  <talentdescription.tesp_quickdraw_order>最后一个得到你命令的人获得：远程射速+[amount]%、伤害+[damage]%。</talentdescription.tesp_quickdraw_order>
   <talentdescription.tesp_inspiringpresence>只要你还活着，全体船员手术中受到的创伤性休克-[traumashock]%，精神创伤-[neurotrauma]%。</talentdescription.tesp_inspiringpresence>
+  <talentdescription.tesp_leadingbyexample_extra>船员获得的士气高涨额外提供：物理伤害抗性+[resistance]%、骨折概率-[fracture]%。</talentdescription.tesp_leadingbyexample_extra>
   <afflictiondescription.inspiringpresence>船长的存在使你急于表现，你获得任意‖color:gui.orange‖技能‖end‖时，额外获得‖color:gui.green‖2‖end‖点。</afflictiondescription.inspiringpresence>
   <afflictiondescription.quickdrawing_cs>使用手枪造成的伤害提高‖color:gui.green‖50%‖end‖，可用‖color:gui.green‖[=strength gte 8f ? 2:1]‖end‖次。</afflictiondescription.quickdrawing_cs>
   <afflictiondescription.radiationsicknessresistance>你受到的辐射伤害降低了。</afflictiondescription.radiationsicknessresistance>

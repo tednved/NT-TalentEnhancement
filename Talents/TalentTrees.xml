@@ -4,19 +4,19 @@
     <!-- 船长天赋树 -->
     <TalentTree jobidentifier="captain">
       <SubTree identifier="captain_primary" nameidentifier="talenttree.primary" type="primary">
-        <TalentOptions requiredtalents="1" maxchosentalents="6">
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
           <TalentOption identifier="bountyhunter" />
           <TalentOption identifier="logisticsexpert" />
           <TalentOption identifier="handsomestranger" />
           <TalentOption identifier="inspirationalleader" />
           <TalentOption identifier="veteran" />
-          <TalentOption identifier="travelingtradesman" />
         </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="4">
+        <TalentOptions requiredtalents="1" maxchosentalents="5">
           <TalentOption identifier="emergencymaneuvers" />
           <TalentOption identifier="camaraderie" />
           <TalentOption identifier="downwiththeship" />
           <TalentOption identifier="gunsmith" />
+          <TalentOption identifier="travelingtradesman" />
         </TalentOptions>
       </SubTree>
       <SubTree identifier="gunslinger" type="specialization" requires="captain_primary">
