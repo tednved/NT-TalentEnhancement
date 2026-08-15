@@ -103,17 +103,6 @@
         </Abilities>
       </AbilityGroupInterval>
     </Talent>
-    <!-- 非专业专家：手术加速。
-         NTSP 原版 stattype="SurgerySkillBonus" 为无效 StatType（游戏解析忽略，天赋不生效），
-         改由 init.lua 的 tesp.unspecialised 钩子实现：wrap HF.GetSurgerySkill，
-         有天赋时手术技能判定 +30 → 每次手术操作进度更多、成功率更高（手术更快）。 -->
-    <Talent identifier="ntsp_unspecialisedspecialist">
-      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
-      <Description tag="talentdescription.ntsp_unspecialisedspecialist">
-        <Replace tag="[amount]" value="30" color="gui.green" />
-        <Replace tag="[skillname]" value="skillname.surgery" color="gui.orange" />
-      </Description>
-    </Talent>
     <!-- 异丙酚专家：不给自身施加 miracleworker（allowself="false"），
          但自身不免疫 miracleworker，周围同样有此天赋的医生可以互相给对方吊命。 -->
     <Talent identifier="ntsp_properfol">

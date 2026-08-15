@@ -550,29 +550,3 @@ end
 Hook.Add("think", "tesp.implacable", function()
     InvokeSafely("implacable.think", UpdateImplacableWrapped)
 end)
-
--- 非专业专家（ntsp_unspecialisedspecialist）：NTSP 原版使用无效 StatType SurgerySkillBonus，
--- 游戏解析时忽略导致天赋不生效。改为手术加速实现：
--- wrap NT 的 HF.GetSurgerySkill —— 有天赋时手术技能判定 +30。
--- NT 手术每次操作进度 = 1 + skill/2（items.lua advscalpel/advhemostat/advretractors 等），
--- 技能越高进度越多 = 手术步骤越少（更快），成功率（skill/required）同步提升。
-local UNSURGERY_BONUS = 30
-local surgerySkillWrapped = false
-
-local function WrapSurgerySkill()
-    if surgerySkillWrapped then return end
-    if HF == nil or type(HF.GetSurgerySkill) ~= "function" then return end
-    local original = HF.GetSurgerySkill
-    HF.GetSurgerySkill = function(character)
-        local base = original(character)
-        if HasTalentSafe(character, "ntsp_unspecialisedspecialist") then
-            return base + UNSURGERY_BONUS
-        end
-        return base
-    end
-    surgerySkillWrapped = true
-end
-
-Hook.Add("think", "tesp.unspecialised", function()
-    InvokeSafely("unspecialised.think", WrapSurgerySkill)
-end)

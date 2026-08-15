@@ -418,8 +418,7 @@
           <TalentOption identifier="ntsp_homecarepackage" />
           <TalentOption identifier="ntsp_injectorgeneral" />
           <TalentOption identifier="ntsp_fellowtoaster" />
-          <TalentOption identifier="ntsp_unspecialisedspecialist" />
-          <TalentOption identifier="vitaminsupplements" />
+          <TalentOption identifier="tesp_vitaminsupplements" />
         </TalentOptions>
       </SubTree>
       <SubTree identifier="ethicalmedicine" type="specialization" requires="surgeon_primary">
@@ -471,3 +470,4 @@
     </TalentTree>
   </TalentTrees>
 </Override>
+
