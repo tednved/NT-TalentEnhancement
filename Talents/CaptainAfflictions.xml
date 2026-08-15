@@ -85,6 +85,8 @@
         <StatValue stattype="RepairToolStructureRepairMultiplier" value="0.4" />
         <StatValue stattype="MovementSpeed" value="0.1" />
       </Effect>
+      <!-- +30% 物理伤害抗性（以身作则附加效果，family 翻倍版） -->
+      <Effect minstrength="0" maxstrength="1" resistancefor="damage" minresistance="0.3" maxresistance="0.3" />
       <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="5,1" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
     </Affliction>
     <!-- 注意我：船长的存在使你急于表现。 -->

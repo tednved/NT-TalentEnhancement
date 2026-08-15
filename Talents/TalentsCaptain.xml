@@ -625,7 +625,7 @@
       <!-- 只要你还活着，给全体船员施加创伤抗性标记 -->
       <AbilityGroupInterval interval="0.9">
         <Abilities>
-          <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true">
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true" allowclientsimulation="false">
             <StatusEffects>
               <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
                 <Affliction identifier="tesp_inspiringpresence" strength="1.0" />

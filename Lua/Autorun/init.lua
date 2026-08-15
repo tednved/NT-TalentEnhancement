@@ -224,6 +224,9 @@ local function TryRegisterNTC()
                 if HasTalentSafe(character, "buff") then
                     -- 身强体壮：骨折概率 -50%
                     InvokeSafely("NTC.SetMultiplier", setMultiplier, character, "anyfracturechance", 0.5)
+                elseif HasAffliction(character, Identifier("excellentmorale")) then
+                    -- 以身作则 + family 的亢进士气：骨折概率 -40%
+                    InvokeSafely("NTC.SetMultiplier", setMultiplier, character, "anyfracturechance", 0.6)
                 elseif HasAffliction(character, Identifier("highmorale")) then
                     -- 以身作则的士气高涨：骨折概率 -20%
                     InvokeSafely("NTC.SetMultiplier", setMultiplier, character, "anyfracturechance", 0.8)
