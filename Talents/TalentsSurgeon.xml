@@ -18,42 +18,139 @@
       </AbilityGroupEffect>
     </Talent>
     <!-- Field surgeon -->
-    <Talent identifier="ntsp_imadoctornota">
+    <!-- 我是一个医生！而不是...（N选一，ShowCaseTalent 外壳 identifier="ntsp_imadoctornota"，见 TalentTrees.xml）：
+         6 个选项：医疗/机械/电气/武器/舵手 各 +50（单选）；全面发展 = 5 技能各 +10。
+         所有选项均带：外科技能 30% 的设计（制造）速度 + 近战/远程攻击速度加成。 -->
+    <Talent identifier="tesp_imadoctornota_medical">
       <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
-      <Description tag="talentdescription.skillbonus">
-        <Replace tag="[amount]" value="20" />
+      <Description tag="talentdescription.tesp_imadoctornota_skill">
+        <Replace tag="[amount]" value="50" color="gui.green" />
         <Replace tag="[skillname]" value="skillname.medical" color="gui.orange" />
       </Description>
-      <Description tag="talentdescription.skillbonus">
-        <Replace tag="[amount]" value="20" />
-        <Replace tag="[skillname]" value="skillname.weapons" color="gui.orange" />
-      </Description>
-      <Description tag="talentdescription.skillbonus">
-        <Replace tag="[amount]" value="20" />
-        <Replace tag="[skillname]" value="skillname.mechanical" color="gui.orange" />
-      </Description>
-      <Description tag="talentdescription.skillbonus">
-        <Replace tag="[amount]" value="20" />
-        <Replace tag="[skillname]" value="skillname.electrical" color="gui.orange" />
-      </Description>
-      <Description tag="talentdescription.skillbonus">
-        <Replace tag="[amount]" value="20" />
-        <Replace tag="[skillname]" value="skillname.helm" color="gui.orange" />
-      </Description>
-      <Description tag="talentdescription.ntsp_imadoctornota">
+      <Description tag="talentdescription.tesp_imadoctornota_surgspeed">
         <Replace tag="[skillpercentage]" value="30" color="gui.green" />
       </Description>
       <AbilityGroupEffect abilityeffecttype="None">
         <Abilities>
-          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="20" />
-          <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="20" />
-          <CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="20" />
-          <CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="20" />
-          <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="20" />
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="50" />
         </Abilities>
       </AbilityGroupEffect>
       <AbilityGroupInterval interval="0.5">
         <Abilities>
+          <CharacterAbilityModifyStatToSkill stattype="FabricationSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="MeleeAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="RangedAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <Talent identifier="tesp_imadoctornota_mechanical">
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.tesp_imadoctornota_skill">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.mechanical" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.tesp_imadoctornota_surgspeed">
+        <Replace tag="[skillpercentage]" value="30" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="50" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.5">
+        <Abilities>
+          <CharacterAbilityModifyStatToSkill stattype="FabricationSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="MeleeAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="RangedAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <Talent identifier="tesp_imadoctornota_electrical">
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.tesp_imadoctornota_skill">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.electrical" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.tesp_imadoctornota_surgspeed">
+        <Replace tag="[skillpercentage]" value="30" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="50" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.5">
+        <Abilities>
+          <CharacterAbilityModifyStatToSkill stattype="FabricationSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="MeleeAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="RangedAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <Talent identifier="tesp_imadoctornota_weapons">
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.tesp_imadoctornota_skill">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.weapons" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.tesp_imadoctornota_surgspeed">
+        <Replace tag="[skillpercentage]" value="30" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="50" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.5">
+        <Abilities>
+          <CharacterAbilityModifyStatToSkill stattype="FabricationSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="MeleeAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="RangedAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <Talent identifier="tesp_imadoctornota_helm">
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.tesp_imadoctornota_skill">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.helm" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.tesp_imadoctornota_surgspeed">
+        <Replace tag="[skillpercentage]" value="30" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="50" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.5">
+        <Abilities>
+          <CharacterAbilityModifyStatToSkill stattype="FabricationSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="MeleeAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+          <CharacterAbilityModifyStatToSkill stattype="RangedAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <Talent identifier="tesp_imadoctornota_all">
+      <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.tesp_imadoctornota_all">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.tesp_imadoctornota_surgspeed">
+        <Replace tag="[skillpercentage]" value="30" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="10" />
+          <CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="10" />
+          <CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="10" />
+          <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="10" />
+          <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="10" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.5">
+        <Abilities>
+          <CharacterAbilityModifyStatToSkill stattype="FabricationSpeed" maxvalue="0.3" skillidentifier="surgery" />
           <CharacterAbilityModifyStatToSkill stattype="MeleeAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
           <CharacterAbilityModifyStatToSkill stattype="RangedAttackSpeed" maxvalue="0.3" skillidentifier="surgery" />
         </Abilities>
@@ -152,12 +249,12 @@
     <Talent identifier="ntsp_selfcare">
       <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="3,0" sheetelementsize="128,128" />
       <Description tag="talentdescription.ntsp_selfcarepsychosis">
-        <Replace tag="[amount]" value="100" color="gui.green" />
+        <Replace tag="[amount]" value="70" color="gui.green" />
         <Replace tag="[affliction]" value="afflictionname.psychosis" color="gui.orange" />
       </Description>
       <AbilityGroupEffect abilityeffecttype="None">
         <Abilities>
-          <CharacterAbilityGiveResistance resistance="psychosis" multiplier="0" />
+          <CharacterAbilityGiveResistance resistance="psychosis" multiplier="0.3" />
         </Abilities>
       </AbilityGroupEffect>
     </Talent>
@@ -168,6 +265,17 @@
         <Replace tag="[base]" value="60" color="gui.green" />
         <Replace tag="[multiplier]" value="0.1" color="gui.green" />
       </Description>
+    </Talent>
+    <!-- 奇怪的小诊所（覆盖 NTSP ntsp_experimental）：脑罐 / 实验性药物 / 仿生大脑 配方
+         （原「实习医师」ntsp_therapisttintraining 的脑罐与仿生大脑配方迁移至此，该天赋已从树中删除）。 -->
+    <Talent identifier="ntsp_experimental">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="1,5" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.brainjar,entityname.artificialbrain,entityname.experimentaltreatment" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="brainjar" />
+      <AddedRecipe itemidentifier="artificialbrain" />
+      <AddedRecipe itemidentifier="experimentaltreatment" />
     </Talent>
   </Talents>
 </Override>

@@ -1,6 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Simplified Chinese" nowhitespace="true" translatedname="中文(简体)">
   <!-- TALENTS -->
+  <talentname.tesp_imadoctornota_medical>医疗专精</talentname.tesp_imadoctornota_medical>
+  <talentname.tesp_imadoctornota_mechanical>机械专精</talentname.tesp_imadoctornota_mechanical>
+  <talentname.tesp_imadoctornota_electrical>电气专精</talentname.tesp_imadoctornota_electrical>
+  <talentname.tesp_imadoctornota_weapons>武器专精</talentname.tesp_imadoctornota_weapons>
+  <talentname.tesp_imadoctornota_helm>舵手专精</talentname.tesp_imadoctornota_helm>
+  <talentname.tesp_imadoctornota_all>全面发展</talentname.tesp_imadoctornota_all>
+  <talentdescription.tesp_imadoctornota_skill>获得 [amount] 点 [skillname] 加成。</talentdescription.tesp_imadoctornota_skill>
+  <talentdescription.tesp_imadoctornota_all>所有技能各获得 [amount] 点加成。</talentdescription.tesp_imadoctornota_all>
+  <talentdescription.tesp_imadoctornota_surgspeed>获得相当于外科技能 [skillpercentage]% 的设计速度、近战与远程攻击速度奖励。</talentdescription.tesp_imadoctornota_surgspeed>
+  <talentname.ntsp_experimental>奇怪的小诊所</talentname.ntsp_experimental>
+  <talenttree.ethicalmedicine>主刀医生</talenttree.ethicalmedicine>
   <talentdescription.ntsp_imadoctornota>获得相当于你外科技能[skillpercentage]%的远程射击速度和近战攻击速度的奖励。</talentdescription.ntsp_imadoctornota>
   <talentname.tesp_militarydoping>军用兴奋剂</talentname.tesp_militarydoping>
   <talentdescription.ntsp_preventativepermit>最后一个得到你命令的人以及6米内的友军(包括自身)获得[physicalresistance]%的伤害抗性，并避免其受到致命的打击。</talentdescription.ntsp_preventativepermit>

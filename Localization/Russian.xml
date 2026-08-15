@@ -1,6 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Russian" nowhitespace="false" translatedname="Русский">
   <!-- TALENTS -->
+  <talentname.tesp_imadoctornota_medical>Медицинская специализация</talentname.tesp_imadoctornota_medical>
+  <talentname.tesp_imadoctornota_mechanical>Механическая специализация</talentname.tesp_imadoctornota_mechanical>
+  <talentname.tesp_imadoctornota_electrical>Электрическая специализация</talentname.tesp_imadoctornota_electrical>
+  <talentname.tesp_imadoctornota_weapons>Оружейная специализация</talentname.tesp_imadoctornota_weapons>
+  <talentname.tesp_imadoctornota_helm>Штурвальная специализация</talentname.tesp_imadoctornota_helm>
+  <talentname.tesp_imadoctornota_all>Разносторонний</talentname.tesp_imadoctornota_all>
+  <talentdescription.tesp_imadoctornota_skill>Получите [amount] очков навыка [skillname].</talentdescription.tesp_imadoctornota_skill>
+  <talentdescription.tesp_imadoctornota_all>Получите [amount] очков всех навыков.</talentdescription.tesp_imadoctornota_all>
+  <talentdescription.tesp_imadoctornota_surgspeed>Получите скорость создания, скорость ближнего и дальнего боя, равную [skillpercentage]% вашего навыка хирургии.</talentdescription.tesp_imadoctornota_surgspeed>
+  <talentname.ntsp_experimental>Странная маленькая клиника</talentname.ntsp_experimental>
+  <talenttree.ethicalmedicine>Ведущий хирург</talenttree.ethicalmedicine>
   <talentdescription.ntsp_imadoctornota>Получите бонус, равный [skillpercentage]% от скорости дальнего выстрела и скорости атаки ближнего боя вашего хирургического навыка.</talentdescription.ntsp_imadoctornota>
   <talentname.tesp_militarydoping>Военный допинг</talentname.tesp_militarydoping>
   <talentdescription.ntsp_preventativepermit>Последний человек, получивший вашу команду, и дружественные войска в радиусе 6 м (включая вас самих) получают [physicalresistance]% сопротивления урону и защищены от смертельных ударов.</talentdescription.ntsp_preventativepermit>

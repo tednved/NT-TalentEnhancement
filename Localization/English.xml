@@ -1,6 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
   <!-- TALENTS -->
+  <talentname.tesp_imadoctornota_medical>Medical Specialization</talentname.tesp_imadoctornota_medical>
+  <talentname.tesp_imadoctornota_mechanical>Mechanical Specialization</talentname.tesp_imadoctornota_mechanical>
+  <talentname.tesp_imadoctornota_electrical>Electrical Specialization</talentname.tesp_imadoctornota_electrical>
+  <talentname.tesp_imadoctornota_weapons>Weapons Specialization</talentname.tesp_imadoctornota_weapons>
+  <talentname.tesp_imadoctornota_helm>Helm Specialization</talentname.tesp_imadoctornota_helm>
+  <talentname.tesp_imadoctornota_all>Well-Rounded</talentname.tesp_imadoctornota_all>
+  <talentdescription.tesp_imadoctornota_skill>Gain [amount] points in [skillname].</talentdescription.tesp_imadoctornota_skill>
+  <talentdescription.tesp_imadoctornota_all>Gain [amount] points in all skills.</talentdescription.tesp_imadoctornota_all>
+  <talentdescription.tesp_imadoctornota_surgspeed>Gain fabrication speed, melee and ranged attack speed equal to [skillpercentage]% of your surgery skill.</talentdescription.tesp_imadoctornota_surgspeed>
+  <talentname.ntsp_experimental>Strange Little Clinic</talentname.ntsp_experimental>
+  <talenttree.ethicalmedicine>Lead Surgeon</talenttree.ethicalmedicine>
   <talentdescription.ntsp_imadoctornota>Gain an additional percentage to Ranged Fire Rate and Melee Attack Speed equal to [skillpercentage]% of your surgery skill.</talentdescription.ntsp_imadoctornota>
   <talentname.tesp_militarydoping>Military doping</talentname.tesp_militarydoping>
   <talentdescription.ntsp_preventativepermit>The last person you ordered and ally(including yourself) within 6m gain gains [physicalresistance]% damage resistance and is less likely to suffer serious injuries.</talentdescription.ntsp_preventativepermit>

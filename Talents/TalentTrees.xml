@@ -425,7 +425,7 @@
         <TalentOptions>
           <TalentOption identifier="ntsp_underpressure" />
         </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOptions>
           <TalentOption identifier="tesp_laststand" />
         </TalentOptions>
         <TalentOptions requiredtalents="1" maxchosentalents="2">
@@ -441,7 +441,7 @@
           <TalentOption identifier="ntsp_ultrasoniccleaner" />
         </TalentOptions>
         <TalentOptions>
-          <TalentOption identifier="ntsp_therapisttintraining" />
+          <TalentOption identifier="ntsp_preventativepermit" />
         </TalentOptions>
         <TalentOptions requiredtalents="1" maxchosentalents="2">
           <TalentOption identifier="ntsp_mannitol" />
@@ -459,9 +459,15 @@
           <TalentOption identifier="ntsp_captainresist" />
           <TalentOption identifier="ntsp_fallenandcantgetup" />
         </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="ntsp_preventativepermit" />
-          <TalentOption identifier="ntsp_imadoctornota" />
+        <TalentOptions>
+          <ShowCaseTalent identifier="ntsp_imadoctornota">
+            <TalentOption identifier="tesp_imadoctornota_medical" />
+            <TalentOption identifier="tesp_imadoctornota_mechanical" />
+            <TalentOption identifier="tesp_imadoctornota_electrical" />
+            <TalentOption identifier="tesp_imadoctornota_weapons" />
+            <TalentOption identifier="tesp_imadoctornota_helm" />
+            <TalentOption identifier="tesp_imadoctornota_all" />
+          </ShowCaseTalent>
         </TalentOptions>
         <TalentOptions>
           <TalentOption identifier="ntsp_properfol" />
