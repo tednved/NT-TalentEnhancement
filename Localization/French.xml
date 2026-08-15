@@ -19,6 +19,13 @@
   <talentname.tesp_laststand>Course contre la mort</talentname.tesp_laststand>
   <talentdescription.tesp_laststand>Un bon médecin doit soigner non seulement les autres, mais aussi lui-même. À l'agonie, gagnez [base] + chirurgie × [multiplier] secondes de conscience forcée. Après la fin, vie max -15 %, soignable uniquement en clinique médicale.</talentdescription.tesp_laststand>
   <afflictionname.tesp_laststand>Course contre la mort</afflictionname.tesp_laststand>
+  <afflictiondescription.highmorale>Votre capitaine donne l'exemple. Vous vous sentez confiant et plein d'énergie. Octroie les bonus suivants :\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Vitesse de réparation‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Vitesse de réparation de coque‖end‖\n‖color:gui.green‖5%‖end‖‖color:gui.orange‖Vitesse de déplacement‖end‖\n‖color:gui.green‖15%‖end‖‖color:gui.orange‖Résistance aux dégâts physiques‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Risque de fracture réduit‖end‖</afflictiondescription.highmorale>
+  <afflictionname.quickdraworder>Ordre du tireur rapide</afflictionname.quickdraworder>
+  <afflictiondescription.quickdraworder>Dernier ordre du capitaine : +100% de cadence de tir à distance, +50% de dégâts. Retiré quand le capitaine ordonne à quelqu'un d'autre.</afflictiondescription.quickdraworder>
+  <afflictionname.tesp_inspiringpresence>Présence inspirante</afflictionname.tesp_inspiringpresence>
+  <afflictiondescription.tesp_inspiringpresence>La présence du capitaine vous inspire : -25% de choc traumatique, -50% de neurotraumatisme.</afflictiondescription.tesp_inspiringpresence>
+  <talentdescription.tesp_quickdraw_order>Le dernier membre d'équipage à qui vous avez donné un ordre gagne une marque : +[amount]% de cadence de tir à distance, +[damage]% de dégâts, jusqu'à ce que vous ordonniez à quelqu'un d'autre.</talentdescription.tesp_quickdraw_order>
+  <talentdescription.tesp_inspiringpresence>Tant que vous êtes en vie, tout l'équipage gagne -[traumashock]% de choc traumatique et -[neurotrauma]% de neurotraumatisme.</talentdescription.tesp_inspiringpresence>
   <afflictiondescription.tesp_laststand>Conscience forcée ; tension, rythme cardiaque et perte de sang stabilisés.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Séquelle</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>Le prix de la survie : vie max -15 %. La Course contre la mort ne peut pas se déclencher tant que ce debuff est actif.</afflictiondescription.tesp_laststand_aftermath>

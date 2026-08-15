@@ -12,13 +12,11 @@
           <TalentOption identifier="veteran" />
           <TalentOption identifier="travelingtradesman" />
         </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="6">
+        <TalentOptions requiredtalents="1" maxchosentalents="4">
           <TalentOption identifier="emergencymaneuvers" />
-          <TalentOption identifier="sailorwithnoname" />
           <TalentOption identifier="camaraderie" />
           <TalentOption identifier="downwiththeship" />
           <TalentOption identifier="gunsmith" />
-          <TalentOption identifier="steadytune" />
         </TalentOptions>
       </SubTree>
       <SubTree identifier="gunslinger" type="specialization" requires="captain_primary">
@@ -59,8 +57,7 @@
           <TalentOption identifier="yourreputationnew" />
           <TalentOption identifier="affiliation" />
         </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="2">
-          <TalentOption identifier="campaigningnew" />
+        <TalentOptions>
           <TalentOption identifier="networking" />
         </TalentOptions>
         <TalentOptions>

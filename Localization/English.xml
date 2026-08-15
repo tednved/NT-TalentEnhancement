@@ -19,6 +19,13 @@
   <talentname.tesp_laststand>Race with Death</talentname.tesp_laststand>
   <talentdescription.tesp_laststand>A good doctor should be able to heal not only others but also themselves. When dying, gain [base] + surgery skill × [multiplier] seconds of forced consciousness. After it ends, max health -15%, curable only at a medical clinic.</talentdescription.tesp_laststand>
   <afflictionname.tesp_laststand>Race with Death</afflictionname.tesp_laststand>
+  <afflictiondescription.highmorale>Your captain is leading by example. You feel confident and energized. Grants the following bonuses:\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Repair speed‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Hull repair speed‖end‖\n‖color:gui.green‖5%‖end‖‖color:gui.orange‖Movement speed‖end‖\n‖color:gui.green‖15%‖end‖‖color:gui.orange‖Physical damage resistance‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Fracture chance reduced‖end‖</afflictiondescription.highmorale>
+  <afflictionname.quickdraworder>Quickdraw Order</afflictionname.quickdraworder>
+  <afflictiondescription.quickdraworder>The captain's last order: +100% ranged fire rate, +50% damage. Removed when the captain orders someone else.</afflictiondescription.quickdraworder>
+  <afflictionname.tesp_inspiringpresence>Inspiring Presence</afflictionname.tesp_inspiringpresence>
+  <afflictiondescription.tesp_inspiringpresence>The captain's presence inspires you: -25% traumatic shock, -50% neurotrauma.</afflictiondescription.tesp_inspiringpresence>
+  <talentdescription.tesp_quickdraw_order>The last crew member you ordered gains a mark: +[amount]% ranged fire rate, +[damage]% damage, until you order someone else.</talentdescription.tesp_quickdraw_order>
+  <talentdescription.tesp_inspiringpresence>While you are alive, all crew gain -[traumashock]% traumatic shock and -[neurotrauma]% neurotrauma.</talentdescription.tesp_inspiringpresence>
   <afflictiondescription.tesp_laststand>Forced consciousness; blood pressure, heart rate and blood loss are stabilized.</afflictiondescription.tesp_laststand>
   <afflictionname.tesp_laststand_aftermath>Aftermath of the Surge</afflictionname.tesp_laststand_aftermath>
   <afflictiondescription.tesp_laststand_aftermath>The price of holding on: max health -15%. Race with Death cannot trigger while this debuff is active.</afflictiondescription.tesp_laststand_aftermath>

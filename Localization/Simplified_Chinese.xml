@@ -59,7 +59,13 @@
   <afflictiondescription.excellentmorale>这个船员对你来说就像一个家庭。没有人敢招惹你的潜艇小家庭。已获得以下效果：\n‖color:gui.green‖40%‖end‖‖color:gui.orange‖修复速度‖end‖\n‖color:gui.green‖40%‖end‖‖color:gui.orange‖船体修复速度‖end‖\n‖color:gui.green‖10%‖end‖‖color:gui.orange‖移动速度‖end‖</afflictiondescription.excellentmorale>
   <afflictiondescription.figureheadnew>你将‖color:gui.orange‖保持清醒‖end‖，不惜一切代价来保住这艘舰船。</afflictiondescription.figureheadnew>
   <afflictiondescription.figureheadnew_cs>你将在‖color:gui.green‖[=strength]‖end‖秒的时间内‖color:gui.orange‖保持清醒‖end‖，不惜一切代价来保住这艘舰船。</afflictiondescription.figureheadnew_cs>
-  <afflictiondescription.highmorale>你的舰长以身作则。你感到自信和精力充沛。已获得以下效果：\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖修复速度‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖船体修复速度‖end‖\n‖color:gui.green‖5%‖end‖‖color:gui.orange‖移动速度‖end‖</afflictiondescription.highmorale>
+  <afflictiondescription.highmorale>你的舰长以身作则。你感到自信和精力充沛。已获得以下效果：\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖修复速度‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖船体修复速度‖end‖\n‖color:gui.green‖5%‖end‖‖color:gui.orange‖移动速度‖end‖\n‖color:gui.green‖15%‖end‖‖color:gui.orange‖物理伤害抗性‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖骨折概率降低‖end‖</afflictiondescription.highmorale>
+  <afflictionname.quickdraworder>快枪手指令</afflictionname.quickdraworder>
+  <afflictiondescription.quickdraworder>舰长的最后指令：远程射速+100%、伤害+50%。当舰长指挥其他人后移除。</afflictiondescription.quickdraworder>
+  <afflictionname.tesp_inspiringpresence>鼓舞人心</afflictionname.tesp_inspiringpresence>
+  <afflictiondescription.tesp_inspiringpresence>舰长的存在鼓舞了你：创伤性休克-25%、精神创伤-50%。</afflictiondescription.tesp_inspiringpresence>
+  <talentdescription.tesp_quickdraw_order>你最后一次下达指令的船员获得标记：远程射速+[amount]%、伤害+[damage]%，直到你指挥别人。</talentdescription.tesp_quickdraw_order>
+  <talentdescription.tesp_inspiringpresence>只要你还活着，全体船员手术中受到的创伤性休克-[traumashock]%，精神创伤-[neurotrauma]%。</talentdescription.tesp_inspiringpresence>
   <afflictiondescription.inspiringpresence>船长的存在使你急于表现，你获得任意‖color:gui.orange‖技能‖end‖时，额外获得‖color:gui.green‖2‖end‖点。</afflictiondescription.inspiringpresence>
   <afflictiondescription.quickdrawing_cs>使用手枪造成的伤害提高‖color:gui.green‖50%‖end‖，可用‖color:gui.green‖[=strength gte 8f ? 2:1]‖end‖次。</afflictiondescription.quickdrawing_cs>
   <afflictiondescription.radiationsicknessresistance>你受到的辐射伤害降低了。</afflictiondescription.radiationsicknessresistance>

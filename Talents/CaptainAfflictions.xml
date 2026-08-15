@@ -74,6 +74,8 @@
         <StatValue stattype="RepairToolStructureRepairMultiplier" value="0.2" />
         <StatValue stattype="MovementSpeed" value="0.05" />
       </Effect>
+      <!-- +15% 物理伤害抗性（以身作则附加效果） -->
+      <Effect minstrength="0" maxstrength="1" resistancefor="damage" minresistance="0.15" maxresistance="0.15" />
       <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="4,1" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
     </Affliction>
     <!-- 亢进士气：这个船员对你来说就像一个家庭。没有人敢招惹你的潜艇小家庭。 -->
@@ -105,6 +107,20 @@
         <StatValue stattype="SwimmingSpeed" value="0.1" />
       </Effect>
       <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 快枪手标记：最后被舰长下达指令的船员获得（远程射速+100%、伤害+50%，换指令目标后自动消失） -->
+    <Affliction identifier="quickdraworder" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="1" maxstrength="5" duration="2" showbarinhealthmenu="false" treatmentthreshold="1000" iconcolors="53,55,58;146,191,204;146,191,204;247,227,229">
+      <Effect minstrength="0" maxstrength="5">
+        <StatValue stattype="RangedAttackSpeed" value="1.0" />
+        <StatValue stattype="AttackMultiplier" value="0.5" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 鼓舞人心（tesp 版）：创伤性休克-25%、精神创伤-50%（cerebralhypoxia） -->
+    <Affliction identifier="tesp_inspiringpresence" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" showiconthreshold="1" maxstrength="1" duration="1" showbarinhealthmenu="false" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" resistancefor="traumaticshock" minresistance="0.25" maxresistance="0.25" />
+      <Effect minstrength="0" maxstrength="1" resistancefor="cerebralhypoxia" minresistance="0.5" maxresistance="0.5" />
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,1" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
     </Affliction>
   </Override>
   <!-- 与舰同在：不惜一切代价来保住这艘舰船。 -->

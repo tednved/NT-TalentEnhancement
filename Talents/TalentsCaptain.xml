@@ -114,6 +114,10 @@
         <Replace tag="[amount]" value="50" color="gui.green" />
         <Replace tag="[stattype]" value="stattypenames.skillgainspeed" color="gui.orange" />
       </Description>
+      <!-- 文本：解锁配方：雪茄（原「无名水手」配方迁移） -->
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.cigar" color="gui.orange" />
+      </Description>
       <!-- 给所有船员：+25％ 技能获取速度 -->
       <AbilityGroupInterval interval="0.9">
         <Abilities>
@@ -126,6 +130,7 @@
           </CharacterAbilityApplyStatusEffectsToAllies>
         </Abilities>
       </AbilityGroupInterval>
+      <AddedRecipe itemidentifier="cigar" />
       <!-- 文本：换行 -->
       <Description tag="talentdescription.Newline" />
       <!-- 文本：给所有船员 -->
@@ -217,25 +222,6 @@
         </Abilities>
       </AbilityGroupEffect>
     </Talent>
-    <!-- 无名水手 -->
-    <Talent identifier="sailorwithnoname">
-      <!-- 文本：医疗水平获得20的成长。 -->
-      <Description tag="talentdescription.skillbonus">
-        <Replace tag="[amount]" value="20" color="gui.green" />
-        <Replace tag="[skillname]" value="skillname.medical" color="gui.orange" />
-      </Description>
-      <!-- 文本：解锁配方：雪茄 -->
-      <Description tag="talentdescription.unlockrecipe">
-        <Replace tag="[itemname]" value="entityname.cigar" color="gui.orange" />
-      </Description>
-      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,1" sheetelementsize="128,128" />
-      <AbilityGroupEffect abilityeffecttype="None">
-        <Abilities>
-          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="20" />
-        </Abilities>
-      </AbilityGroupEffect>
-      <AddedRecipe itemidentifier="cigar" />
-    </Talent>
     <!-- 战友之情 -->
     <Talent identifier="camaraderie">
       <!-- 文本：每当你完成任务而没有任何船员死亡，你的船员就会获得额外10%经验和额外的5%物理伤害抗性。 -->
@@ -287,13 +273,14 @@
           <AbilityConditionShipFlooded floodpercentage="0.5" />
         </Conditions>
         <Abilities>
-          <CharacterAbilityApplyStatusEffects>
+          <!-- 对全体船员生效（含自身），效果与持续时间不变 -->
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true">
             <StatusEffects>
               <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
                 <Affliction identifier="downwiththeship" amount="60.0" />
               </StatusEffect>
             </StatusEffects>
-          </CharacterAbilityApplyStatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
         </Abilities>
       </AbilityGroupInterval>
     </Talent>
@@ -306,53 +293,6 @@
       </Description>
       <AddedRecipe itemidentifier="revolver" />
       <AddedRecipe itemidentifier="revolverround" />
-    </Talent>
-    <!-- 稳稳当当 -->
-    <Talent identifier="steadytune">
-      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,3" sheetelementsize="128,128" />
-      <!-- 文本：演奏口琴至少10秒后，你和附近的盟友获得+100% 精神抗性，持续60秒。 -->
-      <Description tag="talentdescription.steadytune">
-        <Replace tag="[duration]" value="10" color="gui.green" />
-        <Replace tag="[buffamount]" value="100" color="gui.green" />
-        <Replace tag="[buffname]" value="afflictionname.psychosisresistance" color="gui.orange" />
-        <Replace tag="[buffduration]" value="60" color="gui.green" />
-      </Description>
-      <!-- 使用远程武器 -->
-      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
-        <Conditions>
-          <!-- 口琴 -->
-          <AbilityConditionItem identifiers="harmonica" />
-        </Conditions>
-        <Abilities>
-          <CharacterAbilityApplyStatusEffects>
-            <StatusEffects>
-              <StatusEffect type="OnAbility" target="Character">
-                <!-- 使用Affliction计时 -->
-                <Affliction identifier="steadytune_charging" amount="2" />
-              </StatusEffect>
-            </StatusEffects>
-          </CharacterAbilityApplyStatusEffects>
-        </Abilities>
-      </AbilityGroupEffect>
-      <!-- 使用远程武器 -->
-      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
-        <Conditions>
-          <!-- 口琴 -->
-          <AbilityConditionItem identifiers="harmonica" />
-          <!-- 计时Affliction达到90% -->
-          <AbilityConditionHasAffliction afflictionidentifier="steadytune_charging" minimumpercentage="0.9" />
-        </Conditions>
-        <Abilities>
-          <!-- 对船员生效,范围600(6米) -->
-          <CharacterAbilityApplyStatusEffectsToAllies range="600">
-            <StatusEffects>
-              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true">
-                <Affliction identifier="psychosisimmunity" amount="60" />
-              </StatusEffect>
-            </StatusEffects>
-          </CharacterAbilityApplyStatusEffectsToAllies>
-        </Abilities>
-      </AbilityGroupEffect>
     </Talent>
     <!-- 第一系天赋 -->
     <!-- 快枪手 -->
@@ -415,6 +355,22 @@
           <CharacterAbilityGiveStat stattype="DualWieldingPenaltyReduction" value="0.5" />
         </Abilities>
       </AbilityGroupEffect>
+      <!-- 你最后一次下达指令的船员获得标记（远程射速+100%、伤害+50%），直到你指挥别人（同外科医生预防性许可证机制） -->
+      <Description tag="talentdescription.tesp_quickdraw_order">
+        <Replace tag="[amount]" value="100" color="gui.green" />
+        <Replace tag="[damage]" value="50" color="gui.green" />
+      </Description>
+      <AbilityGroupInterval>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToLastOrderedCharacter>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="quickdraworder" amount="5.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToLastOrderedCharacter>
+        </Abilities>
+      </AbilityGroupInterval>
     </Talent>
     <!-- 孤狼：获得以下效果，如果附近20米内没有其他船员则效果翻倍：+20％ 物理伤害抗性、+20％ 晕眩抗性、+20％ 造成近战伤害-->
     <Talent identifier="lonewolf">
@@ -656,30 +612,18 @@
     <!-- 鼓舞人心 -->
     <Talent identifier="inspiringpresence">
       <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,1" sheetelementsize="128,128" />
-      <!-- 文本：所有在同舱室获得技能点的船员将获得3点。船员步行速度提高5%。 -->
-      <Description tag="talentdescription.inspiringpresence">
-        <Replace tag="[amount]" value="3" color="gui.green" />
-        <Replace tag="[movespeed]" value="5" color="gui.green" />
+      <!-- 文本：只要你还活着，全体船员手术中受到的创伤性休克-25%、精神创伤-50%（同安全官急救训练机制） -->
+      <Description tag="talentdescription.tesp_inspiringpresence">
+        <Replace tag="[traumashock]" value="25" color="gui.green" />
+        <Replace tag="[neurotrauma]" value="50" color="gui.green" />
       </Description>
-      <!-- 同舱室，排除自己，给予inspiringpresence -->
-      <AbilityGroupInterval interval="0.9">
-        <Abilities>
-          <CharacterAbilityApplyStatusEffectsToAllies insameroom="true" allowself="false">
-            <StatusEffects>
-              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
-                <Affliction identifier="inspiringpresence" strength="1.0" />
-              </StatusEffect>
-            </StatusEffects>
-          </CharacterAbilityApplyStatusEffectsToAllies>
-        </Abilities>
-      </AbilityGroupInterval>
-      <!-- 为所有船员提供步行速度加成 -->
+      <!-- 只要你还活着，给全体船员施加创伤抗性标记 -->
       <AbilityGroupInterval interval="0.9">
         <Abilities>
           <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true">
             <StatusEffects>
               <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
-                <Affliction identifier="inspiringpresence_walkspeed" strength="1.0" />
+                <Affliction identifier="tesp_inspiringpresence" strength="1.0" />
               </StatusEffect>
             </StatusEffects>
           </CharacterAbilityApplyStatusEffectsToAllies>
@@ -846,49 +790,6 @@
           <CharacterAbilityGivePermanentStat statidentifier="trustbuilding" stattype="MaximumHealthMultiplier" value="0.05" maxvalue="0.30" targetallies="true" />
         </Abilities>
       </AbilityGroupEffect>
-    </Talent>
-    <!-- 特别收藏 -->
-    <Talent identifier="campaigningnew">
-      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,4" sheetelementsize="128,128" />
-      <!-- 文本：你可以多选择一个任务。 -->
-      <Description tag="talentdescription.extramission" />
-      <!-- 文本：每当你第一次打开沉船中的容器时，你有5%的概率找到一把特殊武器。你可以通过重新制造，将特殊武器的质量提升到大师并且赋予特殊效果。 -->
-      <Description tag="talentdescription.uniquestrengthen">
-        <Replace tag="[probability]" value="5" color="gui.green" />
-      </Description>
-      <!-- 效果：制造的特殊武器质量提升3 -->
-      <AbilityGroupEffect abilityeffecttype="None">
-        <Abilities>
-          <CharacterAbilityGiveStat stattype="ExtraMissionCount" value="1" />
-          <CharacterAbilityGivePermanentStat statidentifier="unique" stattype="IncreaseFabricationQuality" value="3" />
-        </Abilities>
-      </AbilityGroupEffect>
-      <!-- 效果：打开沉船容器时5%概率找到特殊武器 -->
-      <AbilityGroupEffect abilityeffecttype="OnOpenItemContainer">
-        <Conditions>
-          <AbilityConditionItemInSubmarine submarinetype="Wreck" />
-          <AbilityConditionItem tags="container" />
-        </Conditions>
-        <Abilities>
-          <CharacterAbilitySpawnItemsToContainer randomchance="0.05" oncepercontainer="true">
-            <StatusEffects>
-              <StatusEffect type="OnAbility" target="UseTarget" spawnitemrandomly="true">
-                <SpawnItem identifiers="shotgununique" spawnposition="ThisInventory" spawnifcantbecontained="false" />
-                <SpawnItem identifiers="divingknifeunique" spawnposition="ThisInventory" spawnifcantbecontained="false" />
-                <SpawnItem identifiers="smgunique" spawnposition="ThisInventory" spawnifcantbecontained="false" />
-                <SpawnItem identifiers="spearunique" spawnposition="ThisInventory" spawnifcantbecontained="false" />
-                <SpawnItem identifiers="flamerunique" spawnposition="ThisInventory" spawnifcantbecontained="false" />
-              </StatusEffect>
-            </StatusEffects>
-          </CharacterAbilitySpawnItemsToContainer>
-        </Abilities>
-      </AbilityGroupEffect>
-      <!-- 解锁强化配方 -->
-      <AddedRecipe itemidentifier="shotgununique" />
-      <AddedRecipe itemidentifier="divingknifeunique" />
-      <AddedRecipe itemidentifier="smgunique" />
-      <AddedRecipe itemidentifier="spearunique" />
-      <AddedRecipe itemidentifier="flamerunique" />
     </Talent>
     <!-- 人脉 -->
     <Talent identifier="networking">

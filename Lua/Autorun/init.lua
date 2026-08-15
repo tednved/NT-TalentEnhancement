@@ -220,8 +220,14 @@ local function TryRegisterNTC()
 
     local ok, err = pcall(addHumanUpdateHook, function(character)
         InvokeSafely("NTC.humanUpdate", function()
-            if character ~= nil and HasTalentSafe(character, "buff") then
-                InvokeSafely("NTC.SetMultiplier", setMultiplier, character, "anyfracturechance", 0.5)
+            if character ~= nil then
+                if HasTalentSafe(character, "buff") then
+                    -- 身强体壮：骨折概率 -50%
+                    InvokeSafely("NTC.SetMultiplier", setMultiplier, character, "anyfracturechance", 0.5)
+                elseif HasAffliction(character, Identifier("highmorale")) then
+                    -- 以身作则的士气高涨：骨折概率 -20%
+                    InvokeSafely("NTC.SetMultiplier", setMultiplier, character, "anyfracturechance", 0.8)
+                end
             end
         end)
     end)
