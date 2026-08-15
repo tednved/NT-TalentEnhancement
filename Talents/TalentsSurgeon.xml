@@ -3,7 +3,7 @@
   <Talents>
     <!-- Researcher -->
     <!-- Hospitalizer -->
-    <Talent identifier="vitaminsupplements">
+    <Talent identifier="tesp_vitaminsupplements" nameidentifier="talentname.vitaminsupplements">
       <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,5" sheetelementsize="128,128" />
       <Description tag="talentdescription.vitaminsupplements">
         <Replace tag="[healthboost]" value="20" color="gui.green" />
@@ -103,10 +103,9 @@
         </Abilities>
       </AbilityGroupInterval>
     </Talent>
-    <!-- 非专业专家：+30 外科技能（占位）。
-         游戏 StatTypes 无 SurgerySkillBonus 映射（GetSkillStatType 只支持
-         electrical/helm/mechanical/medical/weapons），CharacterAbilityIncreaseSkill
-         会直接改角色基础技能值（写进存档，出问题），故留空占位，等 NT 更新支持额外等级。 -->
+    <!-- 非专业专家：+30 外科技能。
+         NTSP 原版 stattype="SurgerySkillBonus" 为无效 StatType（游戏解析忽略，天赋不生效），
+         改由 init.lua 的 tesp.unspecialised 钩子实现（有天赋 +30、洗点自动回收）。 -->
     <Talent identifier="ntsp_unspecialisedspecialist">
       <Icon texture="%ModDir:NT Surgery Plus%/Items/MainAtlas.png" sheetindex="6,1" sheetelementsize="128,128" />
       <Description tag="talentdescription.ntsp_unspecialisedspecialist">
@@ -182,3 +181,4 @@
     </Talent>
   </Talents>
 </Override>
+

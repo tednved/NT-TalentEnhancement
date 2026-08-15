@@ -550,3 +550,36 @@ end
 Hook.Add("think", "tesp.implacable", function()
     InvokeSafely("implacable.think", UpdateImplacableWrapped)
 end)
+
+-- 非专业专家（ntsp_unspecialisedspecialist）：NTSP 原版使用无效 StatType SurgerySkillBonus，
+-- 游戏解析时忽略导致天赋不生效。改为 Lua 对齐式实现：有天赋时给外科技能 +30（基础值），
+-- 洗点/失去天赋时自动回收 -30，不残留存档。
+local UNSURGERY_BONUS = 30
+local unspecialisedApplied = {} -- character userdata -> true
+local unspecialisedTimer = 0.0
+
+local function UpdateUnspecialised(dt)
+    unspecialisedTimer = unspecialisedTimer + (dt or 0)
+    if unspecialisedTimer < 1.0 then return end
+    unspecialisedTimer = 0.0
+    for _, character in pairs(Character.CharacterList) do
+        if character ~= nil and character.Info ~= nil then
+            local hasTalent = HasTalentSafe(character, "ntsp_unspecialisedspecialist")
+            if hasTalent and not unspecialisedApplied[character] then
+                pcall(function()
+                    character.Info.IncreaseSkillLevel(SURGERY_ID, UNSURGERY_BONUS)
+                end)
+                unspecialisedApplied[character] = true
+            elseif not hasTalent and unspecialisedApplied[character] then
+                pcall(function()
+                    character.Info.IncreaseSkillLevel(SURGERY_ID, -UNSURGERY_BONUS)
+                end)
+                unspecialisedApplied[character] = nil
+            end
+        end
+    end
+end
+
+Hook.Add("think", "tesp.unspecialised", function(dt)
+    InvokeSafely("unspecialised.think", UpdateUnspecialised, dt)
+end)
