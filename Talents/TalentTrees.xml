@@ -411,7 +411,7 @@
           <TalentOption identifier="ntsp_autodidact" />
           <TalentOption identifier="selfcare" />
         </TalentOptions>
-        <TalentOptions requiredtalents="1" maxchosentalents="5">
+        <TalentOptions requiredtalents="1" maxchosentalents="4">
           <TalentOption identifier="ntsp_homecarepackage" />
           <TalentOption identifier="ntsp_injectorgeneral" />
           <TalentOption identifier="ntsp_fellowtoaster" />

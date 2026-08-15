@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
   <!-- TALENTS -->
+  <talentdescription.downwiththeship>If you are on your submarine and it is flooded by [flooded]%, all crew gain +[swimmingboost]% swimming speed and +[repairspeed]% hull repair speed for [duration] seconds.</talentdescription.downwiththeship>
   <talentdescription.tesp_imadoctornota_base>Choose a specialization: +[amount] in one skill, or Well-Rounded (+[allamount] in all skills). Either way, gain fabrication speed, melee and ranged attack speed equal to [skillpercentage]% of your surgery skill.</talentdescription.tesp_imadoctornota_base>
   <talentname.tesp_imadoctornota_medical>Medical Specialization</talentname.tesp_imadoctornota_medical>
   <talentname.tesp_imadoctornota_mechanical>Mechanical Specialization</talentname.tesp_imadoctornota_mechanical>

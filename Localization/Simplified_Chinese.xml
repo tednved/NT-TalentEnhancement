@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Simplified Chinese" nowhitespace="true" translatedname="中文(简体)">
   <!-- TALENTS -->
+  <talentdescription.downwiththeship>如果你在你的潜艇上，并且已经进水[flooded]%，所有船员的游泳速度提高[swimmingboost]%，并且修复船壳速度提高[repairspeed]%，持续[duration]秒。</talentdescription.downwiththeship>
   <talentdescription.tesp_imadoctornota_base>选择一项专精：单项技能 +[amount]，或全面发展（全部技能各 +[allamount]）。无论怎么选，都获得相当于外科技能 [skillpercentage]% 的设计速度与近战/远程攻击速度加成。</talentdescription.tesp_imadoctornota_base>
   <talentname.tesp_imadoctornota_medical>医疗专精</talentname.tesp_imadoctornota_medical>
   <talentname.tesp_imadoctornota_mechanical>机械专精</talentname.tesp_imadoctornota_mechanical>
