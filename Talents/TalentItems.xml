@@ -2,7 +2,7 @@
 <Override>
   <!-- 武器 -->
   <!-- 榴弹发射器：增加制造配方，增加demolitionsexpert标签，弹药4堆叠 -->
-  <Item name="" identifier="grenadelauncher" subcategory="TalentEnhancement" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,demolitionsexpert" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="" identifier="grenadelauncher" subcategory="TalentEnhancement" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,smallitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon,demolitionsexpert" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" amount="1" spawnprobability="0.2" notcampaign="true" />
     <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" spawnprobability="0.1" />
     <PreferredContainer secondary="armcab" />
@@ -66,7 +66,7 @@
     <SkillRequirementHint identifier="weapons" level="60" />
   </Item>
   <!-- 爆鸣：在编辑器中显示，增加配方（强化），质量加成提高，大师品质大幅度减少射击间隔 -->
-  <Item name="" identifier="shotgununique" subcategory="TalentEnhancement" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,provocativetohumanai,mountableweapon,unique" Scale="0.5" impactsoundtag="impact_metal_light" allowasextracargo="true">
+  <Item name="" identifier="shotgununique" subcategory="TalentEnhancement" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,smallitem,weapon,gun,provocativetohumanai,mountableweapon,unique" Scale="0.5" impactsoundtag="impact_metal_light" allowasextracargo="true">
     <PreferredContainer primary="secarmcab" secondary="armcab" />
     <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" spawnprobability="0.05" />
     <Price baseprice="931" sold="false" canbespecial="false" />
@@ -278,7 +278,7 @@
     <SkillRequirementHint identifier="weapons" level="50" />
   </Item>
   <!-- 亚哈之矛：在编辑器中显示,增加配方（强化），提供质量加成，大师品质伤害大幅提高 -->
-  <Item name="" identifier="spearunique" subcategory="TalentEnhancement" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="6" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,handheldammo,harpoonammo,unique" Scale="0.5" impactsoundtag="impact_metal_light" allowasextracargo="true">
+  <Item name="" identifier="spearunique" subcategory="TalentEnhancement" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="6" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,smallitem,handheldammo,harpoonammo,unique" Scale="0.5" impactsoundtag="impact_metal_light" allowasextracargo="true">
     <PreferredContainer primary="harpoongun,armcab" secondary="secarmcab" />
     <PreferredContainer secondary="wrecksecarmcab,wreckarmcab,abandonedsecarmcab,piratesecarmcab,abandonedarmcab,piratearmcab" amount="6" spawnprobability="0.05" />
     <Price baseprice="550" sold="false" canbespecial="false" />

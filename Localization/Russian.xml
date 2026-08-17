@@ -21,8 +21,8 @@
   <talentdescription.tesp_laststand>Хороший врач должен лечить не только других, но и себя. При смерти вы получаете [base] + хирургия × [multiplier] секунд принудительного сознания. После окончания макс. здоровье -15%, лечится только в медклинике.</talentdescription.tesp_laststand>
   <afflictionname.tesp_laststand>Гонка со смертью</afflictionname.tesp_laststand>
   <afflictiondescription.highmorale>Ваш капитан подаёт пример. Вы чувствуете уверенность и прилив сил. Даёт следующие бонусы:\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Скорость ремонта‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Скорость ремонта корпуса‖end‖\n‖color:gui.green‖5%‖end‖‖color:gui.orange‖Скорость движения‖end‖\n‖color:gui.green‖15%‖end‖‖color:gui.orange‖Сопротивление физ. урону‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Шанс перелома снижен‖end‖</afflictiondescription.highmorale>
-  <afflictionname.quickdraworder>Приказ стрелка</afflictionname.quickdraworder>
-  <afflictiondescription.quickdraworder>Последний приказ капитана: +100% к скорострельности, +50% к урону. Исчезает, когда капитан отдаёт приказ другому.</afflictiondescription.quickdraworder>
+  <afflictionname.quickdraworder>Искупление</afflictionname.quickdraworder>
+  <afflictiondescription.quickdraworder>Убирайся из этого забытого богом места. Будь мужчиной, держащим своё слово.</afflictiondescription.quickdraworder>
   <afflictionname.tesp_inspiringpresence>Вдохновляющее присутствие</afflictionname.tesp_inspiringpresence>
   <afflictiondescription.tesp_inspiringpresence>Присутствие капитана воодушевляет вас: -25% к травматическому шоку, -50% к нейротравме.</afflictiondescription.tesp_inspiringpresence>
   <talentdescription.tesp_quickdraw_order>Последний член экипажа, которому вы отдали приказ, получает метку: +[amount]% к скорострельности, +[damage]% к урону, пока вы не отдадите приказ другому.</talentdescription.tesp_quickdraw_order>
@@ -38,8 +38,8 @@
   <talentdescription.tesp_implacable_amputate>При активации лечит ампутированные конечности, переломы и вывихи; во время действия нельзя получить новые ампутации, переломы или вывихи.</talentdescription.tesp_implacable_amputate>
   <talentdescription.tesp_lastwave>После окончания макс. здоровье -20%, лечится только в медклинике, плюс кратковременное оглушение; Последний рубеж не может сработать, пока действует этот дебафф.</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>Последний рубеж</afflictionname.tesp_implacable>
-  <afflictiondescription.tesp_implacable>Борьба на грани</afflictiondescription.tesp_implacable>
-  <afflictionname.tesp_lastwave>Последняя волна</afflictionname.tesp_lastwave>
+  <afflictiondescription.tesp_implacable>Не бойся жнеца</afflictiondescription.tesp_implacable>
+  <afflictionname.tesp_lastwave>Сбой Relic</afflictionname.tesp_lastwave>
   <afflictiondescription.tesp_lastwave>Цена выживания: макс. здоровье -20%. Лечится только в медклинике.</afflictiondescription.tesp_lastwave>
   <talentdescription.affiliationnew>Всякий раз, когда вы выполняете миссию без потерей среди экипажа, матросы получают дополнительно [extraexperience]% опыта и [largegain]% дополнительного запаса здоровья, ограниченного [maxgain]%</talentdescription.affiliationnew>
   <talentdescription.bountyhunter>Когда вы или кто-то из вашей команды убивает монстра, команда получает дополнительные кредиты в размере [percentage]% от максимального здоровья монстра.</talentdescription.bountyhunter>

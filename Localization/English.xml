@@ -21,8 +21,8 @@
   <talentdescription.tesp_laststand>A good doctor should be able to heal not only others but also themselves. When dying, gain [base] + surgery skill × [multiplier] seconds of forced consciousness. After it ends, max health -15%, curable only at a medical clinic.</talentdescription.tesp_laststand>
   <afflictionname.tesp_laststand>Race with Death</afflictionname.tesp_laststand>
   <afflictiondescription.highmorale>Your captain is leading by example. You feel confident and energized. Grants the following bonuses:\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Repair speed‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Hull repair speed‖end‖\n‖color:gui.green‖5%‖end‖‖color:gui.orange‖Movement speed‖end‖\n‖color:gui.green‖15%‖end‖‖color:gui.orange‖Physical damage resistance‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Fracture chance reduced‖end‖</afflictiondescription.highmorale>
-  <afflictionname.quickdraworder>Quickdraw Order</afflictionname.quickdraworder>
-  <afflictiondescription.quickdraworder>The captain's last order: +100% ranged fire rate, +50% damage. Removed when the captain orders someone else.</afflictiondescription.quickdraworder>
+  <afflictionname.quickdraworder>Redemption</afflictionname.quickdraworder>
+  <afflictiondescription.quickdraworder>Leave this godforsaken place. Be a man of your word.</afflictiondescription.quickdraworder>
   <afflictionname.tesp_inspiringpresence>Inspiring Presence</afflictionname.tesp_inspiringpresence>
   <afflictiondescription.tesp_inspiringpresence>The captain's presence inspires you: -25% traumatic shock, -50% neurotrauma.</afflictiondescription.tesp_inspiringpresence>
   <talentdescription.tesp_quickdraw_order>The last crew member you ordered gains a mark: +[amount]% ranged fire rate, +[damage]% damage, until you order someone else.</talentdescription.tesp_quickdraw_order>
@@ -38,8 +38,8 @@
   <talentdescription.tesp_implacable_amputate>On trigger, heals amputated limbs, fractures and dislocations; while active, cannot gain new amputations, fractures or dislocations.</talentdescription.tesp_implacable_amputate>
   <talentdescription.tesp_lastwave>After it ends, max health -20%, curable only at a medical clinic, plus a brief stun; Last Stand cannot trigger while this debuff is active.</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>Last Stand</afflictionname.tesp_implacable>
-  <afflictiondescription.tesp_implacable>Deathbed struggle</afflictiondescription.tesp_implacable>
-  <afflictionname.tesp_lastwave>The Last Wave</afflictionname.tesp_lastwave>
+  <afflictiondescription.tesp_implacable>Don't Fear The Reaper</afflictiondescription.tesp_implacable>
+  <afflictionname.tesp_lastwave>Relic Malfunction</afflictionname.tesp_lastwave>
   <afflictiondescription.tesp_lastwave>The price of holding on: max health -20%. Curable only at a medical clinic.</afflictiondescription.tesp_lastwave>
   <talentdescription.affiliationnew>Whenever you complete a mission without any crew members dying, your crew members gain an extra [extraexperience]% experience and [largegain]% increased maximum life, capped at [maxgain]%</talentdescription.affiliationnew>
   <talentdescription.bountyhunter>Whenever you or an allied crewmember kills a monster, your crew gains additional marks equal to [percentage]% of the creature's maximum health.</talentdescription.bountyhunter>

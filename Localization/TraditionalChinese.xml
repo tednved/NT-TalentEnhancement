@@ -30,8 +30,8 @@
   <talentdescription.tesp_implacable_amputate>觸發時治愈身上的斷肢、骨折和脫臼；持續期間不會新增斷肢、骨折或脫臼。</talentdescription.tesp_implacable_amputate>
   <talentdescription.tesp_lastwave>結束後最大生命-20%，隻能在站點醫生處治療，並短暫暈眩；有此debuff時破釜沉舟無法生效</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>破釜沉舟</afflictionname.tesp_implacable>
-  <afflictiondescription.tesp_implacable>瀕死掙紮</afflictiondescription.tesp_implacable>
-  <afflictionname.tesp_lastwave>最後的波紋</afflictionname.tesp_lastwave>
+  <afflictiondescription.tesp_implacable>以我殘軀化烈火</afflictiondescription.tesp_implacable>
+  <afflictionname.tesp_lastwave>Relic 故障</afflictionname.tesp_lastwave>
   <afflictiondescription.tesp_lastwave>強行續命的代價：最大生命值-20%，隻能在站點醫生處治療。</afflictiondescription.tesp_lastwave>
   <afflictiondescription.lonewolf.high>‖color:gui.orange‖孤身一人‖end‖，提高‖color:gui.green‖40%‖end‖ ‖color:gui.orange‖物理伤害抗性‖end‖、‖color:gui.orange‖晕眩抗性‖end‖、‖color:gui.orange‖近战伤害‖end‖</afflictiondescription.lonewolf.high>
   <afflictiondescription.lonewolf.low>‖color:gui.orange‖船员在侧‖end‖，提高‖color:gui.green‖20%‖end‖ ‖color:gui.orange‖物理伤害抗性‖end‖、‖color:gui.orange‖晕眩抗性‖end‖、‖color:gui.orange‖近战伤害‖end‖</afflictiondescription.lonewolf.low>
@@ -61,8 +61,8 @@
   <afflictiondescription.figureheadnew>你将‖color:gui.orange‖保持清醒‖end‖，不惜一切代价来保住这艘舰船。</afflictiondescription.figureheadnew>
   <afflictiondescription.figureheadnew_cs>你将在‖color:gui.green‖[=strength]‖end‖秒的时间内‖color:gui.orange‖保持清醒‖end‖，不惜一切代价来保住这艘舰船。</afflictiondescription.figureheadnew_cs>
   <afflictiondescription.highmorale>你的艦長以身作則。你感到自信和精力充沛。已獲得以下效果：\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖修復速度‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖船體修復速度‖end‖\n‖color:gui.green‖5%‖end‖‖color:gui.orange‖移動速度‖end‖\n‖color:gui.green‖15%‖end‖‖color:gui.orange‖物理傷害抗性‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖骨折概率降低‖end‖</afflictiondescription.highmorale>
-  <afflictionname.quickdraworder>快槍手指令</afflictionname.quickdraworder>
-  <afflictiondescription.quickdraworder>艦長的最後指令：遠程射速+100%、傷害+50%。當艦長指揮其他人後移除。</afflictiondescription.quickdraworder>
+  <afflictionname.quickdraworder>救贖</afflictionname.quickdraworder>
+  <afflictiondescription.quickdraworder>離開這個鬼地方！去做一個頂天立地的人！</afflictiondescription.quickdraworder>
   <afflictionname.tesp_inspiringpresence>鼓舞人心</afflictionname.tesp_inspiringpresence>
   <afflictiondescription.tesp_inspiringpresence>艦長的存在鼓舞了你：創傷性休克-25%、精神創傷-50%。</afflictiondescription.tesp_inspiringpresence>
   <talentdescription.tesp_quickdraw_order>你最後一次下達指令的船員獲得標記：遠程射速+[amount]%、傷害+[damage]%，直到你指揮別人。</talentdescription.tesp_quickdraw_order>

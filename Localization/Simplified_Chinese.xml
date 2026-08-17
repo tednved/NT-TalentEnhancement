@@ -30,9 +30,9 @@
   <talentdescription.tesp_implacable_amputate>触发时治愈身上的断肢、骨折和脱臼；持续期间不会新增断肢、骨折或脱臼。</talentdescription.tesp_implacable_amputate>
   <talentdescription.tesp_lastwave>结束后最大生命-20%，只能在站点医生处治疗。</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>破釜沉舟</afflictionname.tesp_implacable>
-  <afflictiondescription.tesp_implacable>濒死挣扎</afflictiondescription.tesp_implacable>
-  <afflictionname.tesp_lastwave>最后的波纹</afflictionname.tesp_lastwave>
-  <afflictiondescription.tesp_lastwave>回光返照后遗症：最大生命值-20%。</afflictiondescription.tesp_lastwave>
+  <afflictiondescription.tesp_implacable>以我残躯化烈火</afflictiondescription.tesp_implacable>
+  <afflictionname.tesp_lastwave>relic故障</afflictionname.tesp_lastwave>
+  <afflictiondescription.tesp_lastwave>最大生命值-20%。</afflictiondescription.tesp_lastwave>
   <afflictiondescription.lonewolf.high>‖color:gui.orange‖孤身一人‖end‖，提高‖color:gui.green‖40%‖end‖ ‖color:gui.orange‖物理伤害抗性‖end‖、‖color:gui.orange‖晕眩抗性‖end‖、‖color:gui.orange‖近战伤害‖end‖</afflictiondescription.lonewolf.high>
   <afflictiondescription.lonewolf.low>‖color:gui.orange‖船员在侧‖end‖，提高‖color:gui.green‖20%‖end‖ ‖color:gui.orange‖物理伤害抗性‖end‖、‖color:gui.orange‖晕眩抗性‖end‖、‖color:gui.orange‖近战伤害‖end‖</afflictiondescription.lonewolf.low>
   <talentdescription.affiliationnew>每当你完成任务而没有任何船员死亡，你的船员就会获得额外[extraexperience]%经验，并增加[largegain]%的最大生命，上限为[maxgain]%的最大生命。</talentdescription.affiliationnew>

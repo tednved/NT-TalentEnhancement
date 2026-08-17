@@ -21,8 +21,8 @@
   <talentdescription.tesp_laststand>Un bon médecin doit soigner non seulement les autres, mais aussi lui-même. À l'agonie, gagnez [base] + chirurgie × [multiplier] secondes de conscience forcée. Après la fin, vie max -15 %, soignable uniquement en clinique médicale.</talentdescription.tesp_laststand>
   <afflictionname.tesp_laststand>Course contre la mort</afflictionname.tesp_laststand>
   <afflictiondescription.highmorale>Votre capitaine donne l'exemple. Vous vous sentez confiant et plein d'énergie. Octroie les bonus suivants :\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Vitesse de réparation‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Vitesse de réparation de coque‖end‖\n‖color:gui.green‖5%‖end‖‖color:gui.orange‖Vitesse de déplacement‖end‖\n‖color:gui.green‖15%‖end‖‖color:gui.orange‖Résistance aux dégâts physiques‖end‖\n‖color:gui.green‖20%‖end‖‖color:gui.orange‖Risque de fracture réduit‖end‖</afflictiondescription.highmorale>
-  <afflictionname.quickdraworder>Ordre du tireur rapide</afflictionname.quickdraworder>
-  <afflictiondescription.quickdraworder>Dernier ordre du capitaine : +100% de cadence de tir à distance, +50% de dégâts. Retiré quand le capitaine ordonne à quelqu'un d'autre.</afflictiondescription.quickdraworder>
+  <afflictionname.quickdraworder>Rédemption</afflictionname.quickdraworder>
+  <afflictiondescription.quickdraworder>Quitte cet endroit maudit. Sois un homme de parole.</afflictiondescription.quickdraworder>
   <afflictionname.tesp_inspiringpresence>Présence inspirante</afflictionname.tesp_inspiringpresence>
   <afflictiondescription.tesp_inspiringpresence>La présence du capitaine vous inspire : -25% de choc traumatique, -50% de neurotraumatisme.</afflictiondescription.tesp_inspiringpresence>
   <talentdescription.tesp_quickdraw_order>Le dernier membre d'équipage à qui vous avez donné un ordre gagne une marque : +[amount]% de cadence de tir à distance, +[damage]% de dégâts, jusqu'à ce que vous ordonniez à quelqu'un d'autre.</talentdescription.tesp_quickdraw_order>
@@ -38,8 +38,8 @@
   <talentdescription.tesp_implacable_amputate>À l'activation, soigne les membres amputés, fractures et luxations ; pendant l'effet, aucun nouveau membre amputé, fracture ou luxation ne peut survenir.</talentdescription.tesp_implacable_amputate>
   <talentdescription.tesp_lastwave>Après la fin, vie max -20 %, soignable uniquement en clinique médicale, plus un étourdissement bref ; le Dernier rempart ne peut pas se déclencher tant que ce debuff est actif.</talentdescription.tesp_lastwave>
   <afflictionname.tesp_implacable>Dernier rempart</afflictionname.tesp_implacable>
-  <afflictiondescription.tesp_implacable>Lutte à l'agonie</afflictiondescription.tesp_implacable>
-  <afflictionname.tesp_lastwave>La Dernière Vague</afflictionname.tesp_lastwave>
+  <afflictiondescription.tesp_implacable>Ne crains pas la Faucheuse</afflictiondescription.tesp_implacable>
+  <afflictionname.tesp_lastwave>Panne de Relic</afflictionname.tesp_lastwave>
   <afflictiondescription.tesp_lastwave>Le prix de la survie : vie max -20 %. Soignable uniquement en clinique médicale.</afflictiondescription.tesp_lastwave>
   <talentdescription.affiliationnew>Chaque fois que vous terminez une mission sans qu'aucun membre d'équipage ne meure, vos membres d'équipage gagnent [extraexperience]% d'expérience supplémentaire et [largegain]% de vie maximale augmentée, plafonnée à [maxgain]%</talentdescription.affiliationnew>
   <talentdescription.bountyhunter>Quand vous ou un membre d'équipage allié tuez un monstre, votre équipage gagne des marks supplémentaires équivalant à [percentage] % de la santé maximum de la créature.</talentdescription.bountyhunter>
